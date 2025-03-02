@@ -42,13 +42,13 @@ export default function AboutUs() {
   return (
     <div className="min-h-screen bg-primary">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
+      <section className="relative py-28 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/placeholder.svg?height=1080&width=1920"
+            src="/d2.jpg"
             alt="Dubai Skyline"
             fill
-            className="object-cover brightness-[0.85]"
+            className="object-cover brightness-[0.50]"
             priority
           />
           <div className="absolute inset-0 bg-primary/30" />
@@ -61,9 +61,9 @@ export default function AboutUs() {
             className="mb-6"
           >
             <h1 className=" font-bold  mb-4">MRST Consultancy</h1>
-            <p className=" max-w-3xl mx-auto">
+            <h3 className=" max-w-3xl mx-auto">
               Your trusted partner for global business connections and educational opportunities
-            </p>
+            </h3>
           </motion.div>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.5 }}>
             <Button
@@ -90,7 +90,7 @@ export default function AboutUs() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-primary"
+            className="text-black"
           >
             MRST Consultancy L.L.C-FZ has established itself as a trusted partner for businesses and students looking to
             navigate international opportunities. Operating from our headquarters at Meydan Grandstand in Dubai, we
@@ -239,11 +239,11 @@ export default function AboutUs() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-primary mb-4">
+            <p className="text-black mb-4">
               Located in the prestigious Meydan Grandstand on the 6th floor, our modern offices reflect our commitment
               to professionalism and excellence.
             </p>
-            <div className="flex flex-col gap-2 text-primary">
+            <div className="flex flex-col gap-2 text-black">
               <p>
                 <strong>Address:</strong> 6th Floor, Meydan Grandstand, Dubai, UAE
               </p>
@@ -264,11 +264,11 @@ export default function AboutUs() {
             className="rounded-lg overflow-hidden shadow-lg"
           >
             <Image
-              src="/placeholder.svg?height=600&width=800"
+              src="/Meydan.jpg"
               alt="Meydan Grandstand"
-              width={800}
+              width={600}
               height={600}
-              className="w-full h-auto"
+              className="w-full h-auto object-contain"
             />
           </motion.div>
         </div>

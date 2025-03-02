@@ -31,14 +31,16 @@ export default function StudentConsultancyServices() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative bg-primary text-white">
-        <div className="absolute inset-0 opacity-20">
-          {/* <Image
-            src="/placeholder.svg?height=800&width=1600"
-            alt="International Education Background"
-            fill
-            className="object-cover"
-          /> */}
-        </div>
+        <div className="absolute inset-0 opacity-40">
+               
+               <Image
+                    src="/pattern.png"
+                    alt="Investment Partnership Background"
+                    fill
+                    className="object-cover"
+                  /> 
+                
+                </div>
         <div className="container mx-auto px-4 py-24 sm:px-6 lg:px-8 relative z-10">
           <motion.div initial="hidden" animate="visible" variants={fadeIn} className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">Student Consultancy Services</h1>
@@ -67,7 +69,7 @@ export default function StudentConsultancyServices() {
             className="text-center mb-16 text-primary"
           >
             <h2 className="font-bold mb-4">Comprehensive Education Consultancy</h2>
-            <p className="max-w-3xl mx-auto">
+            <p className="max-w-3xl mx-auto text-black">
               Personalized guidance at every step of your international education journey, from planning to
               post-graduation.
             </p>
@@ -81,13 +83,13 @@ export default function StudentConsultancyServices() {
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             <motion.div variants={fadeIn}>
-              <Card className="h-full transition-all hover:shadow-lg">
+              <Card className="h-full transition-all border-2 border-primary hover:shadow-lg">
                 <CardHeader className="pb-3">
                   <GraduationCap className="h-10 w-10 text-primary mb-3" />
                   <CardTitle>University Selection</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">
+                  <p className="text-black">
                     Customized recommendations based on academic goals, career aspirations, and personal preferences to
                     find your perfect match.
                   </p>
@@ -96,13 +98,13 @@ export default function StudentConsultancyServices() {
             </motion.div>
 
             <motion.div variants={fadeIn}>
-              <Card className="h-full transition-all hover:shadow-lg">
+              <Card className="h-full transition-all border-2 border-primary hover:shadow-lg">
                 <CardHeader className="pb-3">
                   <BookOpen className="h-10 w-10 text-primary mb-3" />
                   <CardTitle>Application Management</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">
+                  <p className="text-black">
                     Strategic guidance on application preparation, personal statements, and documentation to maximize
                     your chances of acceptance.
                   </p>
@@ -111,13 +113,13 @@ export default function StudentConsultancyServices() {
             </motion.div>
 
             <motion.div variants={fadeIn}>
-              <Card className="h-full transition-all hover:shadow-lg">
+              <Card className="h-full transition-all border-2 border-primary hover:shadow-lg">
                 <CardHeader className="pb-3">
                   <Globe className="h-10 w-10 text-primary mb-3" />
                   <CardTitle>Visa Assistance</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">
+                  <p className="text-black">
                     Expert support for student visa applications and requirements, ensuring a smooth transition to your
                     host country.
                   </p>
@@ -126,13 +128,13 @@ export default function StudentConsultancyServices() {
             </motion.div>
 
             <motion.div variants={fadeIn}>
-              <Card className="h-full transition-all hover:shadow-lg">
+              <Card className="h-full transition-all border-2 border-primary hover:shadow-lg">
                 <CardHeader className="pb-3">
                   <Lightbulb className="h-10 w-10 text-primary mb-3" />
                   <CardTitle>Scholarship Guidance</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">
+                  <p className="text-black">
                     Identification of financial aid opportunities and application support to help fund your education.
                   </p>
                 </CardContent>
@@ -140,13 +142,13 @@ export default function StudentConsultancyServices() {
             </motion.div>
 
             <motion.div variants={fadeIn}>
-              <Card className="h-full transition-all hover:shadow-lg">
+              <Card className="h-full transition-all border-2 border-primary hover:shadow-lg">
                 <CardHeader className="pb-3">
                   <Home className="h-10 w-10 text-primary mb-3" />
                   <CardTitle>Pre-Departure Orientation</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">
+                  <p className="text-black">
                     Preparation for cultural adjustment and practical aspects of studying abroad, ensuring a smooth
                     transition.
                   </p>
@@ -168,7 +170,7 @@ export default function StudentConsultancyServices() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl font-bold mb-4">Destination Specializations</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-black max-w-3xl mx-auto">
               We offer specialized knowledge for popular study destinations worldwide, helping you make informed
               decisions.
             </p>
@@ -299,7 +301,7 @@ export default function StudentConsultancyServices() {
       </section>
 
       {/* Our Approach */}
-      <section className="py-20 ">
+      <section className="py-20 relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial="hidden"
@@ -307,14 +309,15 @@ export default function StudentConsultancyServices() {
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
             className=" mx-auto text-center text-primary"
-          >
+          >  <div className="absolute inset-0 opacity-15 h-full w-full bg-[url('/pattern2.png')] bg-repeat bg-contain "></div>
+
             <h2 className="font-bold mb-6">Our Approach</h2>
-            <p className=" mb-8">
+            <p className=" mb-8 text-black">
               We pride ourselves on providing honest, ethical guidance that prioritizes student success. Our consultants
               maintain up-to-date knowledge of international education trends, admission requirements, and employment
               opportunities to ensure students receive accurate and relevant advice.
             </p>
-            <p className=" mb-8">
+            <p className=" mb-8 text-black">
               At MRST Consultancy, we believe that quality education transcends borders. Our mission is to help you
               access the educational opportunities that will shape your future, wherever in the world they may be.
             </p>
@@ -335,8 +338,8 @@ export default function StudentConsultancyServices() {
             variants={fadeIn}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold mb-4">Student Success Stories</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <h2 className=" font-bold mb-4">Student Success Stories</h2>
+            <p className="text-secondary max-w-3xl mx-auto">
               Hear from students who have successfully navigated their international education journey with our
               guidance.
             </p>
@@ -355,17 +358,17 @@ export default function StudentConsultancyServices() {
                   <div className="flex flex-col items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-2">
                       <Image
-                        src="/placeholder.svg?height=64&width=64"
+                        src="/p1.jpg"
                         alt="Student"
                         width={64}
                         height={64}
                         className="rounded-full"
                       />
                     </div>
-                    <h3 className="font-semibold">Sarah J.</h3>
-                    <p className="text-sm text-gray-500">MSc, University of London</p>
+                    <h3 className="font-semibold">Sarah Jahan</h3>
+                    <p className="text-sm text-secondary">MSc, University of London</p>
                   </div>
-                  <p className="text-gray-600 italic">
+                  <p className="text-secondary italic">
                     "MRST Consultancy guided me through every step of my application to UK universities. Their
                     personalized approach and attention to detail made all the difference in securing my place at my
                     dream program."
@@ -380,17 +383,17 @@ export default function StudentConsultancyServices() {
                   <div className="flex flex-col items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-2">
                       <Image
-                        src="/placeholder.svg?height=64&width=64"
+                        src="/p2.jpg"
                         alt="Student"
                         width={64}
                         height={64}
                         className="rounded-full"
                       />
                     </div>
-                    <h3 className="font-semibold">Ahmed K.</h3>
-                    <p className="text-sm text-gray-500">MBA, Harvard University</p>
+                    <h3 className="font-semibold">Karim Javed</h3>
+                    <p className="text-sm text-secondary">MBA, Harvard University</p>
                   </div>
-                  <p className="text-gray-600 italic">
+                  <p className="text- italic">
                     "From test preparation to scholarship applications, MRST provided expert guidance that helped me
                     secure a substantial scholarship for my MBA. Their knowledge of the US education system is
                     unparalleled."
@@ -405,17 +408,17 @@ export default function StudentConsultancyServices() {
                   <div className="flex flex-col items-center mb-4">
                     <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-2">
                       <Image
-                        src="/placeholder.svg?height=64&width=64"
+                        src="/p3.jpg"
                         alt="Student"
                         width={64}
                         height={64}
                         className="rounded-full"
                       />
                     </div>
-                    <h3 className="font-semibold">Priya M.</h3>
+                    <h3 className="font-semibold">Priyom Mazumdar</h3>
                     <p className="text-sm text-gray-500">BEng, University of Toronto</p>
                   </div>
-                  <p className="text-gray-600 italic">
+                  <p className="italic">
                     "The visa process seemed overwhelming until I worked with MRST. Their step-by-step guidance and
                     preparation for my visa interview made the process smooth and successful."
                   </p>
@@ -437,7 +440,7 @@ export default function StudentConsultancyServices() {
             className="max-w-3xl mx-auto text-center"
           >
             <h2 className="text-3xl font-bold mb-6">Begin Your International Education Journey Today</h2>
-            <p className="text-xl mb-8">
+            <p className="mb-8 text-black">
               Let our expert consultants guide you toward the educational opportunities that will shape your future.
             </p>
             <Button size="lg" variant="outline" className="bg-white text-green-800 hover:bg-gray-100">

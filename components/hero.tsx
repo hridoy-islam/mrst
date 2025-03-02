@@ -1,5 +1,5 @@
 "use client"
-
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import Link from "next/link"
@@ -46,11 +46,11 @@ export default function Hero() {
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Button asChild variant="outline" size="lg" className="bg-secondary text-primary">
-                <Link href="#contact">Schedule a Consultation</Link>
+                <Link href="/contact">Schedule a Consultation</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="bg-secondary text-primary">
+              {/* <Button asChild variant="outline" size="lg" className="bg-secondary text-primary">
                 <Link href="#services">Our Services</Link>
-              </Button>
+              </Button> */}
             </div>
           </motion.div>
 
@@ -63,13 +63,15 @@ export default function Hero() {
             <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-secondary/30 blur-3xl"></div>
             <div className="absolute -bottom-10 -left-10 h-64 w-64 rounded-full bg-secondary/20 blur-3xl"></div>
             <div className="relative rounded-2xl bg-white/10 p-6 backdrop-blur-sm">
-              <div className="aspect-[4/3] overflow-hidden rounded-lg">
-                <img
-                  src="/placeholder.svg?height=800&width=1600"
-                  alt="Placeholder image"
-                  className="object-cover"
-                />
-              </div>
+            <div className="aspect-[4/3] overflow-hidden rounded-lg">
+  <Image
+    src="/dubai.jpg" // Corrected path
+    alt="Dubai skyline"
+    className="object-cover"
+    width={600}
+    height={800}
+  />
+</div>
               <div className="mt-4 flex items-center justify-between rounded-lg bg-white/10 p-4 backdrop-blur-sm">
                 <div>
                   <p className="font-medium">Headquartered in Dubai</p>

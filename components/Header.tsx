@@ -18,7 +18,9 @@ import { ChevronDown } from "lucide-react";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
-
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [hideNavbar, setHideNavbar] = useState(false);
+  
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const desktopMenuRef = useRef<HTMLDivElement>(null);
 
@@ -65,11 +67,33 @@ export default function Header() {
     };
   }, []);
 
+  // Track scroll direction and navbar visibility
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Hide navbar when scrolling down and show when scrolling up
+      if (currentScrollY > lastScrollY) {
+        setHideNavbar(true); // Hide when scrolling down
+      } else {
+        setHideNavbar(false); // Show when scrolling up
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
   return (
     <Navbar
-      className=" px-6 mx-auto shadow-lg"
+      className={`px-6 mx-auto shadow-lg transition-all duration-300 ${
+        hideNavbar ? "translate-y-[-100%]" : "translate-y-0"
+      } ${lastScrollY > 0 ? "fixed top-0 left-0 right-0 z-50" : "relative"}`}
       maxWidth="full"
-      position="static"
       isBlurred={false}
     >
       {/* Left side */}
@@ -81,7 +105,7 @@ export default function Header() {
         />
         <NavbarBrand className="flex items-center flex-row max-md:justify-between">
           <Link href="/">
-            <Image src={logo} alt="logo" width={80} />
+            <Image src={logo} alt="logo" width={100} />
           </Link>
         </NavbarBrand>
       </NavbarContent>
@@ -92,20 +116,20 @@ export default function Header() {
         className="text-xl hidden bg-secondary md:flex gap-8"
         ref={desktopMenuRef}
       >
-        
         {menuItems.map((item, index) =>
           item.submenu ? (
             <NavbarItem key={index} className="relative">
               <motion.div whileTap={{ scale: 0.95 }} className="relative">
                 <button
                   onClick={() => toggleSubMenu(index)}
-                  className="cursor-pointer flex items-center gap-1 px-3 py-2 rounded-md transition-all duration-300 hover:bg-primary hover:text-secondary focus:outline-none"
+                  className="cursor-pointer flex items-center gap-1 px-3 py-2 transition-all duration-300  group"
                 >
                   {item.name} <ChevronDown size={16} />
+                  <div className="absolute bottom-0 left-0 w-full h-[3px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 </button>
                 {openSubMenu === index && (
                   <motion.div
-                    className="absolute left-0 mt-2 w-48 shadow-lg rounded-lg bg-secondary duration-100"
+                    className="absolute left-0 mt-4 w-48 shadow-lg bg-secondary duration-100"
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
@@ -114,10 +138,11 @@ export default function Header() {
                       <Link
                         key={subIndex}
                         href={subItem.path}
-                        className="block px-4 py-2 text-black hover:bg-primary hover:text-secondary rounded"
+                        className="block px-4 py-2 text-black  relative group"
                         onClick={() => setOpenSubMenu(null)}
                       >
                         {subItem.name}
+                        <div className="absolute bottom-1  left-1/2 w-5/6 h-[3px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center -translate-x-1/2 "></div>
                       </Link>
                     ))}
                   </motion.div>
@@ -129,10 +154,11 @@ export default function Header() {
               <motion.div whileTap={{ scale: 0.95 }}>
                 <Link
                   href={item.path}
-                  className="px-3 py-2 rounded-md hover:text-secondary transition-all duration-300 hover:bg-primary"
+                  className="px-3 py-2 rounded-md transition-all duration-300 relative group"
                   onClick={() => setOpenSubMenu(null)}
                 >
                   {item.name}
+                  <div className="absolute bottom-0 left-0 w-full h-[3px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
                 </Link>
               </motion.div>
             </NavbarItem>
@@ -167,7 +193,7 @@ export default function Header() {
                 {item.submenu ? (
                   <div>
                     <button
-                      className="flex items-center justify-between w-full text-lg py-2"
+                      className="flex items-center justify-between w-full text-lg py-2 relative group"
                       onClick={() =>
                         setOpenSubMenu(openSubMenu === item.name ? null : item.name)
                       }
@@ -179,6 +205,7 @@ export default function Header() {
                           openSubMenu === item.name ? "rotate-180" : ""
                         } transition-transform`}
                       />
+                      <div className="absolute bottom-0 left-0 w-0 h-[3px] bg-secondary group-hover:w-full transition-all duration-300"></div>
                     </button>
                     <AnimatePresence>
                       {openSubMenu === item.name && (
@@ -193,11 +220,8 @@ export default function Header() {
                             <Link
                               key={subIndex}
                               href={subItem.path}
-                              className="block py-2 text-gray-600"
-                              onClick={() => {
-                                setOpenSubMenu(null);
-                                setIsMenuOpen(false);
-                              }}
+                              className="block py-2 text-lg"
+                              onClick={() => setIsMenuOpen(false)}
                             >
                               {subItem.name}
                             </Link>
@@ -209,7 +233,7 @@ export default function Header() {
                 ) : (
                   <Link
                     href={item.path}
-                    className="block text-lg my-2"
+                    className="block py-2 text-lg"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}

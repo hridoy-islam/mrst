@@ -8,9 +8,9 @@ export default function Footer() {
     <div className="bg-primary flex flex-col justify-between px-10 text-white">
       <div className=" mx-auto">
         <div className="md:flex sm:flex-row gap-3 justify-between py-8 sm:space-y-6">
-          <div className="md:w-1/3 w-full space-y-4">
+          <div className="md:w-[60%] w-full space-y-4">
             {/* <Image src={whitelogo} alt="robofx" /> */}
-            <h2>MRST Consultancy</h2>
+            <h2>MRST Consultancy L.L.C-FZ </h2>
             <p>
               At MRST Consultancy L.L.C-FZ, we bridge international markets,
               facilitate cross-border investments, and guide students toward

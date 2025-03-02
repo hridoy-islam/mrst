@@ -10,6 +10,7 @@ import Industries from "@/components/industries"
 import Methodology from "@/components/methodology"
 import Insights from "@/components/insights"
 import ContactCTA from "@/components/contact-cta"
+import GrowthProjections from "@/components/global-reach";
 
 
 export default function page() {
@@ -18,7 +19,7 @@ export default function page() {
       <Hero />
       <Services />
       <WhyChooseUs />
-      <GlobalReach />
+      <GrowthProjections />
       <Testimonials />
       <Industries />
       <Methodology />

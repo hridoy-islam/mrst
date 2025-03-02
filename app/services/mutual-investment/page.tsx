@@ -31,19 +31,21 @@ export default function MutualInvestmentServices() {
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative bg-primary">
-        <div className="absolute inset-0 opacity-20">
-          {/* <Image
-            src="/placeholder.svg?height=800&width=1600"
-            alt="Investment Partnership Background"
-            fill
-            className="object-cover"
-          /> */}
-        </div>
+       <div className="absolute inset-0 opacity-40">
+              
+              <Image
+                   src="/pattern.png"
+                   alt="Investment Partnership Background"
+                   fill
+                   className="object-cover"
+                 /> 
+               
+               </div>
         <div className="container mx-auto px-4 py-24 sm:px-6 lg:px-8 relative z-10">
           <motion.div initial="hidden" animate="visible" variants={fadeIn} className="max-w-3xl">
             <h1 className="text-4xl sm:text-5xl font-bold mb-6">Mutual Investment Services</h1>
             <p className="text-xl mb-8">Building Cross-Border Investment Partnerships</p>
-            <p className="text-lg mb-8 opacity-90">
+            <p className="mb-8 opacity-90 ">
               MRST Consultancy facilitates strategic investment opportunities that connect capital with promising
               ventures across international borders. Our investment consultancy services are designed to create mutually
               beneficial partnerships that drive growth and deliver returns.
@@ -67,7 +69,7 @@ export default function MutualInvestmentServices() {
             className="text-center mb-16"
           >
             <h2 className=" font-bold mb-4">Investment Advisory Services</h2>
-            <p className=" max-w-3xl mx-auto">
+            <p className=" max-w-3xl text-black mx-auto">
               Strategic guidance to optimize your investment decisions and maximize returns across international
               markets.
             </p>
@@ -87,7 +89,7 @@ export default function MutualInvestmentServices() {
                   <CardTitle>Investment Strategy Development</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">
+                  <p className="text-black">
                     Customized investment approaches aligned with client objectives, risk tolerance, and time horizons.
                   </p>
                 </CardContent>
@@ -101,7 +103,7 @@ export default function MutualInvestmentServices() {
                   <CardTitle>Market Analysis and Research</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">
+                  <p className="text-black">
                     In-depth evaluation of investment landscapes across target markets, identifying trends and
                     opportunities.
                   </p>
@@ -116,7 +118,7 @@ export default function MutualInvestmentServices() {
                   <CardTitle>Opportunity Identification</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">
+                  <p className="text-black">
                     Sourcing and vetting of high-potential investment opportunities aligned with your strategic goals.
                   </p>
                 </CardContent>
@@ -130,7 +132,7 @@ export default function MutualInvestmentServices() {
                   <CardTitle>Due Diligence</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">
+                  <p className="text-black">
                     Comprehensive assessment of investment targets and risk evaluation to protect your capital.
                   </p>
                 </CardContent>
@@ -144,7 +146,7 @@ export default function MutualInvestmentServices() {
                   <CardTitle>Deal Structuring</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">
+                  <p className="text-black">
                     Strategic guidance on investment structures and negotiations to optimize terms and protect
                     interests.
                   </p>
@@ -166,7 +168,7 @@ export default function MutualInvestmentServices() {
             className="text-center mb-16 text-primary"
           >
             <h2 className="font-bold mb-4">For Investors</h2>
-            <p className="max-w-3xl mx-auto">
+            <p className="max-w-3xl text-black mx-auto">
               Comprehensive services to help investors identify opportunities, mitigate risks, and optimize returns.
             </p>
           </motion.div>
@@ -180,11 +182,11 @@ export default function MutualInvestmentServices() {
           >
             <motion.div variants={fadeIn}>
               <Card className="h-full transition-all hover:shadow-lg border-2 border-primary">
-                <CardHeader className="pb-3">
+                <CardHeader className="pb-3 text-primary">
                   <CardTitle>Portfolio Diversification</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">
+                  <p >
                     Access to international investment opportunities across various sectors, reducing risk through
                     strategic diversification.
                   </p>
@@ -194,11 +196,11 @@ export default function MutualInvestmentServices() {
 
             <motion.div variants={fadeIn}>
               <Card className="h-full transition-all hover:shadow-lg  border-2 border-primary">
-                <CardHeader className="pb-3">
+                <CardHeader className="pb-3 text-primary">
                   <CardTitle>Market Entry Guidance</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">
+                  <p >
                     Strategic advice for entering emerging and established markets, navigating local business
                     environments.
                   </p>
@@ -208,11 +210,11 @@ export default function MutualInvestmentServices() {
 
             <motion.div variants={fadeIn}>
               <Card className="h-full transition-all hover:shadow-lg  border-2 border-primary">
-                <CardHeader className="pb-3">
+                <CardHeader className="pb-3 text-primary">
                   <CardTitle>Risk Management</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">
+                  <p >
                     Identification and mitigation of cross-border investment risks, protecting your capital in foreign
                     markets.
                   </p>
@@ -222,11 +224,11 @@ export default function MutualInvestmentServices() {
 
             <motion.div variants={fadeIn}>
               <Card className="h-full transition-all hover:shadow-lg  border-2 border-primary">
-                <CardHeader className="pb-3">
+                <CardHeader className="pb-3 text-primary">
                   <CardTitle>Compliance Support</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">
+                  <p >
                     Navigation of regulatory requirements across multiple jurisdictions, ensuring legal compliance.
                   </p>
                 </CardContent>
@@ -235,11 +237,11 @@ export default function MutualInvestmentServices() {
 
             <motion.div variants={fadeIn}>
               <Card className="h-full transition-all hover:shadow-lg  border-2 border-primary">
-                <CardHeader className="pb-3">
+                <CardHeader className="pb-3 text-primary">
                   <CardTitle>Performance Monitoring</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">
+                  <p >
                     Ongoing assessment and reporting on investment performance, with strategic adjustments as needed.
                   </p>
                 </CardContent>
@@ -260,7 +262,7 @@ export default function MutualInvestmentServices() {
             className="text-center mb-16 text-primary "
           >
             <h2 className="font-bold mb-4">For Investment Recipients</h2>
-            <p className=" max-w-3xl mx-auto">
+            <p className=" max-w-3xl mx-auto text-black">
               Strategic support for businesses seeking capital, from preparation to post-investment growth.
             </p>
           </motion.div>
@@ -399,26 +401,33 @@ export default function MutualInvestmentServices() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 text-primary">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeIn}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h2 className="text-3xl font-bold mb-6">Ready to Explore Investment Opportunities?</h2>
-            <p className="text-xl mb-8">
-              Let our experts connect you with the right investment partners and opportunities to achieve your financial
-              goals.
-            </p>
-            <Button size="lg" variant="outline" className="bg-white text-indigo-800 hover:bg-gray-100">
-              Schedule a Consultation
-            </Button>
-          </motion.div>
-        </div>
-      </section>
+      <section className="py-20 text-primary relative bg-[url('/pattern.png')] bg-contain bg-center bg-repeat">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeIn}
+      className="relative max-w-3xl mx-auto text-center"
+    >
+      {/* Content */}
+      <div className="relative z-10 bg-white/60 p-8 rounded-lg">
+        <h2 className="text-3xl font-bold mb-6">
+          Ready to Explore Investment Opportunities?
+        </h2>
+        <p className="text-xl mb-8">
+          Let our experts connect you with the right investment partners and opportunities to achieve your financial goals.
+        </p>
+        <Button size="lg" variant="outline" className="bg-white text-indigo-800 hover:bg-gray-100">
+          Schedule a Consultation
+        </Button>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
+
+
     </div>
   )
 }

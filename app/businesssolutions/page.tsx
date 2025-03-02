@@ -1,8 +1,8 @@
-"use client"
+"use client";
+import Image from "next/image";
+import type React from "react";
 
-import type React from "react"
-
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 import {
   BarChart,
   Building,
@@ -18,9 +18,9 @@ import {
   HeartPulse,
   Coffee,
   ArrowRight,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
-
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Industries from "@/components/industries";
 
 // Animation variants
 const fadeIn = {
@@ -30,7 +30,7 @@ const fadeIn = {
     y: 0,
     transition: { duration: 0.6 },
   },
-}
+};
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -40,10 +40,21 @@ const staggerContainer = {
       staggerChildren: 0.2,
     },
   },
-}
+};
 
-const ServiceCard = ({ icon, title, items }: { icon: React.ReactNode; title: string; items: string[] }) => (
-  <motion.div variants={fadeIn} className="bg-primary rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+const ServiceCard = ({
+  icon,
+  title,
+  items,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  items: string[];
+}) => (
+  <motion.div
+    variants={fadeIn}
+    className="bg-primary rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+  >
     <div className="flex items-center flex-row mb-4">
       <div className="bg-white p-3 rounded-full mr-4">{icon}</div>
       <h3 className=" font-semibold">{title}</h3>
@@ -57,51 +68,64 @@ const ServiceCard = ({ icon, title, items }: { icon: React.ReactNode; title: str
       ))}
     </ul>
   </motion.div>
-)
+);
 
-const IndustryCard = ({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) => (
-  <motion.div variants={fadeIn} className="flex flex-col items-center text-center  p-4">
+const IndustryCard = ({
+  icon,
+  title,
+  description,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}) => (
+  <motion.div
+    variants={fadeIn}
+    className="flex flex-col items-center text-center  p-4"
+  >
     <div className="bg-secondary/40 p-4 rounded-full mb-4">{icon}</div>
     <h3 className="text-lg font-semibold mb-2">{title}</h3>
     <p className="text-gray-600 text-sm">{description}</p>
   </motion.div>
-)
+);
 
 export default function BusinessSolutions() {
   return (
-    <div className="bg-gray-50">
+    <div className="bg-secondary">
       {/* Hero Section */}
-      <section className="relative bg-primary  py-20">
+      <section className="relative bg-primary  py-28">
+        <div className="absolute inset-0 opacity-40">
+          <Image
+            src="/pattern.png"
+            alt="Investment Partnership Background"
+            fill
+            className="object-cover"
+          />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial="hidden" animate="visible" variants={fadeIn} className="text-center">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+            className="text-center"
+          >
             <h1 className="  font-bold mb-6">
               Comprehensive Solutions for Global Business Challenges
             </h1>
             <p className=" max-w-3xl mx-auto mb-8">
-              MRST Consultancy offers integrated business solutions designed to address the complex challenges of
-              international operations.
+              MRST Consultancy offers integrated business solutions designed to
+              address the complex challenges of international operations.
             </p>
-            
 
-            <Button size="lg" className="group bg-secondary text-primary hover:bg-secondary/90">
-            Discover Our Approach
+            <Button
+              size="lg"
+              className="group bg-secondary text-primary hover:bg-secondary/90"
+            >
+              Discover Our Approach
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </motion.div>
         </div>
-
-        {/* Decorative elements */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.1 }}
-          transition={{ delay: 0.5, duration: 1 }}
-          className="absolute top-0 right-0 w-1/3 h-full"
-          style={{
-            backgroundImage: "url('/placeholder.svg?height=600&width=600')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
       </section>
 
       {/* Services Section */}
@@ -115,9 +139,9 @@ export default function BusinessSolutions() {
             className="text-center mb-16 text-primary"
           >
             <h2 className="font-bold mb-4">Our Business Solutions</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
-              Our tailored approaches combine strategic insight with practical implementation to deliver measurable
-              results for your business.
+            <p className="text-black max-w-3xl mx-auto">
+              Our tailored approaches combine strategic insight with practical
+              implementation to deliver measurable results for your business.
             </p>
           </motion.div>
 
@@ -204,66 +228,8 @@ export default function BusinessSolutions() {
       </section>
 
       {/* Industries Section */}
-      <section className="py-20 bg-primary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={fadeIn}
-            className="text-center mb-16"
-          >
-            <h2 className="font-bold mb-4">Industries We Serve</h2>
-            <p className=" max-w-3xl mx-auto">
-              Our business solutions are customized for diverse sectors with unique international challenges.
-            </p>
-          </motion.div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={staggerContainer}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8"
-          >
-            <IndustryCard
-              icon={<Building className="h-6 w-6 text-secondary" />}
-              title="Manufacturing"
-              description="Optimizing production and distribution across international markets"
-            />
-
-            <IndustryCard
-              icon={<Cpu className="h-6 w-6 text-secondary" />}
-              title="Technology"
-              description="Facilitating global scale-up for tech companies"
-            />
-
-            <IndustryCard
-              icon={<Store className="h-6 w-6 text-secondary" />}
-              title="Retail"
-              description="Creating omnichannel strategies for international consumer reach"
-            />
-
-            <IndustryCard
-              icon={<Briefcase className="h-6 w-6 text-secondary" />}
-              title="Professional Services"
-              description="Enabling cross-border service delivery"
-            />
-
-            <IndustryCard
-              icon={<HeartPulse className="h-6 w-6 text-secondary" />}
-              title="Healthcare"
-              description="Navigating complex international regulatory environments"
-            />
-
-            <IndustryCard
-              icon={<Coffee className="h-6 w-6 text-secondary" />}
-              title="Food & Beverage"
-              description="Addressing unique challenges of international food supply chains"
-            />
-          </motion.div>
-        </div>
-      </section>
+      <Industries />
 
       {/* Approach Section */}
       <section className="py-20 text-primary">
@@ -276,18 +242,22 @@ export default function BusinessSolutions() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl font-bold mb-6">Our Approach</h2>
-              <p className="text-gray-700 mb-6">
-                Each business solution begins with a thorough understanding of your specific challenges and objectives.
-                We then develop tailored strategies drawing on our multidisciplinary expertise and international
-                network.
+              <p className="text-black mb-6">
+                Each business solution begins with a thorough understanding of
+                your specific challenges and objectives. We then develop
+                tailored strategies drawing on our multidisciplinary expertise
+                and international network.
               </p>
-              <p className="text-gray-700 mb-6">
-                Implementation is conducted with close client collaboration, ensuring alignment with your organizational
-                capabilities and goals.
+              <p className="text-black mb-6">
+                Implementation is conducted with close client collaboration,
+                ensuring alignment with your organizational capabilities and
+                goals.
               </p>
-              <p className="text-gray-700 font-medium">
-                MRST Consultancy's business solutions combine strategic vision with practical execution, helping your
-                company overcome barriers to international success and achieve sustainable growth in global markets.
+              <p className="text-black font-medium">
+                MRST Consultancy's business solutions combine strategic vision
+                with practical execution, helping your company overcome barriers
+                to international success and achieve sustainable growth in
+                global markets.
               </p>
             </motion.div>
 
@@ -313,7 +283,9 @@ export default function BusinessSolutions() {
                     </div>
                     <div>
                       <h4 className="font-medium">Assessment</h4>
-                      <p className="text-sm text-gray-600">Comprehensive analysis of your current situation</p>
+                      <p className="text-sm text-black">
+                        Comprehensive analysis of your current situation
+                      </p>
                     </div>
                   </div>
 
@@ -323,7 +295,9 @@ export default function BusinessSolutions() {
                     </div>
                     <div>
                       <h4 className="font-medium">Strategy Development</h4>
-                      <p className="text-sm text-gray-600">Creating tailored solutions for your specific needs</p>
+                      <p className="text-sm text-black">
+                        Creating tailored solutions for your specific needs
+                      </p>
                     </div>
                   </div>
 
@@ -333,7 +307,9 @@ export default function BusinessSolutions() {
                     </div>
                     <div>
                       <h4 className="font-medium">Implementation</h4>
-                      <p className="text-sm text-gray-600">Executing the plan with precision and adaptability</p>
+                      <p className="text-sm text-black">
+                        Executing the plan with precision and adaptability
+                      </p>
                     </div>
                   </div>
 
@@ -343,7 +319,9 @@ export default function BusinessSolutions() {
                     </div>
                     <div>
                       <h4 className="font-medium">Evaluation & Refinement</h4>
-                      <p className="text-sm text-gray-600">Continuous improvement based on results</p>
+                      <p className="text-sm text-black">
+                        Continuous improvement based on results
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -358,7 +336,7 @@ export default function BusinessSolutions() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-primary text-white">
+      {/* <section className="py-16 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -366,24 +344,24 @@ export default function BusinessSolutions() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Global Business?</h2>
+            <h2 className="text-3xl font-bold mb-6">
+              Ready to Transform Your Global Business?
+            </h2>
             <p className="text-xl mb-8 max-w-3xl mx-auto">
-              Contact MRST Consultancy today to discuss how our tailored solutions can help you overcome international
-              business challenges.
+              Contact MRST Consultancy today to discuss how our tailored
+              solutions can help you overcome international business challenges.
             </p>
-           
 
-
-            <Button size="lg" className="group bg-secondary text-primary hover:bg-secondary/90">
-           <a href="/contact">
-           Schedule a Consultation
-            </a> 
+            <Button
+              size="lg"
+              className="group bg-secondary text-primary hover:bg-secondary/90"
+            >
+              <a href="/contact">Schedule a Consultation</a>
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </motion.div>
         </div>
-      </section>
+      </section> */}
     </div>
-  )
+  );
 }
-

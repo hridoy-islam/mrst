@@ -73,7 +73,7 @@ export default function Services() {
           {services.map((service, index) => (
             <motion.div key={index} variants={itemVariants}>
               <Card className="h-full border-none bg-secondary/5 transition-all duration-300 hover:shadow-lg">
-                <CardHeader className="flex flex-row justify-center gap-2 items-center">
+                <CardHeader className="flex flex-row justify-start gap-2 items-center">
                   <div className="inline-flex rounded-lg bg-primary/10 p-3 text-primary">{service.icon}</div>
                   <CardTitle className="text-xl">{service.title}</CardTitle>
                 </CardHeader>

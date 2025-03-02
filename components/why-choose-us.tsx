@@ -58,7 +58,7 @@ export default function WhyChooseUs() {
               <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
                 {reason.icon}
               </div>
-              <h3 className="mt-6  font-medium text-foreground">{reason.title}</h3>
+              <h3 className="mt-6  font-medium text-primary">{reason.title}</h3>
               <p className="mt-2 ">{reason.description}</p>
             </motion.div>
           ))}

@@ -38,14 +38,14 @@ export default function Industries() {
       icon: <BuildingIcon className="h-6 w-6" />,
       name: "Real Estate & Construction",
     },
-    {
-      icon: <LandmarkIcon className="h-6 w-6" />,
-      name: "Financial Services",
-    },
-    {
-      icon: <LeafIcon className="h-6 w-6" />,
-      name: "Agriculture & Food Processing",
-    },
+    // {
+    //   icon: <LandmarkIcon className="h-6 w-6" />,
+    //   name: "Financial Services",
+    // },
+    // {
+    //   icon: <LeafIcon className="h-6 w-6" />,
+    //   name: "Agriculture & Food Processing",
+    // },
   ]
 
   const containerVariants = {
@@ -70,7 +70,7 @@ export default function Industries() {
   }
 
   return (
-    <section className="bg-primary/5 py-24">
+    <section className="bg-primary py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -79,7 +79,7 @@ export default function Industries() {
           transition={{ duration: 0.5 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <h2 className="font-bold tracking-tight text-primary ">Industries We Serve</h2>
+          <h2 className="font-bold tracking-tight text-secondary ">Industries We Serve</h2>
           <p className="mt-4 ">Our consultancy expertise spans diverse sectors</p>
         </motion.div>
 
@@ -99,7 +99,7 @@ export default function Industries() {
               <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
                 {industry.icon}
               </div>
-              <h3 className="mt-4 font-medium">{industry.name}</h3>
+              <h3 className="mt-4 font-medium text-primary">{industry.name}</h3>
             </motion.div>
           ))}
         </motion.div>
