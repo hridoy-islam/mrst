@@ -11,6 +11,8 @@ import Methodology from "@/components/methodology"
 import Insights from "@/components/insights"
 import ContactCTA from "@/components/contact-cta"
 import GrowthProjections from "@/components/global-reach";
+import { WhatWeDo } from "@/components/what-we-do";
+import FuturePlans from "@/components/future-plans";
 
 
 export default function page() {
@@ -18,11 +20,13 @@ export default function page() {
     <main className="min-h-screen">
       <Hero />
       <Services />
-      <WhyChooseUs />
+      {/* <WhyChooseUs /> */}
+      {/* <WhatWeDo/> */}
+      <FuturePlans/>
       <GrowthProjections />
-      <Testimonials />
-      <Industries />
       <Methodology />
+      <Industries />
+      <Testimonials />
       {/* <Insights /> */}
       
     </main>

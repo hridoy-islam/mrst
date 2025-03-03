@@ -38,7 +38,7 @@ export default function Methodology() {
   ]
 
   return (
-    <section className="bg-background py-24">
+    <section className="bg-gradient-to-t from-secondary to-primary/20 py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -72,8 +72,8 @@ export default function Methodology() {
                 <div className={`relative z-10 flex h-16 w-16 items-center justify-center rounded-full ${step.color}`}>
                   {step.icon}
                 </div>
-                <h3 className="mt-6 text-xl font-medium text-foreground">{step.title}</h3>
-                <p className="mt-2 text-muted-foreground">{step.description}</p>
+                <h3 className="mt-6 text-xl font-medium text-primary">{step.title}</h3>
+                <p className="mt-2 text-black">{step.description}</p>
               </motion.div>
             ))}
           </div>

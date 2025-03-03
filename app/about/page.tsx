@@ -1,23 +1,19 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { ChevronDown } from "lucide-react"
-import Image from "next/image"
-import { useRef } from "react"
+import { motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+import Image from "next/image";
+import { useRef } from "react";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import AboutSection from "./components/about-section"
-import TeamMember from "./components/team-member"
-import ValueCard from "./components/value-card"
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import AboutSection from "./components/about-section";
+import TeamMember from "./components/team-member";
+import ValueCard from "./components/value-card";
+import DirectorSpeech from "./components/director-speech";
+import { Background } from "./components/background";
 
 export default function AboutUs() {
-  const storyRef = useRef<HTMLDivElement>(null)
-
-  const scrollToStory = () => {
-    storyRef.current?.scrollIntoView({ behavior: "smooth" })
-  }
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -26,7 +22,7 @@ export default function AboutUs() {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -37,69 +33,63 @@ export default function AboutUs() {
         duration: 0.5,
       },
     },
-  }
+  };
+
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
+    },
+  };
+  
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+  
 
   return (
-    <div className="min-h-screen bg-primary">
+    <div className="min-h-screen bg-primary w-full">
+      
       {/* Hero Section */}
-      <section className="relative py-28 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+      <section className="relative py-16 bg-primary text-secondary">
+        <div className="absolute inset-0 opacity-40">
           <Image
-            src="/d2.jpg"
-            alt="Dubai Skyline"
+            src="/pattern.png"
+            alt="Investment Partnership Background"
             fill
-            className="object-cover brightness-[0.50]"
-            priority
+            className="object-cover"
           />
-          <div className="absolute inset-0 bg-primary/30" />
         </div>
-        <div className="container relative z-10 mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 py-24 sm:px-6 lg:px-8 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-6"
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+            className="max-w-3xl"
           >
-            <h1 className=" font-bold  mb-4">MRST Consultancy</h1>
-            <h3 className=" max-w-3xl mx-auto">
-              Your trusted partner for global business connections and educational opportunities
+            <h1 className="text-secondary font-bold mb-4">MRST Consultancy</h1>
+            <h3 className="text-secondary">
+              Your trusted partner for global business connections and
+              educational opportunities
             </h3>
-          </motion.div>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.5 }}>
-            <Button
-              onClick={scrollToStory}
-              variant="outline"
-              className="mt-8 bg-secondary text-primary backdrop-blur-sm border-white/40 "
-            >
-              Discover Our Story
-              <ChevronDown className="ml-2 h-4 w-4" />
-            </Button>
+          
           </motion.div>
         </div>
       </section>
 
-      {/* Our Story Section */}
-      <div ref={storyRef}>
-        <AboutSection
-          title="Our Story"
-          subtitle="Founded with a vision to facilitate global connections"
-          className="bg-secondary text-primary"
-        >
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-black"
-          >
-            MRST Consultancy L.L.C-FZ has established itself as a trusted partner for businesses and students looking to
-            navigate international opportunities. Operating from our headquarters at Meydan Grandstand in Dubai, we
-            leverage the UAE&apos;s strategic position as a global business crossroads.
-          </motion.p>
-        </AboutSection>
-      </div>
+      <DirectorSpeech />
 
-      {/* Mission & Vision Section */}
+      <Background />
+
+      {/* Mission & Vision Section
       <AboutSection title="Our Mission & Vision" subtitle="Building bridges across borders" className="bg-gray-50">
         <div className="grid md:grid-cols-2 gap-8 mt-8">
           <Card className="border-none shadow-lg bg-secondary">
@@ -136,10 +126,10 @@ export default function AboutUs() {
             </CardContent>
           </Card>
         </div>
-      </AboutSection>
+      </AboutSection> */}
 
       {/* Values Section */}
-      <AboutSection title="Our Values" subtitle="What drives us forward" className="bg-secondary text-primary ">
+      {/* <AboutSection title="Our Values" subtitle="What drives us forward" className="bg-secondary text-primary ">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -183,10 +173,10 @@ export default function AboutUs() {
             />
           </motion.div>
         </motion.div>
-      </AboutSection>
+      </AboutSection> */}
 
       {/* Team Section */}
-      <AboutSection
+      {/* <AboutSection
         title="Our Team"
         subtitle="Led by industry experts with extensive experience"
         className="bg-primary"
@@ -228,10 +218,14 @@ export default function AboutUs() {
             />
           </motion.div>
         </motion.div>
-      </AboutSection>
+      </AboutSection> */}
 
       {/* Location Section */}
-      <AboutSection title="Our Location" subtitle="Visit us at Meydan Grandstand" className="bg-secondary text-primary">
+      <AboutSection
+        title="Our Location"
+        subtitle="Visit us at Meydan Grandstand"
+        className="bg-secondary text-primary"
+      >
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -240,12 +234,14 @@ export default function AboutUs() {
             transition={{ duration: 0.6 }}
           >
             <p className="text-black mb-4">
-              Located in the prestigious Meydan Grandstand on the 6th floor, our modern offices reflect our commitment
-              to professionalism and excellence.
+              Located in the prestigious Meydan Grandstand on the 6th floor, our
+              modern offices reflect our commitment to professionalism and
+              excellence.
             </p>
             <div className="flex flex-col gap-2 text-black">
               <p>
-                <strong>Address:</strong> 6th Floor, Meydan Grandstand, Dubai, UAE
+                <strong>Address:</strong> 6th Floor, Meydan Grandstand, Dubai,
+                UAE
               </p>
               <p>
                 <strong>Email:</strong> info@mrstconsultancy.com
@@ -274,6 +270,5 @@ export default function AboutUs() {
         </div>
       </AboutSection>
     </div>
-  )
+  );
 }
-

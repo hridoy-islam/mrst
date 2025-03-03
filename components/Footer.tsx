@@ -5,24 +5,22 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <div className="bg-primary flex flex-col justify-between px-10 text-white">
+    <div className="bg-primary px-28 flex flex-col  justify-between text-secondary">
       <div className=" mx-auto">
         <div className="md:flex sm:flex-row gap-3 justify-between py-8 sm:space-y-6">
-          <div className="md:w-[60%] w-full space-y-4">
+          <div className="md:w-[40%] w-full space-y-4">
             {/* <Image src={whitelogo} alt="robofx" /> */}
             <h2>MRST Consultancy L.L.C-FZ </h2>
             <p>
-              At MRST Consultancy L.L.C-FZ, we bridge international markets,
-              facilitate cross-border investments, and guide students toward
-              educational excellence worldwide.
+            MRST CONSULTANCY L.L.C-FZ is a dynamic and multifaceted organisation specialising in export, import, mutual investment, and student consultancy. Established in 2023, we are committed to providing seamless global trade solutions, strategic investment opportunities, and expert guidance for students pursuing international education.
             </p>
-            <div className="flex items-center gap-4">
+            {/* <div className="flex items-center gap-4">
               <Icon icon="tabler:clock" width={28} />
               <div>
                 <p>Mon - Fri - 09:00AM - 06:00PM </p>
                 <p>Saturday - 09:00AM - 05:00PM</p>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="md:w-1/6 w-full space-y-4">
             <h3 className=" pb-2">Company</h3>
@@ -92,7 +90,8 @@ export default function Footer() {
         </div>
 
         
-        <div className="text-center flex flex-col items-center justify-center border-t border-stroke mt-6 p-4">
+        {/* <div className="text-center flex flex-col items-center justify-center border-t border-stroke mt-6 p-4"> */}
+        <div className="text-center flex flex-col items-center justify-center  mt-6 p-4">
   <p className="text-sm">Copyrights © 2024 All Rights Reserved by Software.</p>
 </div>
 

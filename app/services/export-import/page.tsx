@@ -35,8 +35,8 @@ const staggerContainer = {
 
 export default function ExportImportServices() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <section className="relative bg-primary text-white">
+    <div >
+      <section className="relative  bg-primary text-secondary">
         <div className="absolute inset-0 opacity-40">
           <Image
             src="/pattern.png"
@@ -50,12 +50,12 @@ export default function ExportImportServices() {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="max-w-3xl"
+            className="max-w-7xl "
           >
             <h1 className=" font-bold mb-6">Export & Import Services</h1>
-            <p className="text-xl mb-8">
+            <h3 className=" mb-8">
               Navigating Global Trade with Confidence
-            </p>
+            </h3>
             <p className="mb-8 opacity-90">
               MRST Consultancy provides comprehensive export and import
               solutions designed to streamline your international trade
@@ -327,31 +327,29 @@ export default function ExportImportServices() {
         </div>
       </section>
       <motion.div
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: true }}
-  variants={fadeIn}
-  className="relative mt-16 text-center bg-primary text-secondary p-16 overflow-hidden"
->
-  {/* Background with repeating pattern */}
-  <div className="absolute inset-0 opacity-20 h-full w-full bg-[url('/pattern2.png')] bg-repeat bg-contain "></div>
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeIn}
+        className="relative mt-16 text-center bg-primary text-secondary p-16 overflow-hidden"
+      >
+        {/* Background with repeating pattern */}
+        <div className="absolute inset-0 opacity-20 h-full w-full bg-[url('/pattern2.png')] bg-repeat bg-contain "></div>
 
-  <h3 className="relative mb-8 mx-auto px-10">
-    With MRST Consultancy as your trade partner, you gain access to our
-    extensive network of global connections and our deep understanding of
-    international markets, positioning your business for sustainable
-    growth in the global arena.
-  </h3>
+        <h3 className="relative mb-8 mx-auto px-10">
+          With MRST Consultancy as your trade partner, you gain access to our
+          extensive network of global connections and our deep understanding of
+          international markets, positioning your business for sustainable
+          growth in the global arena.
+        </h3>
 
-  <Button
-    size="lg"
-    className="relative bg-secondary text-primary hover:bg-secondary/90"
-  >
-    Schedule a Consultation
-  </Button>
-</motion.div>
-
-
+        <Button
+          size="lg"
+          className="relative bg-secondary text-primary hover:bg-secondary/90"
+        >
+          Schedule a Consultation
+        </Button>
+      </motion.div>
 
       {/* CTA Section */}
       <section className="py-20 bg-secondary text-primary">

@@ -1,432 +1,335 @@
 "use client";
-
+import Image from "next/image";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import {
-  Building,
-  Clock,
-  Facebook,
-  Instagram,
-  Linkedin,
-  Mail,
-  MapPin,
-  Twitter,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import Link from "next/link";
+import { ChevronDown, Mail, MapPin, Phone } from "lucide-react";
 
-// Animation variants
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 },
-  },
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-export default function ContactUs() {
-  const [formData, setFormData] = useState({
-    name: "",
+export default function ContactPage() {
+  const [formState, setFormState] = useState({
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
-    company: "",
-    service: "",
     message: "",
-    contactMethod: "email",
-    source: "",
   });
 
-  const handleChange = (e: any) => {
+  const [countryCode, setCountryCode] = useState("+62");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormState((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSelectChange = (name: any, value: any) => {
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission logic here
-    console.log(formData);
-    alert("Thank you for your message. We'll get back to you shortly!");
+    console.log("Form submitted:", formState);
+    // Reset form or show success message
+  };
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { type: "spring", stiffness: 100 },
+    },
+  };
+
+  const formVariants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        delay: 0.3,
+      },
+    },
   };
 
   return (
-    <div className="bg-primary">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            className="text-center"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Connect with MRST Consultancy
-            </h1>
-            <p className="text-xl max-w-3xl mx-auto">
-              We welcome the opportunity to discuss how our services can support
-              your international business or education goals.
-            </p>
+    <div className="min-h-screen ">
+      <section className="relative bg-primary text-secondary">
+        <div className="absolute inset-0 opacity-40">
+          <Image
+            src="/pattern.png"
+            alt="Investment Partnership Background"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="container mx-auto px-4 py-28 sm:px-6 lg:px-8 relative z-10">
+          <motion.div initial="hidden" animate="visible" className="max-w-3xl">
+            <h1 className=" font-bold mb-6">Contact Us</h1>
           </motion.div>
         </div>
-
-        {/* Decorative elements */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.1 }}
-          transition={{ delay: 0.5, duration: 1 }}
-          className="absolute top-0 left-0 w-1/3 h-full"
-          style={{
-            backgroundImage: "url('/pattern1.png')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
       </section>
 
-      {/* Contact Information Section */}
-      <section className="py-16 text-primary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4">
-          <div className="flex flex-col lg:flex-row  gap-12 ">
-            {/* Contact Information */}
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-              className="bg-secondary rounded-lg w-[40%] shadow-md p-8 flex-grow-0"
+      <div className="container flex flex-col items-center  mx-auto py-12 sm:px-6 lg:px-8">
+        <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+          {/* Left Column */}
+          <motion.div
+            className="lg:col-span-2 flex flex-col justify-center"
+            initial="hidden"
+            animate="visible"
+            variants={containerVariants}
+          >
+            <motion.h1
+              className="font-bold mb-4 text-primary"
+              variants={itemVariants}
             >
-              <motion.h3
-                variants={fadeIn}
-                className=" font-bold text-primary mb-6 "
+              Contact Us
+            </motion.h1>
+
+            <motion.p className="text-black mb-8" variants={itemVariants}>
+              Email, call, or complete the form to learn how MRST Consultancy
+              can assist you with your needs.
+            </motion.p>
+
+            <motion.div
+              className="flex items-center gap-2 mb-2"
+              variants={itemVariants}
+            >
+              <Mail className="h-5 w-5 text-black" />
+              <a
+                href="mailto:info@mrstconsultancy.com"
+                className="text-gray-700 hover:text-primary transition-colors"
               >
-                Our Location
-              </motion.h3>
-
-              <motion.div variants={fadeIn} className="flex items-start mb-6">
-                <Building className="h-5 w-5 text-primary mr-4 mt-1" />
-                <div>
-                  <h3 className="font-medium">MRST CONSULTANCY L.L.C-FZ</h3>
-                  <p className="text-black">Meydan Grandstand, 6th floor,</p>
-                  <p className="text-black">Meydan Road, Nad Al Sheba,</p>
-                  <p className="text-black">Dubai, United Arab Emirates</p>
-                </div>
-              </motion.div>
-
-              <motion.h3 variants={fadeIn} className=" font-bold mb-6">
-                Contact Information
-              </motion.h3>
-
-              <motion.div variants={fadeIn} className="space-y-6">
-                <div className="flex items-start">
-                  <Mail className="h-5 w-5 text-primary mr-4 mt-1" />
-                  <div>
-                    <h3 className="font-medium">General Inquiries</h3>
-                    <p className="text-black">
-                      Email: info@mrstconsultancy.com
-                    </p>
-                    <p className="text-black">Phone: +971 4 XXX XXXX</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.h3 variants={fadeIn} className=" font-bold mt-8 mb-6">
-                Business Hours
-              </motion.h3>
-
-              <motion.div variants={fadeIn} className="flex items-start">
-                <Clock className="h-5 w-5 text-primary mr-4 mt-1" />
-                <div>
-                  <p className="text-black">
-                    Monday to Friday: 9:00 AM - 6:00 PM (GST)
-                  </p>
-                  <p className="text-black">
-                    Saturday: 10:00 AM - 2:00 PM (GST)
-                  </p>
-                  <p className="text-black">Sunday: Closed</p>
-                </div>
-              </motion.div>
-
-              <motion.h2 variants={fadeIn} className=" font-bold mt-8 mb-6">
-                Connect With Us
-              </motion.h2>
-
-              <motion.div variants={fadeIn} className="flex space-x-4">
-                <a
-                  href="#"
-                  className="bg-primary/10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-colors"
-                >
-                  <Linkedin className="h-5 w-5" />
-                  <span className="sr-only">LinkedIn</span>
-                </a>
-                <a
-                  href="#"
-                  className="bg-primary/10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-colors"
-                >
-                  <Twitter className="h-5 w-5" />
-                  <span className="sr-only">Twitter</span>
-                </a>
-                <a
-                  href="#"
-                  className="bg-primary/10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-colors"
-                >
-                  <Facebook className="h-5 w-5" />
-                  <span className="sr-only">Facebook</span>
-                </a>
-                <a
-                  href="#"
-                  className="bg-primary/10 p-3 rounded-full text-primary hover:bg-primary hover:text-white transition-colors"
-                >
-                  <Instagram className="h-5 w-5" />
-                  <span className="sr-only">Instagram</span>
-                </a>
-              </motion.div>
+                info@mrstconsultancy.com
+              </a>
             </motion.div>
 
-            {/* Contact Form */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="bg-secondary rounded-lg shadow-md p-8 flex-grow"
+              className="flex items-center gap-2 mb-8"
+              variants={itemVariants}
             >
-              <h2 className="font-bold mb-6">Schedule a Consultation</h2>
-              <p className="text-black mb-6">
-                We offer both in-person and virtual consultations to accommodate
-                your schedule and location. Please complete the form below to
-                request a meeting with one of our specialists.
-              </p>
+              <Phone className="h-5 w-5 text-gray-500" />
+              <a
+                href="tel:+9714XXXXXXX"
+                className="text-gray-700 hover:text-primary transition-colors"
+              >
+                +971 4 XXX XXXX
+              </a>
+            </motion.div>
 
-              <form onSubmit={handleSubmit} className="space-y-6 text-black">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Full Name*</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
+            <motion.h3
+              className="text-lg font-semibold mb-4 text-primary"
+              variants={itemVariants}
+            >
+              Our Location
+            </motion.h3>
+
+            <motion.p
+              className="text-black  flex items-start"
+              variants={itemVariants}
+            >
+              <MapPin className="h-5 w-5 mt-2 text-primary  text-start mr-2" />
+              MRST CONSULTANCY L.L.C-FZ <br />
+              Meydan Grandstand, 6th Floor, Meydan Road, <br /> Nad Al Sheba,
+              Dubai, United Arab Emirates
+            </motion.p>
+
+            {/* <div className="flex flex-col gap-6 mb-8">
+    <motion.div 
+      className="bg-white p-5 rounded-lg shadow-sm"
+      variants={itemVariants}
+      whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
+    >
+      <h4 className="font-semibold mb-2 text-gray-800">Customer Support</h4>
+      <p className="text-sm text-gray-600">
+        Our support team is available around the clock to address any concerns or queries you may have.
+      </p>
+    </motion.div>
+    
+    <motion.div 
+      className="bg-white p-5 rounded-lg shadow-sm"
+      variants={itemVariants}
+      whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
+    >
+      <h4 className="font-semibold mb-2 text-gray-800">Feedback and Suggestions</h4>
+      <p className="text-sm text-gray-600">
+        We value your feedback and are continuously working to improve our services. Your input is crucial.
+      </p>
+    </motion.div>
+    
+    <motion.div 
+      className="bg-white p-5 rounded-lg shadow-sm"
+      variants={itemVariants}
+      whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)" }}
+    >
+      <h4 className="font-semibold mb-2 text-gray-800">Media Inquiries</h4>
+      <p className="text-sm text-gray-600">
+        For media-related questions or press inquiries, please contact us at media@mrstconsultancy.com.
+      </p>
+    </motion.div>
+  </div> */}
+          </motion.div>
+
+          {/* Right Column - Contact Form */}
+          <motion.div
+            className="lg:col-span-3 bg-white rounded-2xl shadow-lg overflow-hidden"
+            initial="hidden"
+            animate="visible"
+            variants={formVariants}
+          >
+            <div className="p-6 md:p-8">
+              <h2 className="text-2xl font-bold mb-2 text-gray-900">
+                Get in Touch
+              </h2>
+              <p className="text-gray-600 mb-6">You can reach us anytime</p>
+
+              <form onSubmit={handleSubmit}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <label htmlFor="firstName" className="sr-only">
+                      First name
+                    </label>
+                    <input
+                      id="firstName"
+                      name="firstName"
+                      type="text"
+                      placeholder="First name"
+                      value={formState.firstName}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                       required
                     />
                   </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email Address*</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
+                  <div>
+                    <label htmlFor="lastName" className="sr-only">
+                      Last name
+                    </label>
+                    <input
+                      id="lastName"
+                      name="lastName"
+                      type="text"
+                      placeholder="Last name"
+                      value={formState.lastName}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                       required
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="phone">Phone Number*</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="company">
-                      Company/Institution (if applicable)
-                    </Label>
-                    <Input
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
                     />
                   </div>
                 </div>
 
-                <div className="space-y-2 w-[40%]">
-                  <Label htmlFor="service">Service of Interest*</Label>
-                  <Select
-                    name="service"
-                    onValueChange={(value) =>
-                      handleSelectChange("service", value)
-                    }
+                <div className="mb-4">
+                  <label htmlFor="email" className="sr-only">
+                    Your email
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Your email"
+                    value={formState.email}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                     required
-                  >
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select a service" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem
-                        value="export"
-                        className="hover:bg-primary hover:text-secondary"
-                      >
-                        Export & Import Consultancy
-                      </SelectItem>
-                      <SelectItem
-                        value="investment"
-                        className="hover:bg-primary hover:text-secondary"
-                      >
-                        Mutual Investment
-                      </SelectItem>
-                      <SelectItem
-                        value="student"
-                        className="hover:bg-primary hover:text-secondary"
-                      >
-                        Student Consultancy
-                      </SelectItem>
-                      <SelectItem
-                        value="other"
-                        className="hover:bg-primary hover:text-secondary"
-                      >
-                        Other
-                      </SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="space-y-2 w-[60%]">
-                  <Label htmlFor="message">Message*</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    className="min-h-[120px]"
                   />
                 </div>
 
-                <div className="space-y-3">
-                  <Label>Preferred Contact Method*</Label>
-                  <RadioGroup
-                    name="contactMethod"
-                    value={formData.contactMethod}
-                    onValueChange={(value) =>
-                      handleSelectChange("contactMethod", value)
-                    }
-                    className="flex flex-col space-y-1"
-                  >
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="email" id="email-method" />
-                      <Label htmlFor="email-method">Email</Label>
+                <div className="mb-4 relative">
+                  <label htmlFor="phone" className="sr-only">
+                    Phone number
+                  </label>
+                  <div className="flex">
+                    <div className="relative">
+                      <button
+                        type="button"
+                        className="flex items-center justify-between w-16 px-3 py-3 rounded-l-lg bg-gray-50 border border-gray-200 border-r-0 text-gray-700"
+                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                      >
+                        <span>{countryCode}</span>
+                        <ChevronDown className="h-4 w-4 text-gray-500" />
+                      </button>
+
+                      {isDropdownOpen && (
+                        <div className="absolute top-full left-0 mt-1 w-24 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
+                          {["+1", "+44", "+61", "+62", "+91"].map((code) => (
+                            <button
+                              key={code}
+                              type="button"
+                              className="block w-full text-left px-3 py-2 hover:bg-gray-50 text-gray-700"
+                              onClick={() => {
+                                setCountryCode(code);
+                                setIsDropdownOpen(false);
+                              }}
+                            >
+                              {code}
+                            </button>
+                          ))}
+                        </div>
+                      )}
                     </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="phone" id="phone-method" />
-                      <Label htmlFor="phone-method">Phone</Label>
-                    </div>
-                  </RadioGroup>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="Phone number"
+                      value={formState.phone}
+                      onChange={handleInputChange}
+                      className="flex-1 px-4 py-3 rounded-r-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                    />
+                  </div>
                 </div>
 
-                <div className="space-y-2 w-[40%]">
-                  <Label htmlFor="source">How did you hear about us?</Label>
-                  <Select
-                    name="source"
-                    onValueChange={(value) =>
-                      handleSelectChange("source", value)
-                    }
-                  >
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select an option" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem
-                        value="search"
-                        className="hover:bg-primary hover:text-secondary"
-                      >
-                        Search Engine
-                      </SelectItem>
-                      <SelectItem
-                        value="social"
-                        className="hover:bg-primary hover:text-secondary"
-                      >
-                        Social Media
-                      </SelectItem>
-                      <SelectItem
-                        value="referral"
-                        className="hover:bg-primary hover:text-secondary"
-                      >
-                        Referral
-                      </SelectItem>
-                      <SelectItem
-                        value="event"
-                        className="hover:bg-primary hover:text-secondary"
-                      >
-                        Event
-                      </SelectItem>
-                      <SelectItem
-                        value="other"
-                        className="hover:bg-primary hover:text-secondary"
-                      >
-                        Other
-                      </SelectItem>
-                    </SelectContent>
-                  </Select>
+                <div className="mb-6">
+                  <label htmlFor="message" className="sr-only">
+                    How can we help?
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    placeholder="How can we help?"
+                    value={formState.message}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
+                    required
+                  />
                 </div>
 
-                <div className="text-sm text-gray-600">
-                  We respect your privacy. All information provided will be
-                  treated confidentially and used only to respond to your
-                  inquiry.
-                </div>
+                <motion.button
+                  type="submit"
+                  className="w-full bg-primary text-white font-medium py-3 px-6 rounded-lg hover:bg-primary/90 transition-all"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Submit
+                </motion.button>
 
-                <div className="flex justify-start">
-                  <Button type="submit" className="w-[40%]">
-                    Submit Request
-                  </Button>
-                </div>
+                {/* <p className="text-xs text-center text-gray-500 mt-4">
+                  By contacting us, you agree to our{" "}
+                  <Link href="#" className="text-primary hover:underline">
+                    Terms of service
+                  </Link>{" "}
+                  and{" "}
+                  <Link href="#" className="text-primary hover:underline">
+                    Privacy Policy
+                  </Link>
+                </p> */}
               </form>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Map Section */}
-      <section className="py-16 bg-secondary relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
-            <div className="absolute inset-0 opacity-10 h-full w-full bg-[url('/pattern2.png')] bg-repeat bg-contain "></div>
-            <h2 className=" font-bold mb-4 text-primary">Visit Our Office</h2>
-            <p className="text-black max-w-3xl mx-auto">
-              Located in the heart of Dubai, our office is easily accessible and
-              ready to welcome you.
-            </p>
+            </div>
           </motion.div>
         </div>
-      </section>
+      </div>
     </div>
   );
 }
