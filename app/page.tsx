@@ -13,6 +13,7 @@ import ContactCTA from "@/components/contact-cta"
 import GrowthProjections from "@/components/global-reach";
 import { WhatWeDo } from "@/components/what-we-do";
 import FuturePlans from "@/components/future-plans";
+import HowWeDo from "@/components/how-we-do";
 
 
 export default function page() {
@@ -24,7 +25,9 @@ export default function page() {
       {/* <WhatWeDo/> */}
       <FuturePlans/>
       <GrowthProjections />
-      <Methodology />
+      {/* <Methodology /> */}
+
+      <HowWeDo />
       <Industries />
       <Testimonials />
       {/* <Insights /> */}

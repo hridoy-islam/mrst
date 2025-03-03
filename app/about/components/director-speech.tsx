@@ -6,16 +6,16 @@ import Link from "next/link";
 
 export default function DirectorSpeech() {
   return (
-    <div className="w-full bg-secondary  mx-auto px-4 py-16 flex flex-col md:flex-row items-center  gap-8 md:gap-12 overflow-hidden">
+    <div className="w-full bg-secondary  md:px-20 py-16 flex flex-col md:flex-row items-center  gap-8 md:gap-12 overflow-hidden">
       {/* Text Content */}
       <motion.div
-        className="w-full container p-28 space-y-6"
+        className=" container space-y-6"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <motion.h1
-          className=" font-bold tracking-tight text-primary leading-tight"
+          className=" font-bold tracking-tight text-primary max-md:text-4xl leading-tight"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}

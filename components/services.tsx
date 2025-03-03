@@ -74,7 +74,7 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+          className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-2"
         >
           {services.map((service, index) => (
   <motion.div key={index} variants={itemVariants}>

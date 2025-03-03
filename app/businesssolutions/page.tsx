@@ -45,13 +45,13 @@ const staggerContainer = {
 const ServiceCard = ({ icon, title, items }: { icon: React.ReactNode; title: string; items: string[]; }) => (
   <motion.div
     variants={fadeIn}
-    className="bg-secondary/20 backdrop-blur-xl border border-white/20 shadow-lg rounded-xl p-6 hover:shadow-xl transition-transform hover:scale-105"
+    className="bg-secondary/30 backdrop-blur-2xl border border-white/20 shadow-lg rounded-xl p-6 hover:shadow-xl transition-transform hover:scale-105"
   >
     <div className="flex items-center flex-row mb-4">
       <div className="bg-secondary backdrop-blur-md p-3 rounded-full mr-4">{icon}</div>
-      <h3 className="font-semibold text-white">{title}</h3>
+      <h3 className="font-semibold text-primary">{title}</h3>
     </div>
-    <ul className="space-y-2 text-secondary">
+    <ul className="space-y-2 text-black font-medium">
       {items.map((item, index) => (
         <li key={index} className="flex items-start">
           <span className="text-primary mr-2">•</span>
@@ -101,7 +101,7 @@ export default function BusinessSolutions() {
             variants={fadeIn}
             className="text-start"
           >
-            <h1 className="  font-bold mb-6">
+            <h1 className=" max-md:text-4xl font-bold mb-6">
               Comprehensive Solutions for Global Business Challenges
             </h1>
             <p className="  mx-auto mb-8">
@@ -121,8 +121,8 @@ export default function BusinessSolutions() {
       </section>
 
       {/* Services Section */}
-      <section className="relative py-20 bg-[url('/business.jpg')] bg-cover bg-center bg-no-repeat ">
-      <div className="absolute inset-0 bg-black/20"></div>
+      <section className="relative text-primary py-20 bg-[url('/p4.jpg')] bg-cover bg-center bg-no-repeat ">
+      <div className="absolute inset-0 bg-black/5"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -130,10 +130,10 @@ export default function BusinessSolutions() {
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={fadeIn}
-            className="relative text-center text-secondary z-60 mb-16 "
+            className="relative text-center  z-60 mb-16 "
           >
             <h2 className="font-bold mb-4">Our Business Solutions</h2>
-            <p className="text-secondary max-w-3xl mx-auto">
+            <p className="text-primary max-w-3xl mx-auto">
               Our tailored approaches combine strategic insight with practical
               implementation to deliver measurable results for your business.
             </p>

@@ -13,7 +13,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@iconify/react";
 import logo from "@/public/mlogo.png";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, MenuIcon } from "lucide-react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -77,17 +77,26 @@ export default function Header() {
       isBlurred={false}
     >
       {/* Left side */}
-      <div className="flex w-full flex-row justify-between items-center">
+
+      <div className="flex flex-row justify-between items-center w-full">
+        {/* Left Side - Menu Toggle (Visible on Mobile) */}
         <NavbarMenuToggle
-          icon={<Icon icon="material-symbols:menu" width={24} />}
+          icon={<MenuIcon className="w-6 h-6 text-primary" />} // Lucide icon
           className="md:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         />
-        <NavbarBrand className="flex items-center flex-row justify-between">
+
+        <div>
+
+        <NavbarBrand>
           <Link href="/">
             <Image src={logo} alt="logo" width={100} />
           </Link>
         </NavbarBrand>
+        </div>
+
+        {/* Right Side - Empty div to maintain space balance */}
+        
       </div>
 
       {/* Desktop Navigation */}

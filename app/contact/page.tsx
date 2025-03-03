@@ -83,7 +83,7 @@ export default function ContactPage() {
       </section>
 
       <div className="container flex flex-col items-center  mx-auto py-12 sm:px-6 lg:px-8">
-        <div className="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+        <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Left Column */}
           <motion.div
             className="lg:col-span-2 flex flex-col justify-center"
@@ -250,34 +250,7 @@ export default function ContactPage() {
                     Phone number
                   </label>
                   <div className="flex">
-                    <div className="relative">
-                      <button
-                        type="button"
-                        className="flex items-center justify-between w-16 px-3 py-3 rounded-l-lg bg-gray-50 border border-gray-200 border-r-0 text-gray-700"
-                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                      >
-                        <span>{countryCode}</span>
-                        <ChevronDown className="h-4 w-4 text-gray-500" />
-                      </button>
-
-                      {isDropdownOpen && (
-                        <div className="absolute top-full left-0 mt-1 w-24 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
-                          {["+1", "+44", "+61", "+62", "+91"].map((code) => (
-                            <button
-                              key={code}
-                              type="button"
-                              className="block w-full text-left px-3 py-2 hover:bg-gray-50 text-gray-700"
-                              onClick={() => {
-                                setCountryCode(code);
-                                setIsDropdownOpen(false);
-                              }}
-                            >
-                              {code}
-                            </button>
-                          ))}
-                        </div>
-                      )}
-                    </div>
+                    
                     <input
                       id="phone"
                       name="phone"
@@ -285,7 +258,7 @@ export default function ContactPage() {
                       placeholder="Phone number"
                       value={formState.phone}
                       onChange={handleInputChange}
-                      className="flex-1 px-4 py-3 rounded-r-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
+                      className="flex-1 px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                     />
                   </div>
                 </div>

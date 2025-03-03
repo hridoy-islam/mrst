@@ -58,8 +58,8 @@ export default function GrowthProjections() {
         variants={fadeIn}
         className="mx-auto  text-center mb-16"
       >
-        <h2 className="tracking-tight text-primary mb-4">Growth Projections</h2>
-        <h3 className="text-primary mb-4">Next 5 Years</h3>
+        <h2 className="tracking-tight text-secondary mb-4">Growth Projections</h2>
+        <h3 className="text-secondary mb-4">Next 5 Years</h3>
         <p className="text-secondary">Strategic growth initiatives across our core business sectors</p>
       </motion.div>
   

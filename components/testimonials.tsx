@@ -40,7 +40,7 @@ export default function Testimonials() {
           transition={{ duration: 0.5 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <h2 className=" font-bold tracking-tight text-primary ">Client Success Stories</h2>
+          <h2 className=" font-bold tracking-tight text-primary ">What People Say</h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Hear from our clients about their experience working with MRST Consultancy
           </p>

@@ -60,14 +60,14 @@ export function Background() {
             >
               <div className="relative group">
                 <div
-                  className={`absolute inset-0 bg-gradient-to-r ${company.gradient} opacity-75 rounded-xl blur-xl group-hover:opacity-100 transition-opacity duration-300`}
+                  className={`absolute inset-0 bg-gradient-to-r ${company.gradient} opacity-40 rounded-xl blur-xl group-hover:opacity-60 transition-opacity duration-300`}
                 />
                 <div className="relative bg-secondary rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <div className="flex items-start gap-4">
                     <div
-                      className={`w-12 h-12 rounded-lg bg-gradient-to-r ${company.gradient} flex-shrink-0 flex items-center justify-center`}
+                      className={`w-12 h-12 rounded-lg bg-primary/80 flex-shrink-0 flex items-center justify-center`}
                     >
-                      <company.icon className="w-6 h-6 text-primary" />
+                      <company.icon className="w-6 h-6 text-secondary" />
                     </div>
                     <div>
                       <h3 className="text-primary font-semibold mb-2">{company.name}</h3>

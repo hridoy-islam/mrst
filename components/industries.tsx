@@ -70,9 +70,9 @@ export default function Industries() {
   }
 
   return (
-    <section className="relative bg-[url('/industry.jpg')] bg-cover bg-center bg-no-repeat py-24">
+    <section className="relative bg-[url('/p5.png')] bg-cover bg-center bg-no-repeat py-24">
     {/* Background Overlay for Opacity */}
-    <div className="absolute inset-0 bg-black/30"></div>
+    <div className="absolute inset-0 bg-primary/30"></div>
   
     {/* Content Wrapper */}
     <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,7 +83,7 @@ export default function Industries() {
         transition={{ duration: 0.5 }}
         className="mx-auto max-w-3xl text-center"
       >
-        <h2 className="font-bold tracking-tight text-secondary">Industries We Serve</h2>
+        <h2 className="font-bold  text-secondary">Industries We Serve</h2>
         <p className="mt-4 text-secondary/90">Our consultancy expertise spans diverse sectors</p>
       </motion.div>
   
@@ -99,14 +99,14 @@ export default function Industries() {
           <motion.div
             key={index}
             variants={itemVariants}
-            className="relative flex flex-col items-center rounded-lg bg-white/80 backdrop-blur-lg p-6 text-center shadow-sm transition-all duration-300 hover:shadow-lg hover:scale-105"
+            className="relative flex flex-col items-center rounded-lg bg-black/40 backdrop-blur-xl p-6 text-center shadow-sm transition-all duration-300 hover:shadow-lg hover:scale-105"
           >
             {/* Icon */}
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20 text-primary">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full text-secondary">
               {industry.icon}
             </div>
             {/* Industry Name */}
-            <h3 className="mt-4 font-medium text-primary">{industry.name}</h3>
+            <h3 className="mt-4 font-semibold text-secondary">{industry.name}</h3>
   
             {/* Hover Glow Effect */}
             <div className="absolute -bottom-4 left-1/2 w-24 h-24 bg-primary/30 opacity-20 rounded-full blur-3xl group-hover:opacity-50 transition duration-500"></div>
