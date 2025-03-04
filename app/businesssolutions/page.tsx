@@ -94,7 +94,7 @@ export default function BusinessSolutions() {
             className="object-cover"
           />
         </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full container">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -124,7 +124,7 @@ export default function BusinessSolutions() {
       <section className="relative text-primary py-20 bg-[url('/p4.jpg')] bg-cover bg-center bg-no-repeat ">
       <div className="absolute inset-0 bg-black/5"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full container">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -227,7 +227,7 @@ export default function BusinessSolutions() {
 
       {/* Approach Section */}
       <section className="py-20 text-primary">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}

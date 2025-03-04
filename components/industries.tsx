@@ -70,12 +70,12 @@ export default function Industries() {
   }
 
   return (
-    <section className="relative bg-[url('/p5.png')] bg-cover bg-center bg-no-repeat py-24">
+    <section className="relative bg-[url('/p5.jpg')] bg-cover bg-center bg-no-repeat py-24">
     {/* Background Overlay for Opacity */}
-    <div className="absolute inset-0 bg-primary/30"></div>
+    <div className="absolute inset-0 bg-black/30"></div>
   
     {/* Content Wrapper */}
-    <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative container">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -84,7 +84,7 @@ export default function Industries() {
         className="mx-auto max-w-3xl text-center"
       >
         <h2 className="font-bold  text-secondary">Industries We Serve</h2>
-        <p className="mt-4 text-secondary/90">Our consultancy expertise spans diverse sectors</p>
+        <p className="mt-6 text-secondary">Our consultancy expertise spans diverse sectors</p>
       </motion.div>
   
       {/* Animated Grid */}
@@ -99,7 +99,7 @@ export default function Industries() {
           <motion.div
             key={index}
             variants={itemVariants}
-            className="relative flex flex-col items-center rounded-lg bg-black/40 backdrop-blur-xl p-6 text-center shadow-sm transition-all duration-300 hover:shadow-lg hover:scale-105"
+            className="relative flex flex-col items-center bg-secondary/30 rounded-lg backdrop-blur-xl p-6 text-center shadow-sm transition-all duration-300 hover:shadow-lg hover:scale-105"
           >
             {/* Icon */}
             <div className="flex h-12 w-12 items-center justify-center rounded-full text-secondary">

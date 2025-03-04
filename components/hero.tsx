@@ -29,7 +29,7 @@ export default function Hero() {
         </svg>
       </div>
 
-      <div className="container relative z-10 mx-auto px-4 md:py-24 sm:px-6 lg:px-8 lg:py-32">
+      <div className="container relative z-10  lg:py-32">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -37,10 +37,10 @@ export default function Hero() {
             transition={{ duration: 0.5 }}
             className="flex flex-col justify-center"
           >
-            <h1 className="font-bold tracking-tight max-md:text-5xl">
+            <h1 className="font-bold tracking-tight">
               Your Gateway to Global Opportunities
             </h1>
-            <p className="mt-6 max-w-3xl">
+            <p className="mt-6 ">
               At MRST Consultancy L.L.C-FZ, we bridge international markets, facilitate cross-border investments, and
               guide students toward educational excellence worldwide.
             </p>

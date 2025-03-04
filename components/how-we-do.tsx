@@ -83,7 +83,7 @@ export default function HowWeDo() {
       <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/20 rounded-full blur-3xl opacity-30"></div>
       <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl opacity-30"></div>
 
-      <div className="relative container mx-auto px-6 lg:px-12 z-10">
+      <div className="relative container z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left side - Image with shapes */}
           <motion.div

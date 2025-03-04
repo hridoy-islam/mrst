@@ -32,7 +32,7 @@ export default function Testimonials() {
 
   return (
     <section className="bg-gradient-to-bl from-secondary to-primary/15 py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container ">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

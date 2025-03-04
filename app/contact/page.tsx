@@ -75,14 +75,14 @@ export default function ContactPage() {
             className="object-cover"
           />
         </div>
-        <div className="container mx-auto px-4 py-28 sm:px-6 lg:px-8 relative z-10">
+        <div className="container py-28  relative z-10">
           <motion.div initial="hidden" animate="visible" className="max-w-3xl">
             <h1 className=" font-bold mb-6">Contact Us</h1>
           </motion.div>
         </div>
       </section>
 
-      <div className="container flex flex-col items-center  mx-auto py-12 sm:px-6 lg:px-8">
+      <div className="container flex flex-col items-center   py-12 ">
         <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Left Column */}
           <motion.div

@@ -55,7 +55,7 @@ export default function Services() {
 
   return (
     <section id="services" className="bg-gradient-to-tl from-secondary to-primary/10 py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container ">
         <div className="mx-auto max-w-6xl text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

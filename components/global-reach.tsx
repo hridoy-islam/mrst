@@ -50,7 +50,7 @@ export default function GrowthProjections() {
     <div className="absolute inset-0 bg-black/60"></div>
   
     {/* Content Wrapper (Ensures Text Stays Visible) */}
-    <div className="relative container px-4 sm:px-6 lg:px-8">
+    <div className="relative container ">
       <motion.div
         initial="initial"
         whileInView="animate"

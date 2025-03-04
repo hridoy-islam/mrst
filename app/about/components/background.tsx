@@ -35,7 +35,7 @@ const companies = [
 export function Background() {
   return (
     <section className="py-16 md:py-24 bg-primary-to-tr from-secondary to-primary/10">
-      <div className="container mx-auto px-4">
+      <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

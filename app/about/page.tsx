@@ -56,10 +56,10 @@ export default function AboutUs() {
   
 
   return (
-    <div className="min-h-screen bg-primary w-full">
+    <div className="min-h-screen bg-primary">
       
       {/* Hero Section */}
-      <section className="relative py-16 bg-primary text-secondary">
+      <section className="relative container py-16 bg-primary text-secondary">
         <div className="absolute inset-0 opacity-40">
           <Image
             src="/pattern.png"
@@ -68,12 +68,12 @@ export default function AboutUs() {
             className="object-cover"
           />
         </div>
-        <div className="container mx-auto px-4 py-24 sm:px-6 lg:px-8 relative z-10">
+        <div className="  z-10">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="max-w-3xl"
+           
           >
             <h1 className="text-secondary font-bold mb-4">MRST Consultancy</h1>
             <h3 className="text-secondary">
