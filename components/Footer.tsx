@@ -12,7 +12,7 @@ export default function Footer() {
       {/* Main Container */}
       {/* Main Container */}
       <div className="container py-12 relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-start">
           {/* Company Info */}
           <div>
 
@@ -33,9 +33,9 @@ export default function Footer() {
           {/* Company Links */}
 
           <div className="flex flex-col md:flex-row  items-center justify-between">
-            <div className="space-y-4 w-full max-md:pb-4">
+            <div className="space-y-4 w-full max-md:pb-4 md:-mt-9">
               <h3 className="pb-2 font-semibold">Company</h3>
-              <ul className="md:space-y-6 space-y-2">
+              <ul className=" space-y-2">
                 <li>
                   <Link href="/">Home</Link>
                 </li>
@@ -57,7 +57,7 @@ export default function Footer() {
               <ul className="space-y-2">
                 <li>
                   <div className="flex items-start gap-2">
-                    <Icon icon="ph:map-pin" className="mt-1" />
+                    <Icon icon="ph:map-pin" className="mt-2" />
                     <p>
                       Meydan Grandstand
                       <br />

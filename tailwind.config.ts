@@ -21,15 +21,17 @@ const config: any = {
   			]
   		},
   		container: {
-  			center: true,
-  			padding: {
-  				DEFAULT: '1rem',
-  				sm: '2rem',
-  				lg: '4rem',
-  				xl: '5rem',
-  				'2xl': '6rem'
-  			}
-  		},
+			center: true,
+			padding: {
+			  DEFAULT: '0.5rem', // reduced padding for default
+			  
+			},
+			  margin:{
+				default: '0.5rem'
+			  }
+			
+		  },
+  		
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
@@ -90,7 +92,9 @@ const config: any = {
   		sm: '640px',
   		md: '768px',
   		lg: '1024px',
-  		xl: '1280px'
+  		xl: '1280px',
+		'2xl': '1536px',
+		max: '1920px'
   	}
   },
   plugins: [

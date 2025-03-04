@@ -1,17 +1,12 @@
-"use client"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { motion } from "framer-motion"
-import Link from "next/link"
-
-
- 
+"use client";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Hero() {
- 
-
   return (
-    <section className="relative overflow-hidden bg-primary text-primary w-full min-h-screen flex items-center">
+    <section className="relative overflow-hidden bg-primary text-primary w-full min-h-screen flex items-center z-0">
       {/* Full-screen grid background */}
       <div className="absolute inset-0 z-0 opacity-5 pointer-events-none">
         <svg
@@ -21,8 +16,18 @@ export default function Hero() {
           preserveAspectRatio="none"
         >
           <defs>
-            <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-              <path d="M 20 0 L 0 0 0 20" fill="none" stroke="white" strokeWidth="1" />
+            <pattern
+              id="grid"
+              width="20"
+              height="20"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 20 0 L 0 0 0 20"
+                fill="none"
+                stroke="white"
+                strokeWidth="1"
+              />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />
@@ -41,11 +46,17 @@ export default function Hero() {
               Your Gateway to Global Opportunities
             </h1>
             <p className="mt-6 ">
-              At MRST Consultancy L.L.C-FZ, we bridge international markets, facilitate cross-border investments, and
-              guide students toward educational excellence worldwide.
+              At MRST Consultancy L.L.C-FZ, we bridge international markets,
+              facilitate cross-border investments, and guide students toward
+              educational excellence worldwide.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Button asChild variant="outline" size="lg" className="bg-secondary text-primary">
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="bg-secondary text-primary"
+              >
                 <Link href="/contact">Schedule a Consultation</Link>
               </Button>
               {/* <Button asChild variant="outline" size="lg" className="bg-secondary text-primary">
@@ -63,15 +74,15 @@ export default function Hero() {
             <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-secondary/30 blur-3xl"></div>
             <div className="absolute -bottom-10 -left-10 h-64 w-64 rounded-full bg-secondary/20 blur-3xl"></div>
             <div className="relative rounded-2xl bg-white/10 p-6 backdrop-blur-sm">
-            <div className="aspect-[4/3] overflow-hidden rounded-lg">
-  <Image
-    src="/dubai.jpg" // Corrected path
-    alt="Dubai skyline"
-    className="object-cover"
-    width={600}
-    height={800}
-  />
-</div>
+              <div className="aspect-[4/3] overflow-hidden rounded-lg">
+                <Image
+                  src="/dubai.jpg" // Corrected path
+                  alt="Dubai skyline"
+                  className="object-cover"
+                  width={1200}
+                  height={800}
+                />
+              </div>
               <div className="mt-4 flex items-center justify-between rounded-lg bg-white/10 p-4 backdrop-blur-sm">
                 <div>
                   <p className="font-medium">Headquartered in Dubai</p>
@@ -100,5 +111,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

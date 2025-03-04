@@ -56,169 +56,36 @@ export default function AboutUs() {
   
 
   return (
-    <div className="min-h-screen bg-primary">
+    <div className="min-h-screen bg-primary ">
       
       {/* Hero Section */}
-      <section className="relative container py-16 bg-primary text-secondary">
-        <div className="absolute inset-0 opacity-40">
-          <Image
-            src="/pattern.png"
-            alt="Investment Partnership Background"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="  z-10">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-           
-          >
-            <h1 className="text-secondary font-bold mb-4">MRST Consultancy</h1>
+     
+
+      <section className="relative bg-primary text-secondary">
+              <div className="absolute inset-0 opacity-40">
+                <Image
+                  src="/pattern.png"
+                  alt="Investment Partnership Background"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="container py-28  relative z-10">
+                <motion.div initial="hidden" animate="visible" className="max-w-3xl">
+                <h1 className="text-secondary font-bold mb-4">MRST Consultancy</h1>
             <h3 className="text-secondary">
               Your trusted partner for global business connections and
               educational opportunities
             </h3>
-          
-          </motion.div>
-        </div>
-      </section>
+                </motion.div>
+              </div>
+            </section>
 
       <DirectorSpeech />
 
       <Background />
 
-      {/* Mission & Vision Section
-      <AboutSection title="Our Mission & Vision" subtitle="Building bridges across borders" className="bg-gray-50">
-        <div className="grid md:grid-cols-2 gap-8 mt-8">
-          <Card className="border-none shadow-lg bg-secondary">
-            <CardContent className="pt-6 ">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              >
-                <h3 className=" font-bold mb-4 text-primary">Our Mission</h3>
-                <p className="text-primary">
-                  To provide exceptional consultancy services that empower our clients to succeed in the global
-                  marketplace while fostering sustainable international relationships and educational advancement.
-                </p>
-              </motion.div>
-            </CardContent>
-          </Card>
-
-          <Card className="border-none shadow-lg bg-secondary">
-            <CardContent className="pt-6">
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-              >
-                <h3 className="font-bold mb-4 text-primary">Our Vision</h3>
-                <p className="text-primary">
-                  To become the leading consultancy firm in the MENA region, recognized for our excellence in connecting
-                  businesses across borders and guiding students toward international educational opportunities.
-                </p>
-              </motion.div>
-            </CardContent>
-          </Card>
-        </div>
-      </AboutSection> */}
-
-      {/* Values Section */}
-      {/* <AboutSection title="Our Values" subtitle="What drives us forward" className="bg-secondary text-primary ">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8"
-        >
-          <motion.div variants={itemVariants}>
-            <ValueCard
-              title="Integrity"
-              description="We uphold the highest ethical standards in all our dealings"
-              icon="Shield"
-            />
-          </motion.div>
-          <motion.div variants={itemVariants} >
-            <ValueCard
-              title="Excellence"
-              description="We strive for exceptional quality in every service we provide"
-              icon="Award"
-            />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <ValueCard
-              title="Innovation"
-              description="We embrace creative solutions to complex international challenges"
-              icon="Lightbulb"
-            />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <ValueCard
-              title="Cultural Sensitivity"
-              description="We respect and navigate cultural differences with expertise"
-              icon="Globe"
-            />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <ValueCard
-              title="Client Success"
-              description="We measure our success through the achievements of our clients"
-              icon="Trophy"
-            />
-          </motion.div>
-        </motion.div>
-      </AboutSection> */}
-
-      {/* Team Section */}
-      {/* <AboutSection
-        title="Our Team"
-        subtitle="Led by industry experts with extensive experience"
-        className="bg-primary"
-      >
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-secondary mb-8"
-        >
-          Our diverse team brings together specialized knowledge and a global perspective. Our consultants are
-          multilingual professionals who understand the nuances of cross-border operations and maintain current
-          knowledge of international regulations and market trends.
-        </motion.p>
-
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          <motion.div variants={itemVariants}>
-            <TeamMember name="Sarah Ahmed" position="Managing Director" image="/placeholder.svg?height=400&width=400" />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <TeamMember
-              name="Mohammed Al-Farsi"
-              position="Head of Business Development"
-              image="/placeholder.svg?height=400&width=400"
-            />
-          </motion.div>
-          <motion.div variants={itemVariants}>
-            <TeamMember
-              name="Elena Petrova"
-              position="Education Consultant"
-              image="/placeholder.svg?height=400&width=400"
-            />
-          </motion.div>
-        </motion.div>
-      </AboutSection> */}
+     
 
       {/* Location Section */}
       <AboutSection

@@ -53,9 +53,9 @@ export default function Header() {
     <header
     className={`w-full bg-secondary shadow-lg transition-all duration-300 ${
       hideNavbar ? "translate-y-[-100%]" : "translate-y-0"
-    } ${lastScrollY > 0 ? "fixed top-0 left-0 right-0 z-50" : "relative"}`}
+    } ${lastScrollY > 0 ? "fixed top-0 left-0 right-0 z-50" : "relative z-40"}`}
   >
-    <div className="hidden mx-auto max-md:flex justify-between items-center">
+    <div className="hidden px-4 max-md:flex justify-between items-center">
       <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
         <MenuIcon className="w-6 h-6 text-primary" />
       </button>
@@ -66,7 +66,7 @@ export default function Header() {
 
     <div className="container ">
       <div
-        className="w-full bg-secondary md:flex items-center justify-between"
+        className="w-full bg-secondary hidden md:flex items-center justify-between"
         ref={desktopMenuRef}
       >
         <Link href="/" className="flex items-center">
@@ -97,7 +97,7 @@ export default function Header() {
           animate={{ x: "0%" }}
           exit={{ x: "100%" }}
           transition={{ type: "spring", stiffness: 120, damping: 15 }}
-          className="fixed top-0 right-0 w-64 h-screen bg-primary shadow-lg md:hidden flex flex-col p-6 z-[999]"
+          className="fixed top-0 right-0 w-64 h-screen bg-primary shadow-lg md:hidden flex flex-col p-6 z-90"
         >
           <button
             onClick={() => setIsMenuOpen(false)}
