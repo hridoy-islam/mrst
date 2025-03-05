@@ -83,11 +83,12 @@ export default function ContactPage() {
       </section>
 
       <div className="container flex flex-col items-center   py-12 ">
-        <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
+        <div className="w-full  grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
           {/* Left Column */}
           <motion.div
             className="lg:col-span-2 flex flex-col justify-center"
             initial="hidden"
+
             animate="visible"
             variants={containerVariants}
           >
