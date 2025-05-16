@@ -3,6 +3,20 @@ import Image from "next/image";
 import type React from "react";
 
 import { motion } from "framer-motion";
+import {
+  Code,
+  Smartphone,
+  Bot,
+  Settings,
+  TrendingUp,
+  ShieldCheck,
+  DollarSign,
+  ArrowRight,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
+
+
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -24,6 +38,39 @@ const staggerContainer = {
 };
 
 export default function SoftwareDevelopementPage() {
+  const router = useRouter();
+  const navigateToContact = () => {
+    router.push("/contact");
+  };
+const services = [
+    {
+      icon: <Smartphone className="w-8 h-8 text-blue-600" />,
+      title: "Web & Mobile App Development",
+      description: "Custom apps built for performance, usability, and scale.",
+    },
+    {
+      icon: <Settings className="w-8 h-8 text-blue-600" />,
+      title: "Business Automation Tools",
+      description: "Automate repetitive processes to boost efficiency.",
+    },
+    {
+      icon: <Bot className="w-8 h-8 text-blue-600" />,
+      title: "AI & Machine Learning Integration",
+      description: "Smarter solutions through cutting-edge AI capabilities.",
+    },
+    {
+      icon: <Code className="w-8 h-8 text-blue-600" />,
+      title: "Industry-Specific Software",
+      description: "Tailored tools for retail, logistics, healthcare, and more.",
+    },
+  ];
+
+  const investmentAppeal = [
+    "High scalability",
+    "IP ownership & licensing options",
+    "Monthly SaaS revenue models",
+  ];
+
   return (
     <div className="bg-secondary">
       {/* Hero Section */}
@@ -60,6 +107,126 @@ export default function SoftwareDevelopementPage() {
               Discover Our Approach
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button> */}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20">
+        <div className="container px-4 mx-auto">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="space-y-16"
+          >
+            <motion.div
+              variants={fadeIn}
+              className="text-center max-w-3xl mx-auto"
+            >
+              <h2 className="text-3xl font-bold mb-4 text-primary">
+                Our Expertise Covers
+              </h2>
+              <p className="text-muted-foreground">
+                Innovative and scalable tech tailored to industry-specific needs
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={staggerContainer}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            >
+              {services.map((service, index) => (
+                <motion.div
+                  key={index}
+                  variants={fadeIn}
+                  whileHover={{ y: -5 }}
+                  className="border rounded-xl p-6 hover:shadow-lg transition-all border-primary"
+                >
+                  <div className="mb-4 text-primary">{service.icon}</div>
+                  <h3 className="text-lg font-semibold mb-2 text-primary">{service.title}</h3>
+                  <p className="text-muted-foreground">{service.description}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Investment Appeal Section */}
+      <section
+        className="py-20 bg-gray-100 bg-cover bg-center relative"
+        style={{ backgroundImage: "url(/pattern3.jpg)" }}
+      >
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="container px-4 mx-auto relative">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="flex flex-col lg:flex-row gap-12 items-center"
+          >
+            <motion.div variants={fadeIn} className="lg:w-1/2">
+              <Image
+                src="/developer.jpg"
+                alt="Software Development"
+                width={600}
+                height={400}
+                className="rounded-xl shadow-xl"
+              />
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="lg:w-1/2 space-y-8">
+              <div>
+                <h2 className="text-3xl font-bold mb-6 text-white">
+                  Why Invest in Our Tech Ventures
+                </h2>
+                <ul className="space-y-6">
+                  {investmentAppeal.map((point, index) => (
+                    <li key={index} className="flex items-start gap-4">
+                      <div className="flex-shrink-0 mt-1">
+                        <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
+                          <TrendingUp className="w-3 h-3 text-white" />
+                        </div>
+                      </div>
+                      <p className="text-white">{point}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <Button size="lg" className="group bg-white text-primary">
+                Become a Tech Partner
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-700">
+        <div className="container px-4 mx-auto text-center">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+            className="text-white max-w-3xl mx-auto space-y-6"
+          >
+            <h2 className="text-3xl font-bold text-primary">
+              Ready to Build the Future With Us?
+            </h2>
+            <p className="text-black text-lg">
+              Let’s develop scalable software tailored to your business growth.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="group bg-primary text-blue-800 hover:bg-primary/90"
+                onClick={navigateToContact}
+              >
+                Contact Our Developers
+              </Button>
+            </div>
           </motion.div>
         </div>
       </section>

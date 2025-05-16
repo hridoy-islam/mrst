@@ -3,6 +3,18 @@ import Image from "next/image";
 import type React from "react";
 
 import { motion } from "framer-motion";
+import {
+  HandCoins,
+  BarChart2,
+  Handshake,
+  Layers,
+  Banknote,
+  TrendingUp,
+  Timer,
+  ArrowRight,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -24,6 +36,54 @@ const staggerContainer = {
 };
 
 export default function SoftwareDevelopementPage() {
+
+  const router = useRouter();
+  const navigateToContact = () => {
+    router.push("/contact");
+  };
+
+  const fundingOptions = [
+    {
+      icon: <HandCoins className="w-8 h-8 text-green-600" />,
+      title: "Start-up Capital & Seed Investment",
+      description:
+        "Initial funding for entrepreneurs and early-stage companies.",
+    },
+    {
+      icon: <BarChart2 className="w-8 h-8 text-green-600" />,
+      title: "Business Expansion Loans",
+      description: "Fuel growth with customized lending options.",
+    },
+    {
+      icon: <Handshake className="w-8 h-8 text-green-600" />,
+      title: "Joint Venture Partnerships",
+      description: "Collaborate to accelerate market entry and scaling.",
+    },
+    {
+      icon: <Layers className="w-8 h-8 text-green-600" />,
+      title: "Debt/Equity Hybrid Models",
+      description:
+        "Flexible capital structures combining loans and ownership.",
+    },
+  ];
+
+  const investorBenefits = [
+    {
+      icon: <Banknote className="w-6 h-6 text-white" />,
+      text: "Fixed income from business loan interest",
+    },
+    {
+      icon: <TrendingUp className="w-6 h-6 text-white" />,
+      text: "Equity participation in high-growth companies",
+    },
+    {
+      icon: <Timer className="w-6 h-6 text-white" />,
+      text: "Exit plans with predefined ROI timelines",
+    },
+  ];
+
+
+  
   return (
     <div className="bg-secondary">
       {/* Hero Section */}
@@ -61,6 +121,123 @@ export default function SoftwareDevelopementPage() {
               Discover Our Approach
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button> */}
+          </motion.div>
+        </div>
+      </section>
+      {/* Funding Options */}
+      <section className="py-20">
+        <div className="container px-4 mx-auto">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="space-y-16"
+          >
+            <motion.div
+              variants={fadeIn}
+              className="text-center max-w-3xl mx-auto"
+            >
+              <h2 className="text-3xl font-bold mb-4 text-primary">
+                Funding Options
+              </h2>
+              <p className="text-muted-foreground">
+                Choose from our strategic financial models to support your journey
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={staggerContainer}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            >
+              {fundingOptions.map((option, index) => (
+                <motion.div
+                  key={index}
+                  variants={fadeIn}
+                  whileHover={{ y: -5 }}
+                  className="border border-primary rounded-xl p-6 hover:shadow-lg transition-all"
+                >
+                  <div className="mb-4 text-primary">{option.icon}</div>
+                  <h3 className="text-lg font-semibold mb-2 text-primary" text-primary>{option.title}</h3>
+                  <p className="text-muted-foreground">{option.description}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Investor Benefits */}
+      <section
+        className="py-20 bg-gray-100 bg-cover bg-center relative"
+        style={{ backgroundImage: "url(/pattern3.jpg)" }}
+      >
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="container px-4 mx-auto relative">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={staggerContainer}
+            className="flex flex-col lg:flex-row gap-12 items-center"
+          >
+            <motion.div variants={fadeIn} className="lg:w-1/2">
+              <Image
+                src="/funding.jpg"
+                alt="Funding"
+                width={600}
+                height={400}
+                className="rounded-xl shadow-xl"
+              />
+            </motion.div>
+
+            <motion.div variants={fadeIn} className="lg:w-1/2 space-y-8">
+              <div>
+                <h2 className="text-3xl font-bold mb-6 text-white">
+                  Investor Incentives
+                </h2>
+                <ul className="space-y-6">
+                  {investorBenefits.map((item, index) => (
+                    <li key={index} className="flex items-center gap-4">
+                      <div className="w-6 h-6 flex items-center justify-center">
+                        {item.icon}
+                      </div>
+                      <p className="text-white">{item.text}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <Button size="lg" className="group bg-white text-primary">
+                Explore Investment Models
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-green-800 to-green-700">
+        <div className="container px-4 mx-auto text-center">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+            className="text-white max-w-3xl mx-auto space-y-6"
+          >
+            <h2 className="text-3xl font-bold text-primary">
+              Ready to Invest or Partner with Us?
+            </h2>
+            <p className="text-lg text-black">
+              Whether you’re an experienced investor or exploring new opportunities, we welcome you to join our network.
+            </p>
+            <p className="text-lg text-black"> Contact us today to schedule a free investment consultation or explore our current projects.</p>
+            <Button
+              size="lg"
+              className="group bg-primary text-black hover:bg-primary/90"
+              onClick={navigateToContact}
+            >
+              Schedule Consultation
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Button>
           </motion.div>
         </div>
       </section>
