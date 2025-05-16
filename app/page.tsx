@@ -20,16 +20,16 @@ export default function page() {
   return (
     <main className="min-h-screen">
       <Hero />
-      <Services />
+      {/* <Services /> */}
       {/* <WhyChooseUs /> */}
       {/* <WhatWeDo/> */}
-      <FuturePlans/>
-      <GrowthProjections />
+      {/* <FuturePlans/>
+      <GrowthProjections /> */}
       {/* <Methodology /> */}
 
-      <HowWeDo />
-      <Industries />
-      <Testimonials />
+      {/* <HowWeDo />
+      <Industries /> */}
+      {/* <Testimonials /> */}
       {/* <Insights /> */}
       
     </main>

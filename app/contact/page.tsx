@@ -88,7 +88,6 @@ export default function ContactPage() {
           <motion.div
             className="lg:col-span-2 flex flex-col justify-center"
             initial="hidden"
-
             animate="visible"
             variants={containerVariants}
           >
@@ -113,7 +112,7 @@ export default function ContactPage() {
                 href="mailto:info@mrstconsultancy.com"
                 className="text-gray-700 hover:text-primary transition-colors"
               >
-                info@mrstconsultancy.com
+                mijan@smsonline.org.uk
               </a>
             </motion.div>
 
@@ -126,7 +125,7 @@ export default function ContactPage() {
                 href="tel:+9714XXXXXXX"
                 className="text-gray-700 hover:text-primary transition-colors"
               >
-                +971 4 XXX XXXX
+                +9714 563204619
               </a>
             </motion.div>
 
@@ -251,7 +250,6 @@ export default function ContactPage() {
                     Phone number
                   </label>
                   <div className="flex">
-                    
                     <input
                       id="phone"
                       name="phone"

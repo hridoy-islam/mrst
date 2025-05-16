@@ -123,8 +123,8 @@ export default function HowWeDo() {
                   <Award className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-gray-900">15+ Years</p>
-                  <p className="text-xs text-gray-500">Industry Expertise</p>
+                  <p className="text-sm font-semibold text-black">15+ Years</p>
+                  <p className="text-xs text-black">Industry Expertise</p>
                 </div>
               </div>
             </motion.div>
@@ -139,7 +139,7 @@ export default function HowWeDo() {
               transition={{ duration: 0.6 }}
             >
               
-              <h1 className=" text-primary font-extrabold">
+              <h1 className=" text-white font-extrabold">
                 How We Do
               </h1>
               <p className="mt-4 text-lg text-gray-300">

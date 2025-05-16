@@ -12,6 +12,11 @@ import TeamMember from "./components/team-member";
 import ValueCard from "./components/value-card";
 import DirectorSpeech from "./components/director-speech";
 import { Background } from "./components/background";
+import HowWeDo from "@/components/how-we-do";
+import Industries from "@/components/industries";
+import Services from "@/components/services";
+import FuturePlans from "@/components/future-plans";
+import GrowthProjections from "@/components/global-reach";
 
 export default function AboutUs() {
   const containerVariants = {
@@ -43,7 +48,7 @@ export default function AboutUs() {
       transition: { duration: 0.6 },
     },
   };
-  
+
   const staggerContainer = {
     hidden: { opacity: 0 },
     visible: {
@@ -53,39 +58,34 @@ export default function AboutUs() {
       },
     },
   };
-  
 
   return (
     <div className="min-h-screen bg-primary ">
-      
       {/* Hero Section */}
-     
 
       <section className="relative bg-primary text-secondary">
-              <div className="absolute inset-0 opacity-40">
-                <Image
-                  src="/pattern.png"
-                  alt="Investment Partnership Background"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="container py-28  relative z-10">
-                <motion.div initial="hidden" animate="visible" className="max-w-3xl">
-                <h1 className="text-secondary font-bold mb-4">MRST Consultancy</h1>
-            <h3 className="text-secondary">
+        <div className="absolute inset-0 opacity-40">
+          <Image
+            src="/pattern.png"
+            alt="Investment Partnership Background"
+            fill
+            className="object-cover"
+          />
+        </div>
+        <div className="container py-28  relative z-10">
+          <motion.div initial="hidden" animate="visible" className="max-w-4xl">
+            <h1 className="text-secondary font-bold mb-4">MRST Consultancy</h1>
+            <h3 className="text-secondary font-normal ">
               Your trusted partner for global business connections and
               educational opportunities
             </h3>
-                </motion.div>
-              </div>
-            </section>
+          </motion.div>
+        </div>
+      </section>
 
       <DirectorSpeech />
 
       <Background />
-
-     
 
       {/* Location Section */}
       <AboutSection
@@ -111,10 +111,10 @@ export default function AboutUs() {
                 UAE
               </p>
               <p>
-                <strong>Email:</strong> info@mrstconsultancy.com
+                <strong>Email:</strong> mijan@smsonline.org.uk
               </p>
               <p>
-                <strong>Phone:</strong> +971 4 XXX XXXX
+                <strong>Phone:</strong> +9714 563204619
               </p>
             </div>
             <Button className="mt-6">Contact Us</Button>
@@ -136,6 +136,12 @@ export default function AboutUs() {
           </motion.div>
         </div>
       </AboutSection>
+
+      {/* <Services /> */}
+      <GrowthProjections />
+      <FuturePlans />
+      <Industries />
+      <HowWeDo />
     </div>
   );
 }

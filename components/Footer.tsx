@@ -15,20 +15,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-start">
           {/* Company Info */}
           <div>
-
-         
-          <div className="space-y-4 w-full">
-            {/* <Image src={whitelogo} alt="robofx" /> */}
-            <h2 className="font-bold">MRST Consultancy L.L.C-FZ</h2>
-            <p>
-              MRST CONSULTANCY L.L.C-FZ is a dynamic and multifaceted
-              organisation specialising in export, import, mutual investment,
-              and student consultancy. Established in 2023, we are committed to
-              providing seamless global trade solutions, strategic investment
-              opportunities, and expert guidance for students pursuing
-              international education.
-            </p>
-          </div>
+            <div className="space-y-4 w-full">
+              {/* <Image src={whitelogo} alt="robofx" /> */}
+              <h2 className="font-bold">MRST Consultancy L.L.C-FZ</h2>
+              <p>
+                MRST CONSULTANCY L.L.C-FZ is a dynamic and multifaceted
+                organisation specialising in export, import, mutual investment,
+                and student consultancy. Established in 2023, we are committed
+                to providing seamless global trade solutions, strategic
+                investment opportunities, and expert guidance for students
+                pursuing international education.
+              </p>
+            </div>
           </div>
           {/* Company Links */}
 
@@ -68,16 +66,22 @@ export default function Footer() {
                   </div>
                 </li>
                 <li>
-                  <Link href="/" className="flex items-center gap-2">
+                  <a
+                    href="tel:+9714563204619"
+                    className="flex items-center gap-2"
+                  >
                     <Icon icon="solar:phone-linear" />
-                    <span>+971 50 363 0578</span>
-                  </Link>
+                    <span>+9714563204619</span>
+                  </a>
                 </li>
                 <li>
-                  <Link href="/" className="flex items-center gap-2">
+                  <a
+                    href="mailto:mijan@smsonline.org.uk"
+                    className="flex items-center gap-2"
+                  >
                     <Icon icon="clarity:envelope-solid" />
-                    <p>data@example.com</p>
-                  </Link>
+                    <p>mijan@smsonline.org.uk</p>
+                  </a>
                 </li>
               </ul>
             </div>
