@@ -1,28 +1,15 @@
 "use client";
 import Image from "next/image";
-import type React from "react";
-
 import { motion } from "framer-motion";
 import {
-  BarChart,
-  Building,
   Globe,
-  Layers,
-  LineChart,
-  Link2,
-  Truck,
-  Workflow,
+  Landmark,
+  BookOpen,
   Briefcase,
-  Cpu,
-  Store,
-  HeartPulse,
-  Coffee,
+  Users,
   ArrowRight,
 } from "lucide-react";
-
-import { BookOpen, Landmark, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Industries from "@/components/industries";
 import { useRouter } from "next/navigation";
 
 const fadeIn = {
@@ -45,8 +32,7 @@ const staggerContainer = {
 };
 
 export default function CareerPage() {
-
-   const router = useRouter();
+  const router = useRouter();
   const navigateToContact = () => {
     router.push("/contact");
   };
@@ -54,21 +40,26 @@ export default function CareerPage() {
   const services = [
     {
       icon: <Globe className="w-8 h-8 text-blue-600" />,
+      image: "/c1.jpg", // Add the path to your image
       title: "Study Abroad Counseling",
       description: "Guidance for studying in the UK, Canada, Australia & more",
     },
     {
       icon: <Landmark className="w-8 h-8 text-blue-600" />,
+      image: "/c2.jpg", // Add the path to your image
       title: "Visa & Admissions Support",
       description: "Complete support with university applications and visas",
     },
     {
       icon: <BookOpen className="w-8 h-8 text-blue-600" />,
+      image: "/c3.jpg", // Add the path to your image
       title: "Foundation & Pathway Programs",
-      description: "Programs to prepare students for university-level education",
+      description:
+        "Programs to prepare students for university-level education",
     },
     {
       icon: <Briefcase className="w-8 h-8 text-blue-600" />,
+      image: "/c4.jpg", // Add the path to your image
       title: "Internship & Job Placement",
       description: "Helping students gain experience and start their careers",
     },
@@ -83,7 +74,7 @@ export default function CareerPage() {
   return (
     <div className="bg-secondary">
       {/* Hero Section */}
-      <section className="relative bg-primary  py-28">
+      <section className="relative bg-primary py-28">
         <div className="absolute inset-0 opacity-40">
           <Image
             src="/pattern.png"
@@ -99,25 +90,20 @@ export default function CareerPage() {
             variants={fadeIn}
             className="text-start"
           >
-            <h1 className=" max-md:text-4xl font-bold mb-6">
-              Empowering Students for Global Career Success{" "}
+            <h1 className="text-4xl font-bold mb-6">
+              Empowering Students for Global Career Success
             </h1>
-            <p className="  mx-auto mb-8">
+            <p className="mx-auto mb-8 text-lg">
               Our Student Career Service provides tailored guidance,
               internships, and global placement opportunities to help students
               unlock their full potential and build successful international
               careers.
             </p>
-            {/* <Button
-              size="lg"
-              className="group bg-secondary text-primary hover:bg-secondary/90"
-            >
-              Discover Our Approach
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button> */}
           </motion.div>
         </div>
       </section>
+
+      {/* Services Section */}
       <section className="py-20">
         <div className="container px-4 mx-auto">
           <motion.div
@@ -140,7 +126,7 @@ export default function CareerPage() {
 
             <motion.div
               variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+              className="grid grid-cols-1 md:grid-cols-2  gap-6"
             >
               {services.map((service, index) => (
                 <motion.div
@@ -149,8 +135,25 @@ export default function CareerPage() {
                   whileHover={{ y: -5 }}
                   className="border border-primary rounded-xl p-6 hover:shadow-lg transition-all"
                 >
-                  <div className="mb-4 text-primary">{service.icon}</div>
-                  <h3 className="text-lg font-semibold mb-2 text-primary">{service.title}</h3>
+                  {/* Icon Section */}
+
+                  {/* Image Section */}
+                  <div className="w-full h-[250px] relative mb-5">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-lg"
+                    />
+                  </div>
+                  <div className="flex flex-row gap-2">
+                    <div className=" text-primary">{service.icon}</div>
+
+                    <h3 className="text-lg font-semibold mb-2 text-primary">
+                      {service.title}
+                    </h3>
+                  </div>
                   <p className="text-muted-foreground">{service.description}</p>
                 </motion.div>
               ))}

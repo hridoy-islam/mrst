@@ -16,8 +16,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
-
-
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   visible: {
@@ -42,26 +40,31 @@ export default function SoftwareDevelopementPage() {
   const navigateToContact = () => {
     router.push("/contact");
   };
-const services = [
+  const services = [
     {
       icon: <Smartphone className="w-8 h-8 text-blue-600" />,
+      image: "/s1.jpg", // Path to the image
       title: "Web & Mobile App Development",
       description: "Custom apps built for performance, usability, and scale.",
     },
     {
       icon: <Settings className="w-8 h-8 text-blue-600" />,
+      image: "/s2.jpg", // Path to the image
       title: "Business Automation Tools",
       description: "Automate repetitive processes to boost efficiency.",
     },
     {
       icon: <Bot className="w-8 h-8 text-blue-600" />,
+      image: "/s3.jpg", // Path to the image
       title: "AI & Machine Learning Integration",
       description: "Smarter solutions through cutting-edge AI capabilities.",
     },
     {
       icon: <Code className="w-8 h-8 text-blue-600" />,
+      image: "/s4.jpg", // Path to the image
       title: "Industry-Specific Software",
-      description: "Tailored tools for retail, logistics, healthcare, and more.",
+      description:
+        "Tailored tools for retail, logistics, healthcare, and more.",
     },
   ];
 
@@ -134,17 +137,34 @@ const services = [
 
             <motion.div
               variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+              className="grid grid-cols-1 md:grid-cols-2  gap-6"
             >
               {services.map((service, index) => (
                 <motion.div
                   key={index}
                   variants={fadeIn}
                   whileHover={{ y: -5 }}
-                  className="border rounded-xl p-6 hover:shadow-lg transition-all border-primary"
+                  className="border border-primary rounded-xl p-6 hover:shadow-lg transition-all"
                 >
-                  <div className="mb-4 text-primary">{service.icon}</div>
-                  <h3 className="text-lg font-semibold mb-2 text-primary">{service.title}</h3>
+                  {/* Icon Section */}
+
+                  {/* Image Section */}
+                  <div className="w-full h-[250px] relative mb-5">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-lg"
+                    />
+                  </div>
+                  <div className="flex flex-row gap-2">
+                    <div className=" text-primary">{service.icon}</div>
+
+                    <h3 className="text-lg font-semibold mb-2 text-primary">
+                      {service.title}
+                    </h3>
+                  </div>
                   <p className="text-muted-foreground">{service.description}</p>
                 </motion.div>
               ))}

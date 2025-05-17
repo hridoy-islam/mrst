@@ -42,30 +42,35 @@ export default function SoftwareDevelopementPage() {
     router.push("/contact");
   };
 
-  const fundingOptions = [
-    {
-      icon: <HandCoins className="w-8 h-8 text-green-600" />,
-      title: "Start-up Capital & Seed Investment",
-      description:
-        "Initial funding for entrepreneurs and early-stage companies.",
-    },
-    {
-      icon: <BarChart2 className="w-8 h-8 text-green-600" />,
-      title: "Business Expansion Loans",
-      description: "Fuel growth with customized lending options.",
-    },
-    {
-      icon: <Handshake className="w-8 h-8 text-green-600" />,
-      title: "Joint Venture Partnerships",
-      description: "Collaborate to accelerate market entry and scaling.",
-    },
-    {
-      icon: <Layers className="w-8 h-8 text-green-600" />,
-      title: "Debt/Equity Hybrid Models",
-      description:
-        "Flexible capital structures combining loans and ownership.",
-    },
-  ];
+const fundingOptions = [
+  {
+    icon: <HandCoins className="w-8 h-8 text-green-600" />,
+    image: "/b1.jpg", 
+    title: "Start-up Capital & Seed Investment",
+    description:
+      "Initial funding for entrepreneurs and early-stage companies.",
+  },
+  {
+    icon: <BarChart2 className="w-8 h-8 text-green-600" />,
+    image: "/b2.jpg", 
+    title: "Business Expansion Loans",
+    description: "Fuel growth with customized lending options.",
+  },
+  {
+    icon: <Handshake className="w-8 h-8 text-green-600" />,
+    image: "/b3.jpg", 
+    title: "Joint Venture Partnerships",
+    description: "Collaborate to accelerate market entry and scaling.",
+  },
+  {
+    icon: <Layers className="w-8 h-8 text-green-600" />,
+    image: "/b4.jpg", 
+    title: "Debt/Equity Hybrid Models",
+    description:
+      "Flexible capital structures combining loans and ownership.",
+  },
+];
+
 
   const investorBenefits = [
     {
@@ -147,20 +152,37 @@ export default function SoftwareDevelopementPage() {
 
             <motion.div
               variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+              className="grid grid-cols-1 md:grid-cols-2  gap-6"
             >
-              {fundingOptions.map((option, index) => (
-                <motion.div
-                  key={index}
-                  variants={fadeIn}
-                  whileHover={{ y: -5 }}
-                  className="border border-primary rounded-xl p-6 hover:shadow-lg transition-all"
-                >
-                  <div className="mb-4 text-primary">{option.icon}</div>
-                  <h3 className="text-lg font-semibold mb-2 text-primary" text-primary>{option.title}</h3>
-                  <p className="text-muted-foreground">{option.description}</p>
-                </motion.div>
-              ))}
+              {fundingOptions.map((service, index) => (
+                              <motion.div
+                                key={index}
+                                variants={fadeIn}
+                                whileHover={{ y: -5 }}
+                                className="border border-primary rounded-xl p-6 hover:shadow-lg transition-all"
+                              >
+                                {/* Icon Section */}
+              
+                                {/* Image Section */}
+                                <div className="w-full h-[250px] relative mb-5">
+                                  <Image
+                                    src={service.image}
+                                    alt={service.title}
+                                    layout="fill"
+                                    objectFit="cover"
+                                    className="rounded-lg"
+                                  />
+                                </div>
+                                <div className="flex flex-row gap-2">
+                                  <div className=" text-primary">{service.icon}</div>
+              
+                                  <h3 className="text-lg font-semibold mb-2 text-primary">
+                                    {service.title}
+                                  </h3>
+                                </div>
+                                <p className="text-muted-foreground">{service.description}</p>
+                              </motion.div>
+                            ))}
             </motion.div>
           </motion.div>
         </div>

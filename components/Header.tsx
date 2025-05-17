@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { MenuIcon } from "lucide-react";
+import { MenuIcon, ChevronDown, ChevronRight } from "lucide-react";
 import logo from "@/public/mlogo.png";
 
 export default function Header() {
@@ -28,18 +28,35 @@ export default function Header() {
           name: "Real Estate Development",
           path: "/invesment-opportunities/real-estate",
         },
-        { name: "Export Import", path: "/invesment-opportunities/export-import" },
-        { name: "Student Career Service", path: "/invesment-opportunities/career" },
+        {
+          name: "Export Import",
+          path: "/invesment-opportunities/export-import",
+        },
+        {
+          name: "Student Career Service",
+          path: "/invesment-opportunities/career",
+        },
         {
           name: "Financial and Mutual Investment Opportunities",
           subItems: [
-            { name: "Forex Investment", path: "/invesment-opportunities/financial-investment/forex" },
-            { name: "Crypto Investment", path: "/invesment-opportunities/financial-investment/crypto" },
-            
+            {
+              name: "Forex Investment",
+              path: "/invesment-opportunities/financial-investment/forex",
+            },
+            {
+              name: "Crypto Investment",
+              path: "/invesment-opportunities/financial-investment/crypto",
+            },
           ],
         },
-        { name: "Software Development (Tailor-made Solution)", path: "/invesment-opportunities/software-development" },
-        { name: "Business Funding", path: "/invesment-opportunities/business-funding" },
+        {
+          name: "Software Development (Tailor-made Solution)",
+          path: "/invesment-opportunities/software-development",
+        },
+        {
+          name: "Business Funding",
+          path: "/invesment-opportunities/business-funding",
+        },
       ],
     },
     { name: "About Us", path: "/about" },
@@ -111,14 +128,24 @@ export default function Header() {
                 {item.path ? (
                   <Link
                     href={item.path}
-                    className="py-2 rounded-md transition-all duration-300 relative"
+                    className="py-2 rounded-md transition-all duration-300 relative flex items-center"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
                   </Link>
                 ) : (
-                  <span className="py-2 cursor-pointer relative">
+                  <span className="py-2 cursor-pointer relative flex items-center">
                     {item.name}
+                    {item.subItems && (
+                      <motion.span
+                        initial={{ rotate: 0 }}
+                        whileHover={{ rotate: 180 }}
+                        transition={{ duration: 0.2 }}
+                        className="ml-1"
+                      >
+                        <ChevronDown className="w-4 h-4" />
+                      </motion.span>
+                    )}
                   </span>
                 )}
 
@@ -128,9 +155,17 @@ export default function Header() {
                     {item.subItems.map((sub, i) =>
                       sub.subItems ? (
                         <div key={i} className="relative group/item">
-                          <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer group-hover/item:bg-primary group-hover/item:text-white transition-all duration-200">
+                          <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer group-hover/item:bg-primary group-hover/item:text-white transition-all duration-200 flex items-center justify-between">
                             {sub.name}
+                            <motion.span
+                              initial={{ x: 0 }}
+                              whileHover={{ x: 5 }}
+                              transition={{ type: "spring", stiffness: 300 }}
+                            >
+                              <ChevronRight className="w-4 h-4 ml-2" />
+                            </motion.span>
                           </div>
+
                           <div className="absolute left-full top-0 bg-white shadow-lg hidden group-hover/item:block min-w-[220px] z-50">
                             {sub.subItems.map((deepSub, j) => (
                               <Link
@@ -191,9 +226,18 @@ export default function Header() {
                           openSubMenuIndex === index ? null : index
                         )
                       }
-                      className="text-white font-semibold py-2 w-full text-left"
+                      className="text-white font-semibold py-2 w-full text-left flex items-center"
                     >
                       {item.name}
+                      <motion.span
+                        animate={{
+                          rotate: openSubMenuIndex === index ? 180 : 0,
+                        }}
+                        transition={{ duration: 0.2 }}
+                        className="ml-1"
+                      >
+                        <ChevronDown className="w-4 h-4" />
+                      </motion.span>
                     </button>
                     <AnimatePresence>
                       {openSubMenuIndex === index && (
@@ -215,9 +259,21 @@ export default function Header() {
                                         prev[index] === subIdx ? null : subIdx,
                                     }));
                                   }}
-                                  className="font-medium py-1 w-full text-left"
+                                  className=" font-medium py-1 w-full text-left flex items-center"
                                 >
                                   {sub.name}
+                                  <motion.span
+                                    animate={{
+                                      rotate:
+                                        openDeepSubMenuIndices[index] === subIdx
+                                          ? 90
+                                          : 0,
+                                    }}
+                                    transition={{ duration: 0.2 }}
+                                    className="ml-1"
+                                  >
+                                    <ChevronRight className="w-4 h-4" />
+                                  </motion.span>
                                 </button>
                                 <AnimatePresence>
                                   {openDeepSubMenuIndices[index] === subIdx && (
