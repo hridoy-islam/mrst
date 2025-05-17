@@ -48,7 +48,7 @@ export default function HowWeDo() {
   }
 
   return (
-    <section className="relative py-32 overflow-hidden bg-gradient-to-b from-[#5E9EC5] to-secondary">
+    <section className="relative py-32 overflow-hidden bg-gradient-to-b from-[#C9E1F1] to-secondary">
       {/* Decorative shapes */}
       <div className="absolute top-0 right-0 -mt-16 -mr-16">
         <svg width="404" height="404" fill="none" viewBox="0 0 404 404" aria-hidden="true" className="text-primary/10">
@@ -143,11 +143,11 @@ export default function HowWeDo() {
               <h1 className=" text-primary font-extrabold">
                 How We Do
               </h1>
-              <p className="mt-4 text-lg text-gray-300">
+              <p className="mt-4 text-lg text-black">
                 Supported by our parent company's 15+ years of expertise in education, real estate, and recruitment, we
                 deliver innovation, reliability, and excellence in every sector we engage with.
               </p>
-              <p className="mt-4 text-lg text-gray-300">
+              <p className="mt-4 text-lg text-black">
                 At MRST CONSULTANCY L.L.C-FZ, we are committed to sustainable investments, global partnerships, and
                 service excellence, ensuring long-term success for our clients and stakeholders.
               </p>

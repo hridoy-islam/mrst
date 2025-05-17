@@ -86,7 +86,7 @@ const industries = [
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="mt-16 grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4"
+        className="mt-16 grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-3"
       >
         {industries.map((industry, index) => (
           <motion.div

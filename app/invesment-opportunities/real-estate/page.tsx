@@ -21,6 +21,37 @@ const fadeIn = {
 export default function ExportEmportPage() {
   const router = useRouter();
 
+  const features = [
+    {
+      title: "Less Time in the Chair",
+      desc: "Justo non dolor lectus ac egestas dictum. Leo tempus nec amet fringilla. Eu semper velit tristique semper. Laoreet mi lacus nisi diam in.",
+      image: "/state1.jpg",
+      bgColor: "bg-blue-50",
+      iconColor: "text-blue-500",
+    },
+    {
+      title: "More Efficient",
+      desc: "Justo non dolor lectus ac egestas dictum. Leo tempus nec amet fringilla. Eu semper velit tristique semper. Laoreet mi lacus nisi diam in.",
+      image: "/state2.jpg",
+      bgColor: "bg-purple-50",
+      iconColor: "text-purple-500",
+    },
+    {
+      title: "Longer Lasting",
+      desc: "Justo non dolor lectus ac egestas dictum. Leo tempus nec amet fringilla. Eu semper velit tristique semper. Laoreet mi lacus nisi diam in.",
+      image: "/state3.jpg",
+      bgColor: "bg-red-50",
+      iconColor: "text-red-500",
+    },
+    {
+      title: "More Comfortable Experience",
+      desc: "Justo non dolor lectus ac egestas dictum. Leo tempus nec amet fringilla. Eu semper velit tristique semper. Laoreet mi lacus nisi diam in.",
+      image: "/state4.jpg",
+      bgColor: "bg-green-50",
+      iconColor: "text-green-500",
+    },
+  ];
+
   return (
     <div className="bg-background">
       {/* Hero Section */}
@@ -176,55 +207,62 @@ export default function ExportEmportPage() {
           viewport={{ once: true }}
           variants={fadeIn}
           custom={3}
-          className="space-y-10 py-12 container mx-auto px-4"
+          className="py-16 bg-blue-50/50"
         >
-          <h2 className="text-4xl font-semibold text-center text-primary">
-            Why Invest With Us?
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                title: "High-Yield, Low-Volatility",
-                desc: "Real estate offers stable, long-term returns in any market condition.",
-                image: "/state1.jpg",
-              },
-              {
-                title: "Expert Project Management",
-                desc: "Our team ensures every phase of the project is delivered on time and on budget.",
-                image: "/state6.jpg",
-              },
-              {
-                title: "Transparent Financial Reporting",
-                desc: "We provide full visibility on performance, returns, and costs.",
-                image: "/state7.jpg",
-              },
-              {
-                title: "Tailored Exit Strategies",
-                desc: "We customize investment exits around your risk and return preferences.",
-                image: "/state8.jpg",
-              },
-            ].map((item, i) => (
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col items-center mb-12">
+              <h2 className="text-4xl font-bold text-primary mb-2">
+                Why Choose Us?
+              </h2>
+              <div className="w-24 h-1 bg-orange-500"></div>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                {features.map((item, i) => (
+                  <motion.div
+                    key={item.title}
+                    variants={fadeIn}
+                    custom={i}
+                    className={`flex items-start p-6 rounded-xl shadow-lg border border-primary ${item.bgColor}`}
+                  >
+                    <div className="flex-shrink-0 ">
+                      {/* <div
+                        className={`w-16 h-16 rounded-tl-lg rounded-br-lg ${item.bgColor} flex items-center justify-center`}
+                      >
+                        <Image
+                          src={item.image || "/placeholder.svg"}
+                          alt={item.title}
+                          width={100}
+                          height={60}
+                          className="object-contain"
+                        />
+                      </div> */}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold mb-2 text-primary">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-500 text-sm">{item.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
               <motion.div
-                key={item.title}
                 variants={fadeIn}
-                custom={i}
-                className="flex flex-col md:flex-row bg-gray-50 rounded-xl overflow-hidden shadow-md"
+                custom={1}
+                className="relative overflow-hidden shadow-lg rounded-tl-3xl rounded-br-3xl w-[450px]"
               >
                 <Image
-                  src={item.image}
-                  alt={item.title}
-                  width={300}
-                  height={300}
-                  className="w-full md:w-1/2 h-56 object-cover"
+                  src="/state3.jpg"
+                  alt="Dental office"
+                  width={500}
+                  height={600}
+                  className="w-full h-full object-cover rounded-tl-5xl rounded-br-3xl"
                 />
-                <div className="p-6">
-                  <h3 className="text-lg font-bold mb-2 text-primary ">
-                    {item.title}
-                  </h3>
-                  <p className="text-gray-600">{item.desc}</p>
-                </div>
               </motion.div>
-            ))}
+            </div>
           </div>
         </motion.section>
       </div>

@@ -237,10 +237,10 @@ export default function ExportEmportPage() {
             </p>
             <Button
               size="lg"
-              className="bg-primary text-white hover:bg-primary/90 px-6 py-3 rounded-full font-semibold transition-transform hover:scale-105"
+              className="bg-primary text-white hover:bg-primary/90 px-6 py-3  font-semibold transition-transform hover:scale-105"
               onClick={navigateToContact}
             >
-              Contact Our Team
+              Contact Us
             </Button>
           </div>
         </div>

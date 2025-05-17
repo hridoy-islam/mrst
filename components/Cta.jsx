@@ -6,7 +6,7 @@ export default function Cta() {
       <p className="text-2xl">
         Get help with your Canada Life products and services.
       </p>
-      <Button className="bg-primary text-lightbg text-xl px-8 py-6 rounded-sm">
+      <Button className="bg-primary text-lightbg text-xl px-8 py-6 ">
         Contact Us
       </Button>
     </div>

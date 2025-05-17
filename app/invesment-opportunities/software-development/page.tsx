@@ -251,10 +251,10 @@ export default function SoftwareDevelopementPage() {
 
       <Button
         size="lg"
-        className="group bg-primary text-blue-800 hover:bg-primary/90 px-6 py-3 rounded-full font-semibold transition-transform hover:scale-105"
+        className="group bg-primary text-blue-800 hover:bg-primary/90 px-6 py-3  font-semibold transition-transform hover:scale-105"
         onClick={navigateToContact}
       >
-        Contact Our Developers
+        Contact Us
       </Button>
     </motion.div>
   </div>
