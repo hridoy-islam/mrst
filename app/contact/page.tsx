@@ -75,9 +75,9 @@ export default function ContactPage() {
             className="object-cover"
           />
         </div>
-        <div className="container py-28  relative z-10">
+        <div className="container py-28 mt-8 relative z-10">
           <motion.div initial="hidden" animate="visible" className="max-w-3xl">
-            <h1 className=" font-bold mb-6">Contact Us</h1>
+            <h1 className=" font-bold ">Contact Us</h1>
           </motion.div>
         </div>
       </section>

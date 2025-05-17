@@ -86,17 +86,17 @@ export default function SoftwareDevelopementPage() {
             className="object-cover"
           />
         </div>
-        <div className="w-full container">
+        <div className="w-full container ">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="text-start"
+            className="text-start mt-8"
           >
             <h1 className="max-md:text-4xl font-bold mb-6">
               Building Intelligent Software That Powers Your Digital Future
             </h1>
-            <p className="mx-auto mb-8">
+            <p className="">
               From custom applications to enterprise-grade platforms, we deliver
               innovative software solutions tailored to your business goals.
               Harness cutting-edge technologies and expert development practices
@@ -225,31 +225,41 @@ export default function SoftwareDevelopementPage() {
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-700">
-        <div className="container px-4 mx-auto text-center">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            className="text-white max-w-3xl mx-auto space-y-6"
-          >
-            <h2 className="text-3xl font-bold text-primary">
-              Ready to Build the Future With Us?
-            </h2>
-            <p className="text-black text-lg">
-              Let’s develop scalable software tailored to your business growth.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="group bg-primary text-blue-800 hover:bg-primary/90"
-                onClick={navigateToContact}
-              >
-                Contact Our Developers
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+  <div className="container px-4 mx-auto flex flex-col md:flex-row items-center gap-8">
+    {/* Image Section */}
+    <div className="w-full md:w-1/2">
+      <img
+        src="/s2.jpg"             /* swap with your preferred software image */
+        alt="Software Development"
+        className="w-full h-full object-cover rounded-lg shadow-lg"
+      />
+    </div>
+
+    {/* Text / CTA Section */}
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={fadeIn}
+      className="w-full md:w-1/2 text-black space-y-6"
+    >
+      <h2 className="text-3xl font-bold">
+        Ready to Build the <span className="text-primary">Future</span> With Us?
+      </h2>
+      <p className="text-lg ">
+        Let’s develop scalable software tailored to your business growth.
+      </p>
+
+      <Button
+        size="lg"
+        className="group bg-primary text-blue-800 hover:bg-primary/90 px-6 py-3 rounded-full font-semibold transition-transform hover:scale-105"
+        onClick={navigateToContact}
+      >
+        Contact Our Developers
+      </Button>
+    </motion.div>
+  </div>
+</section>
+
     </div>
   );
 }

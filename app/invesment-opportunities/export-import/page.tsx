@@ -10,6 +10,7 @@ import {
   Handshake,
   Layers,
   ArrowRight,
+  ArrowUp,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
@@ -56,12 +57,12 @@ export default function ExportEmportPage() {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="text-start"
+            className="text-start mt-8"
           >
             <h1 className="max-md:text-4xl font-extrabold mb-6 text-white">
               Driving Global Trade Through Seamless Export-Import Solutions
             </h1>
-            <p className="mx-auto mb-8 text-lg text-gray-200">
+            <p className="mx-auto  text-lg text-gray-200">
               Our export-import services connect businesses to international
               markets with expert logistics, compliance, and global partnerships
               to ensure smooth, secure, and scalable cross-border operations.
@@ -76,7 +77,7 @@ export default function ExportEmportPage() {
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
-            className="space-y-20"
+            className="space-y-20 "
           >
             <motion.div
               variants={fadeIn}
@@ -127,25 +128,30 @@ export default function ExportEmportPage() {
                 <motion.div
                   key={index}
                   variants={fadeIn}
-                  whileHover={{ y: -8 }}
-                  className="border border-primary rounded-xl p-8 hover:shadow-2xl transition-all"
+                  whileHover={{ y: -5 }}
+                  className="border border-primary rounded-xl p-6 hover:shadow-lg transition-all"
                 >
-                  <div className="mb-6 text-primary">{service.icon}</div>
-                  <h3 className="text-xl font-semibold text-primary mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted-foreground">{service.description}</p>
-                  <div className="flex justify-center mt-6">
-                    <div className="w-full h-[250px] relative">
-                      <Image
-                        src={service.image}
-                        alt={service.title}
-                        layout="fill"
-                        objectFit="cover"
-                        className="rounded-lg"
-                      />
-                    </div>
+                  {/* Image Section */}
+                  <div className="w-full h-[250px] relative mb-5">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-lg"
+                    />
                   </div>
+
+                  {/* Icon + Title */}
+                  <div className="flex flex-row items-center gap-2 mb-2">
+                    <div className="text-primary">{service.icon}</div>
+                    <h3 className="text-lg font-semibold text-primary">
+                      {service.title}
+                    </h3>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-muted-foreground">{service.description}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -208,32 +214,35 @@ export default function ExportEmportPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-800 to-blue-600">
-        <div className="container px-4 mx-auto text-center">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            className="text-white max-w-4xl mx-auto space-y-6"
-          >
-            <h2 className="text-3xl font-bold text-primary">
-              Ready to Expand Your Global Reach?
+      <section className="py-20 bg-white">
+        <div className="container px-4 mx-auto flex flex-col md:flex-row items-center gap-8">
+          {/* Image Section */}
+          <div className="w-full md:w-1/2">
+            <img
+              src="/e1.jpg"
+              alt="export"
+              className="w-full h-full object-cover rounded-lg shadow-md"
+            />
+          </div>
+
+          {/* Text Section */}
+          <div className="w-full md:w-1/2">
+            <h2 className="text-3xl font-bold mb-4">
+              Ready to Expand Your <span className="text-primary">Global</span>{" "}
+              Reach?
             </h2>
-            <p className="text-black text-lg">
-              Let our experts guide you through international market
-              opportunities with confidence.
+            <p className="text-lg text-gray-600 mb-6">
+              Maximize your online potential. Our expert services optimize every
+              click into a loyal customer, driving business growth.
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button
-                size="lg"
-                className="group bg-primary text-blue-800 hover:bg-primary/90"
-                onClick={navigateToContact}
-              >
-                Contact Our Team
-              </Button>
-            </div>
-          </motion.div>
+            <Button
+              size="lg"
+              className="bg-primary text-white hover:bg-primary/90 px-6 py-3 rounded-full font-semibold transition-transform hover:scale-105"
+              onClick={navigateToContact}
+            >
+              Contact Our Team
+            </Button>
+          </div>
         </div>
       </section>
     </div>

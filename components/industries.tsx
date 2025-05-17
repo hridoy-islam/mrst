@@ -13,40 +13,33 @@ import {
 } from "lucide-react"
 
 export default function Industries() {
-  const industries = [
-    {
-      icon: <MonitorIcon className="h-6 w-6" />,
-      name: "Technology & Innovation",
-    },
-    {
-      icon: <FactoryIcon className="h-6 w-6" />,
-      name: "Manufacturing & Industrial",
-    },
-    {
-      icon: <ShoppingBagIcon className="h-6 w-6" />,
-      name: "Retail & Consumer Goods",
-    },
-    {
-      icon: <GraduationCapIcon className="h-6 w-6" />,
-      name: "Education & Training",
-    },
-    {
-      icon: <HeartPulseIcon className="h-6 w-6" />,
-      name: "Healthcare & Life Sciences",
-    },
-    {
-      icon: <BuildingIcon className="h-6 w-6" />,
-      name: "Real Estate & Construction",
-    },
-    // {
-    //   icon: <LandmarkIcon className="h-6 w-6" />,
-    //   name: "Financial Services",
-    // },
-    // {
-    //   icon: <LeafIcon className="h-6 w-6" />,
-    //   name: "Agriculture & Food Processing",
-    // },
-  ]
+const industries = [
+  {
+    icon: <BuildingIcon className="h-6 w-6" />,
+    name: "Real Estate Development",
+  },
+  {
+    icon: <ShoppingBagIcon className="h-6 w-6" />,
+    name: "Export Import",
+  },
+  {
+    icon: <GraduationCapIcon className="h-6 w-6" />,
+    name: "Student Career Service",
+  },
+  {
+    icon: <HeartPulseIcon className="h-6 w-6" />,
+    name: "Financial and Mutual Investment Opportunities",
+  },
+  {
+    icon: <MonitorIcon className="h-6 w-6" />,
+    name: "Software Development",
+  },
+  {
+    icon: <FactoryIcon className="h-6 w-6" />,
+    name: "Business Funding",
+  },
+];
+
 
   const containerVariants = {
     hidden: { opacity: 0 },

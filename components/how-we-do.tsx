@@ -48,7 +48,7 @@ export default function HowWeDo() {
   }
 
   return (
-    <section className="relative py-32 overflow-hidden bg-gradient-to-b from-primary/20 to-secondary">
+    <section className="relative py-32 overflow-hidden bg-gradient-to-b from-[#5E9EC5] to-secondary">
       {/* Decorative shapes */}
       <div className="absolute top-0 right-0 -mt-16 -mr-16">
         <svg width="404" height="404" fill="none" viewBox="0 0 404 404" aria-hidden="true" className="text-primary/10">
@@ -59,6 +59,7 @@ export default function HowWeDo() {
           </defs>
           <rect width="404" height="404" fill="url(#pattern-squares)" />
         </svg>
+      
       </div>
 
       <div className="absolute bottom-0 max-lg:hidden left-0 -mb-16 -ml-16 transform rotate-180">
@@ -139,7 +140,7 @@ export default function HowWeDo() {
               transition={{ duration: 0.6 }}
             >
               
-              <h1 className=" text-white font-extrabold">
+              <h1 className=" text-primary font-extrabold">
                 How We Do
               </h1>
               <p className="mt-4 text-lg text-gray-300">
@@ -174,7 +175,7 @@ export default function HowWeDo() {
                     <h3 className="text-lg font-semibold text-primary transition-colors duration-300">
                       {feature.title}
                     </h3>
-                    <p className="mt-1 text-sm text-gray-400">{feature.description}</p>
+                    <p className="mt-1 text-sm text-black">{feature.description}</p>
                   </div>
                 </motion.div>
               ))}

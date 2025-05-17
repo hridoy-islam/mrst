@@ -1,10 +1,9 @@
 "use client";
-
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { MenuIcon, ChevronDown, ChevronRight } from "lucide-react";
+import { MenuIcon, ChevronDown, ChevronRight, X } from "lucide-react";
 import logo from "@/public/mlogo.png";
 
 export default function Header() {
@@ -15,7 +14,8 @@ export default function Header() {
   const [openDeepSubMenuIndices, setOpenDeepSubMenuIndices] = useState<
     Record<number, number | null>
   >({});
-
+  const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [activeMenuIndex, setActiveMenuIndex] = useState<number | null>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const desktopMenuRef = useRef<HTMLDivElement>(null);
 
@@ -81,9 +81,7 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
       if (Math.abs(currentScrollY - lastScrollY) < 10) return;
-
       setHideNavbar(currentScrollY > lastScrollY && currentScrollY > 50);
       setLastScrollY(currentScrollY);
     };
@@ -124,6 +122,16 @@ export default function Header() {
                 key={index}
                 whileTap={{ scale: 0.95 }}
                 className="relative group"
+                onMouseEnter={() => {
+                  if (hoverTimeout) clearTimeout(hoverTimeout);
+                  setActiveMenuIndex(index);
+                }}
+                onMouseLeave={() => {
+                  const timeout = setTimeout(() => {
+                    setActiveMenuIndex(null);
+                  }, 300); // 300ms delay before hiding
+                  setHoverTimeout(timeout);
+                }}
               >
                 {item.path ? (
                   <Link
@@ -139,7 +147,9 @@ export default function Header() {
                     {item.subItems && (
                       <motion.span
                         initial={{ rotate: 0 }}
-                        whileHover={{ rotate: 180 }}
+                        animate={{
+                          rotate: activeMenuIndex === index ? 180 : 0,
+                        }}
                         transition={{ duration: 0.2 }}
                         className="ml-1"
                       >
@@ -150,46 +160,71 @@ export default function Header() {
                 )}
 
                 {/* Dropdown */}
-                {item.subItems && (
-                  <div className="absolute left-0 top-full mt-2 bg-white text-black rounded shadow-xl hidden group-hover:block z-50 min-w-[250px]">
-                    {item.subItems.map((sub, i) =>
-                      sub.subItems ? (
-                        <div key={i} className="relative group/item">
-                          <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer group-hover/item:bg-primary group-hover/item:text-white transition-all duration-200 flex items-center justify-between">
-                            {sub.name}
-                            <motion.span
-                              initial={{ x: 0 }}
-                              whileHover={{ x: 5 }}
-                              transition={{ type: "spring", stiffness: 300 }}
-                            >
-                              <ChevronRight className="w-4 h-4 ml-2" />
-                            </motion.span>
-                          </div>
+               {/* Dropdown for Desktop */}
+{item.subItems && (
+  <div
+    className={`absolute left-0 top-full mt-2 bg-white text-black rounded shadow-xl ${
+      activeMenuIndex === index ? "block" : "hidden"
+    } z-50 min-w-[250px]`}
+    onMouseEnter={() => {
+      if (hoverTimeout) clearTimeout(hoverTimeout);
+      setActiveMenuIndex(index);
+    }}
+    onMouseLeave={() => {
+      const timeout = setTimeout(() => {
+        setActiveMenuIndex(null);
+      }, 300);
+      setHoverTimeout(timeout);
+    }}
+  >
+    {item.subItems.map((sub, i) =>
+      sub.subItems ? (
+        <div
+          key={i}
+          className="relative group/item"
+          onMouseEnter={() => setOpenDeepSubMenuIndices((prev) => ({ ...prev, [index]: i }))}
+          onMouseLeave={() => setOpenDeepSubMenuIndices((prev) => ({ ...prev, [index]: null }))}
+        >
+          <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer group-hover/item:bg-primary group-hover/item:text-white transition-all duration-200 flex items-center justify-between">
+            {sub.name}
+            <motion.span
+              initial={{ x: 0 }}
+              whileHover={{ x: 5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <ChevronRight className="w-4 h-4 ml-2" />
+            </motion.span>
+          </div>
+          <div
+            className="absolute left-full top-0 bg-white shadow-lg min-w-[220px] z-50"
+            style={{
+              display: activeMenuIndex === index && openDeepSubMenuIndices[index] === i ? "block" : "none",
+            }}
+          >
+            {sub.subItems.map((deepSub, j) => (
+              <Link
+                key={j}
+                href={deepSub.path}
+                className="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200"
+              >
+                {deepSub.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      ) : (
+        <Link
+          key={i}
+          href={sub.path}
+          className="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200"
+        >
+          {sub.name}
+        </Link>
+      )
+    )}
+  </div>
+)}
 
-                          <div className="absolute left-full top-0 bg-white shadow-lg hidden group-hover/item:block min-w-[220px] z-50">
-                            {sub.subItems.map((deepSub, j) => (
-                              <Link
-                                key={j}
-                                href={deepSub.path}
-                                className="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200"
-                              >
-                                {deepSub.name}
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      ) : (
-                        <Link
-                          key={i}
-                          href={sub.path}
-                          className="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200"
-                        >
-                          {sub.name}
-                        </Link>
-                      )
-                    )}
-                  </div>
-                )}
 
                 <div className="absolute bottom-0 left-0 w-full h-[3px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </motion.div>
@@ -211,11 +246,10 @@ export default function Header() {
           >
             <button
               onClick={() => setIsMenuOpen(false)}
-              className="self-end text-2xl mb-6"
+              className="self-end text-2xl mb-6 text-white"
             >
-              ✕
+              <X className="w-6 h-6" />
             </button>
-
             {menuItems.map((item, index) => (
               <div key={index} className="mb-2">
                 {item.subItems ? (
@@ -259,7 +293,7 @@ export default function Header() {
                                         prev[index] === subIdx ? null : subIdx,
                                     }));
                                   }}
-                                  className=" font-medium py-1 w-full text-left flex items-center"
+                                  className="font-medium py-1 w-full text-left flex items-center"
                                 >
                                   {sub.name}
                                   <motion.span

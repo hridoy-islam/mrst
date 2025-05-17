@@ -72,7 +72,7 @@ export default function GrowthProjections() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <Card className="h-full border-none shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group bg-white/80 backdrop-blur-lg">
+            <Card className="h-full border-none shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group bg-white/60 backdrop-blur-lg">
               <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-full -z-10 group-hover:bg-primary/10 transition-colors duration-300"></div>
               <CardHeader className="flex flex-row items-center justify-between pb-2">
                 <div className="flex items-center space-x-4">

@@ -84,7 +84,7 @@ export default function FuturePlans() {
           <h2 className=" font-bold mb-6 text-primary ">
             Future Plans
           </h2>
-          <p className=" max-w-3xl mx-auto text-primary">
+          <p className=" max-w-3xl mx-auto text-black">
             MRST CONSULTANCY L.L.C-FZ is dedicated to expanding across multiple industries with a strategic focus on
             growth and innovation.
           </p>

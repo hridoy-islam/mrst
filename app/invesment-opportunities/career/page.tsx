@@ -88,12 +88,12 @@ export default function CareerPage() {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="text-start"
+            className="text-start mt-8"
           >
-            <h1 className="text-4xl font-bold mb-6">
+            <h1 className="text-6xl font-bold mb-6">
               Empowering Students for Global Career Success
             </h1>
-            <p className="mx-auto mb-8 text-lg">
+            <p className="mx-auto  text-lg">
               Our Student Career Service provides tailored guidance,
               internships, and global placement opportunities to help students
               unlock their full potential and build successful international
@@ -212,33 +212,41 @@ export default function CareerPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-800 to-blue-600">
-        <div className="container px-4 mx-auto text-center">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            className="text-white max-w-3xl mx-auto space-y-6"
-          >
-            <h2 className="text-3xl font-bold text-primary">
-              Ready to Empower Students Worldwide?
-            </h2>
-            <p className="text-black text-lg">
-              Join us in building global academic and career success stories.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="group bg-primary text-blue-800 hover:bg-primary/90"
-                onClick={navigateToContact}
-              >
-                Contact Our Team
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+    <section className="py-20 bg-gradient-to-r from-blue-800 to-blue-600">
+  <div className="container px-4 mx-auto flex flex-col md:flex-row items-center gap-8">
+    {/* Image Section */}
+    <div className="w-full md:w-1/2">
+      <img
+        src="/c1.jpg"
+        alt="empower students"
+        className="w-full h-full object-cover rounded-lg shadow-lg"
+      />
+    </div>
+
+    {/* Text Section */}
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={fadeIn}
+      className="w-full md:w-1/2 text-white space-y-6"
+    >
+      <h2 className="text-3xl font-bold text-black">
+        Ready to Empower <span className="text-primary">Students</span> Worldwide?
+      </h2>
+      <p className="text-lg text-black/80">
+        Join us in building global academic and career success stories.
+      </p>
+      <Button
+        size="lg"
+        className="bg-primary text-blue-800 hover:bg-primary/90 px-6 py-3 rounded-full font-semibold transition-transform hover:scale-105"
+        onClick={navigateToContact}
+      >
+        Contact Our Team
+      </Button>
+    </motion.div>
+  </div>
+</section>
+
     </div>
   );
 }

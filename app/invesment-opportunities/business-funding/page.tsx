@@ -36,41 +36,38 @@ const staggerContainer = {
 };
 
 export default function SoftwareDevelopementPage() {
-
   const router = useRouter();
   const navigateToContact = () => {
     router.push("/contact");
   };
 
-const fundingOptions = [
-  {
-    icon: <HandCoins className="w-8 h-8 text-green-600" />,
-    image: "/b1.jpg", 
-    title: "Start-up Capital & Seed Investment",
-    description:
-      "Initial funding for entrepreneurs and early-stage companies.",
-  },
-  {
-    icon: <BarChart2 className="w-8 h-8 text-green-600" />,
-    image: "/b2.jpg", 
-    title: "Business Expansion Loans",
-    description: "Fuel growth with customized lending options.",
-  },
-  {
-    icon: <Handshake className="w-8 h-8 text-green-600" />,
-    image: "/b3.jpg", 
-    title: "Joint Venture Partnerships",
-    description: "Collaborate to accelerate market entry and scaling.",
-  },
-  {
-    icon: <Layers className="w-8 h-8 text-green-600" />,
-    image: "/b4.jpg", 
-    title: "Debt/Equity Hybrid Models",
-    description:
-      "Flexible capital structures combining loans and ownership.",
-  },
-];
-
+  const fundingOptions = [
+    {
+      icon: <HandCoins className="w-8 h-8 text-green-600" />,
+      image: "/b1.jpg",
+      title: "Start-up Capital & Seed Investment",
+      description:
+        "Initial funding for entrepreneurs and early-stage companies.",
+    },
+    {
+      icon: <BarChart2 className="w-8 h-8 text-green-600" />,
+      image: "/b2.jpg",
+      title: "Business Expansion Loans",
+      description: "Fuel growth with customized lending options.",
+    },
+    {
+      icon: <Handshake className="w-8 h-8 text-green-600" />,
+      image: "/b3.jpg",
+      title: "Joint Venture Partnerships",
+      description: "Collaborate to accelerate market entry and scaling.",
+    },
+    {
+      icon: <Layers className="w-8 h-8 text-green-600" />,
+      image: "/b4.jpg",
+      title: "Debt/Equity Hybrid Models",
+      description: "Flexible capital structures combining loans and ownership.",
+    },
+  ];
 
   const investorBenefits = [
     {
@@ -87,8 +84,6 @@ const fundingOptions = [
     },
   ];
 
-
-  
   return (
     <div className="bg-secondary">
       {/* Hero Section */}
@@ -106,7 +101,7 @@ const fundingOptions = [
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="text-start"
+            className="text-start mt-8"
           >
             <h1 className="max-md:text-4xl font-bold mb-6">
               Empowering Ambitions with Strategic Business Funding Solutions
@@ -146,7 +141,8 @@ const fundingOptions = [
                 Funding Options
               </h2>
               <p className="text-muted-foreground">
-                Choose from our strategic financial models to support your journey
+                Choose from our strategic financial models to support your
+                journey
               </p>
             </motion.div>
 
@@ -155,34 +151,34 @@ const fundingOptions = [
               className="grid grid-cols-1 md:grid-cols-2  gap-6"
             >
               {fundingOptions.map((service, index) => (
-                              <motion.div
-                                key={index}
-                                variants={fadeIn}
-                                whileHover={{ y: -5 }}
-                                className="border border-primary rounded-xl p-6 hover:shadow-lg transition-all"
-                              >
-                                {/* Icon Section */}
-              
-                                {/* Image Section */}
-                                <div className="w-full h-[250px] relative mb-5">
-                                  <Image
-                                    src={service.image}
-                                    alt={service.title}
-                                    layout="fill"
-                                    objectFit="cover"
-                                    className="rounded-lg"
-                                  />
-                                </div>
-                                <div className="flex flex-row gap-2">
-                                  <div className=" text-primary">{service.icon}</div>
-              
-                                  <h3 className="text-lg font-semibold mb-2 text-primary">
-                                    {service.title}
-                                  </h3>
-                                </div>
-                                <p className="text-muted-foreground">{service.description}</p>
-                              </motion.div>
-                            ))}
+                <motion.div
+                  key={index}
+                  variants={fadeIn}
+                  whileHover={{ y: -5 }}
+                  className="border border-primary rounded-xl p-6 hover:shadow-lg transition-all"
+                >
+                  {/* Icon Section */}
+
+                  {/* Image Section */}
+                  <div className="w-full h-[250px] relative mb-5">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      layout="fill"
+                      objectFit="cover"
+                      className="rounded-lg"
+                    />
+                  </div>
+                  <div className="flex flex-row gap-2">
+                    <div className=" text-primary">{service.icon}</div>
+
+                    <h3 className="text-lg font-semibold mb-2 text-primary">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <p className="text-muted-foreground">{service.description}</p>
+                </motion.div>
+              ))}
             </motion.div>
           </motion.div>
         </div>
@@ -238,23 +234,39 @@ const fundingOptions = [
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-green-800 to-green-700">
-        <div className="container px-4 mx-auto text-center">
+        <div className="container px-4 mx-auto flex flex-col md:flex-row items-center gap-8">
+          {/* Image Section */}
+          <div className="w-full md:w-1/2">
+            <img
+              src="/b2.jpg" /* Use an appropriate image for investment */
+              alt="Investment Opportunities"
+              className="w-full h-full object-cover rounded-lg shadow-lg"
+            />
+          </div>
+
+          {/* Text / CTA Section */}
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="text-white max-w-3xl mx-auto space-y-6"
+            className="w-full md:w-1/2 text-black space-y-6"
           >
-            <h2 className="text-3xl font-bold text-primary">
-              Ready to Invest or Partner with Us?
+            <h2 className="text-3xl font-bold">
+              Ready to <span className="text-primary">Invest</span> or Partner
+              with Us?
             </h2>
-            <p className="text-lg text-black">
-              Whether you’re an experienced investor or exploring new opportunities, we welcome you to join our network.
+            <p className="text-lg ">
+              Whether you’re an experienced investor or exploring new
+              opportunities, we welcome you to join our network.
             </p>
-            <p className="text-lg text-black"> Contact us today to schedule a free investment consultation or explore our current projects.</p>
+            <p className="text-lg ">
+              Contact us today to schedule a free investment consultation or
+              explore our current projects.
+            </p>
+
             <Button
               size="lg"
-              className="group bg-primary text-black hover:bg-primary/90"
+              className="group bg-primary text-black hover:bg-primary/90 px-6 py-3 rounded-full font-semibold transition-transform hover:scale-105"
               onClick={navigateToContact}
             >
               Schedule Consultation

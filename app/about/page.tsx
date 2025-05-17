@@ -73,7 +73,7 @@ export default function AboutUs() {
           />
         </div>
         <div className="container py-28  relative z-10">
-          <motion.div initial="hidden" animate="visible" className="max-w-4xl">
+          <motion.div initial="hidden" animate="visible" className="max-w-4xl mt-12">
             <h1 className="text-secondary font-bold mb-4">MRST Consultancy</h1>
             <h3 className="text-secondary font-normal ">
               Your trusted partner for global business connections and

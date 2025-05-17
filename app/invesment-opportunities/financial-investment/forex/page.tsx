@@ -91,7 +91,7 @@ const investmentOpportunities = [
             className="object-cover"
           />
         </div>
-        <div className="w-full container">
+        <div className="w-full container mt-8">
           <motion.div initial="hidden" animate="visible" className="text-start">
             <h1 className="max-md:text-4xl font-bold mb-6">
               Unlock Global Opportunities with Expert Forex Solutions
@@ -219,33 +219,44 @@ const investmentOpportunities = [
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-800 to-blue-700">
-        <div className="container px-4 mx-auto text-center">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            className="text-white max-w-3xl mx-auto space-y-6"
-          >
-            <h2 className="text-3xl font-bold text-primary">
-              Ready to Start Investing in Forex?
-            </h2>
-            <p className="text-lg text-black">
-              Join our network of investors and take part in high-return Forex investments.
-            </p>
-            <p className="text-lg text-black">
-              Contact us today to schedule a consultation and start your Forex investment journey.
-            </p>
-            <Button
-              size="lg"
-              className="group bg-primary text-black hover:bg-primary/90"
-              onClick={navigateToContact}
-            >
-              Schedule Consultation
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-          </motion.div>
-        </div>
-      </section>
+  <div className="container px-4 mx-auto flex flex-col md:flex-row items-center gap-8">
+    {/* Image Section */}
+    <div className="w-full md:w-1/2">
+      <img
+        src="/f2.jpg"
+        alt="Forex Investment"
+        className="w-full h-full object-cover rounded-lg shadow-lg"
+      />
+    </div>
+
+    {/* Text Section */}
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={fadeIn}
+      className="w-full md:w-1/2 text-black space-y-6"
+    >
+      <h2 className="text-3xl font-bold">
+        Ready to Start <span className="text-primary">Investing in Forex</span>?
+      </h2>
+      <p className="text-lg ">
+        Join our network of investors and take part in high-return Forex investments.
+      </p>
+      <p className="text-lg ">
+        Contact us today to schedule a consultation and start your Forex investment journey.
+      </p>
+      <Button
+        size="lg"
+        className="group bg-primary text-black hover:bg-primary/90 px-6 py-3 rounded-full font-semibold transition-transform hover:scale-105"
+        onClick={navigateToContact}
+      >
+        Schedule Consultation
+        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+      </Button>
+    </motion.div>
+  </div>
+</section>
+
     </div>
   );
 }
