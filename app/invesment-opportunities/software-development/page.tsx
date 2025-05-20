@@ -214,7 +214,7 @@ export default function SoftwareDevelopementPage() {
                   ))}
                 </ul>
               </div>
-              <Button size="lg" className="group bg-white text-primary">
+              <Button size="lg" className="group bg-white text-primary hover:text-white">
                 Become a Tech Partner
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>

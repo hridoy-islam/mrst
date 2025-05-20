@@ -205,7 +205,7 @@ export default function ExportEmportPage() {
                 </ul>
               </div>
 
-              <Button size="lg" className="group bg-white text-primary">
+              <Button size="lg" className="group bg-white text-primary hover:text-white">
                 Partner With Us
                 <ArrowRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>

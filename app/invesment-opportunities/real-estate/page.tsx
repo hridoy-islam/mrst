@@ -115,11 +115,11 @@ export default function ExportEmportPage() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeIn}
-          custom={1}
-          className="grid md:grid-cols-2 gap-12 py-12 items-center container mx-auto px-4"
+          className="grid md:grid-cols-2 gap-12 py-16 items-center container mx-auto px-4"
         >
-          <div className="space-y-4">
-            <h2 className="text-3xl text-primary font-semibold">
+          {/* Left Content */}
+          <div className="space-y-6 max-w-lg">
+            <h2 className="text-4xl font-bold text-primary leading-tight">
               Full-Cycle Development
             </h2>
             <p className="text-gray-600">
@@ -128,16 +128,27 @@ export default function ExportEmportPage() {
               control, efficiency, and strong returns at every stage.
             </p>
           </div>
-          <Image
-            src="/state1.jpg"
-            alt="Development Cycle"
-            width={600}
-            height={400}
-            className="rounded-xl object-cover"
-          />
+
+          <div className="relative w-full h-[450px]">
+            {/* Top-right image */}
+            <Image
+              src="/state1.jpg"
+              alt="Business Meeting"
+              width={300}
+              height={400}
+              className="object-cover rounded-xl absolute top-0 right-0 w-[60%] h-[80%] z-10 -translate-x-8  -translate-y-4 shadow-md"
+            />
+
+            <Image
+              src="/state2.jpg"
+              alt="Business Man"
+              width={300}
+              height={400}
+              className="object-cover rounded-xl absolute bottom-0 left-0 w-[60%] h-[80%] z-20 -translate-x-4 translate-y-4 shadow-xl"
+            />
+          </div>
         </motion.section>
 
-        {/* Opportunities */}
         {/* Opportunities - with full-width gradient background */}
         <motion.div className="relative bg-gradient-to-b from-primary/10 to-secondary py-12 my-12">
           {/* Container for content */}
@@ -147,55 +158,170 @@ export default function ExportEmportPage() {
             viewport={{ once: true }}
             variants={fadeIn}
             custom={2}
-            className="container mx-auto px-4 space-y-10"
+            className="container mx-auto px-4 "
           >
-            <h2 className="text-4xl text-primary font-semibold text-center">
-              Investment Opportunities
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: "Residential & Commercial Development",
-                  image: "/state2.jpg",
-                  desc: "We create value by planning and constructing residential and commercial properties in growth areas.",
-                },
-                {
-                  title: "Joint Ventures with Landowners",
-                  image: "/state3.jpg",
-                  desc: "We collaborate with landowners to transform unused land into profitable real estate projects.",
-                },
-                {
-                  title: "Refurbishment & Flipping",
-                  image: "/state4.jpg",
-                  desc: "We identify undervalued assets, renovate them, and drive rapid resale value.",
-                },
-                {
-                  title: "Long-Term Rental Investments",
-                  image: "/state5.jpg",
-                  desc: "We build and maintain high-demand rental properties to generate steady cash flow.",
-                },
-              ].map((item, i) => (
-                <motion.div
-                  key={item.title}
-                  variants={fadeIn}
-                  custom={i}
-                  className="bg-white rounded-xl shadow-lg overflow-hidden"
-                >
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    width={600}
-                    height={400}
-                    className="w-full h-60 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2 text-primary">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-600">{item.desc}</p>
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Left Image */}
+              <div className="relative w-full h-[450px]">
+                <Image
+                  src="/e3.jpg"
+                  alt="Business Meeting"
+                  layout="fill"
+                  className="object-cover rounded-xl"
+                />
+                <div className="absolute bottom-4 left-4 bg-white px-4 py-3 rounded-lg shadow-md flex items-center gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-6 h-6 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M12 8c1.1046 0 2-.8954 2-2s-.8954-2-2-2-2 .8954-2 2 .8954 2 2 2zm0 2v8m0 0h8m-8 0H4"
+                    />
+                  </svg>
+                  {/* <div>
+                    <p className="text-lg font-semibold text-green-800">15%</p>
+                    <p className="text-sm text-gray-600">Annual ROI</p>
+                  </div> */}
+                </div>
+              </div>
+
+              {/* Right Content */}
+              <div>
+                <h2 className="text-4xl font-bold text-primary mb-4">
+                  Unlock Lucrative Property Investment Opportunities
+                </h2>
+                <p className="text-gray-600 mb-6">
+                  Our expert team specializes in residential and commercial
+                  property development, joint ventures with landowners, property
+                  refurbishment and flipping, and long-term rental investments.
+                  We provide tailored strategies to help you achieve sustainable
+                  growth in the property market.
+                </p>
+
+                <div className="space-y-5">
+                  {/* 1 - Residential & Commercial Property Development */}
+                  <div className="flex items-start gap-4">
+                    <div className="bg-green-100 p-3 rounded-full">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-6 h-6 text-green-700"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M3 12l2 2-2 2m0 0l2 2-2 2M21 12l-2 2 2 2m0 0l-2 2 2 2"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-lg text-primary">
+                        Residential & Commercial Property Development
+                      </h4>
+                      <p className="text-gray-600">
+                        Explore opportunities in both residential and commercial
+                        property development to create lasting investments.
+                      </p>
+                    </div>
                   </div>
-                </motion.div>
-              ))}
+
+                  {/* 2 - Joint Ventures with Landowners */}
+                  <div className="flex items-start gap-4">
+                    <div className="bg-green-100 p-3 rounded-full">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-6 h-6 text-green-700"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 3v18m9-9H3"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-lg text-primary">
+                        Joint Ventures with Landowners
+                      </h4>
+                      <p className="text-gray-600">
+                        Partner with landowners for mutually beneficial ventures
+                        that unlock the potential of unused land.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* 3 - Property Refurbishment & Flipping */}
+                  <div className="flex items-start gap-4">
+                    <div className="bg-green-100 p-3 rounded-full">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-6 h-6 text-green-700"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M6 9l6 6 6-6"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-lg text-primary">
+                        Property Refurbishment & Flipping
+                      </h4>
+                      <p className="text-gray-600">
+                        Invest in property refurbishment and flipping for high
+                        returns on revitalized properties.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* 4 - Long-term Rental Investment Projects */}
+                  <div className="flex items-start gap-4">
+                    <div className="bg-green-100 p-3 rounded-full">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-6 h-6 text-green-700"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M4 4h16v16H4V4z"
+                        />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-lg text-primary">
+                        Long-term Rental Investment Projects
+                      </h4>
+                      <p className="text-gray-600">
+                        Secure passive income through long-term rental
+                        investment projects in prime locations.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.section>
         </motion.div>
