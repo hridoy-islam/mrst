@@ -110,7 +110,7 @@ export default function Header() {
       {/* Desktop Navbar */}
       <div className="container">
         <div
-          className="w-full bg-secondary hidden md:flex items-center justify-between"
+          className="w-full  font-medium bg-secondary hidden md:flex items-center justify-between"
           ref={desktopMenuRef}
         >
           <Link href="/" className="flex items-center">
@@ -136,13 +136,13 @@ export default function Header() {
                 {item.path ? (
                   <Link
                     href={item.path}
-                    className="py-2 rounded-md transition-all duration-300 relative flex items-center"
+                    className="py-2 rounded-md transition-all duration-300 relative flex items-center font-medium"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
                   </Link>
                 ) : (
-                  <span className="py-2 cursor-pointer relative flex items-center">
+                  <span className="py-2 cursor-pointer relative flex items-center font-medium">
                     {item.name}
                     {item.subItems && (
                       <motion.span
@@ -160,71 +160,84 @@ export default function Header() {
                 )}
 
                 {/* Dropdown */}
-               {/* Dropdown for Desktop */}
-{item.subItems && (
-  <div
-    className={`absolute left-0 top-full mt-2 bg-white text-black rounded shadow-xl ${
-      activeMenuIndex === index ? "block" : "hidden"
-    } z-50 min-w-[250px]`}
-    onMouseEnter={() => {
-      if (hoverTimeout) clearTimeout(hoverTimeout);
-      setActiveMenuIndex(index);
-    }}
-    onMouseLeave={() => {
-      const timeout = setTimeout(() => {
-        setActiveMenuIndex(null);
-      }, 300);
-      setHoverTimeout(timeout);
-    }}
-  >
-    {item.subItems.map((sub, i) =>
-      sub.subItems ? (
-        <div
-          key={i}
-          className="relative group/item"
-          onMouseEnter={() => setOpenDeepSubMenuIndices((prev) => ({ ...prev, [index]: i }))}
-          onMouseLeave={() => setOpenDeepSubMenuIndices((prev) => ({ ...prev, [index]: null }))}
-        >
-          <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer group-hover/item:bg-primary group-hover/item:text-white transition-all duration-200 flex items-center justify-between">
-            {sub.name}
-            <motion.span
-              initial={{ x: 0 }}
-              whileHover={{ x: 5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <ChevronRight className="w-4 h-4 ml-2" />
-            </motion.span>
-          </div>
-          <div
-            className="absolute left-full top-0 bg-white shadow-lg min-w-[220px] z-50"
-            style={{
-              display: activeMenuIndex === index && openDeepSubMenuIndices[index] === i ? "block" : "none",
-            }}
-          >
-            {sub.subItems.map((deepSub, j) => (
-              <Link
-                key={j}
-                href={deepSub.path}
-                className="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200"
-              >
-                {deepSub.name}
-              </Link>
-            ))}
-          </div>
-        </div>
-      ) : (
-        <Link
-          key={i}
-          href={sub.path}
-          className="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200"
-        >
-          {sub.name}
-        </Link>
-      )
-    )}
-  </div>
-)}
-
+                {/* Dropdown for Desktop */}
+                {item.subItems && (
+                  <div
+                    className={`absolute left-0 top-full mt-2 bg-white text-black rounded shadow-xl ${
+                      activeMenuIndex === index ? "block" : "hidden"
+                    } z-50 min-w-[250px]`}
+                    onMouseEnter={() => {
+                      if (hoverTimeout) clearTimeout(hoverTimeout);
+                      setActiveMenuIndex(index);
+                    }}
+                    onMouseLeave={() => {
+                      const timeout = setTimeout(() => {
+                        setActiveMenuIndex(null);
+                      }, 300);
+                      setHoverTimeout(timeout);
+                    }}
+                  >
+                    {item.subItems.map((sub, i) =>
+                      sub.subItems ? (
+                        <div
+                          key={i}
+                          className="relative group/item"
+                          onMouseEnter={() =>
+                            setOpenDeepSubMenuIndices((prev) => ({
+                              ...prev,
+                              [index]: i,
+                            }))
+                          }
+                          onMouseLeave={() =>
+                            setOpenDeepSubMenuIndices((prev) => ({
+                              ...prev,
+                              [index]: null,
+                            }))
+                          }
+                        >
+                          <div className="px-4 py-2 hover:bg-primary hover:text-white cursor-pointer group-hover/item:bg-primary group-hover/item:text-white transition-all duration-200 flex items-center justify-between  ">
+                            {sub.name}
+                            <motion.span
+                              initial={{ x: 0 }}
+                              whileHover={{ x: 5 }}
+                              transition={{ type: "spring", stiffness: 300 }}
+                            >
+                              <ChevronRight className="w-4 h-4 ml-2" />
+                            </motion.span>
+                          </div>
+                          <div
+                            className="absolute left-full top-0 bg-white shadow-lg min-w-[220px] z-50"
+                            style={{
+                              display:
+                                activeMenuIndex === index &&
+                                openDeepSubMenuIndices[index] === i
+                                  ? "block"
+                                  : "none",
+                            }}
+                          >
+                            {sub.subItems.map((deepSub, j) => (
+                              <Link
+                                key={j}
+                                href={deepSub.path}
+                                className="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200 "
+                              >
+                                {deepSub.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ) : (
+                        <Link
+                          key={i}
+                          href={sub.path}
+                          className="block px-4 py-2 hover:bg-primary hover:text-white transition-all duration-200"
+                        >
+                          {sub.name}
+                        </Link>
+                      )
+                    )}
+                  </div>
+                )}
 
                 <div className="absolute bottom-0 left-0 w-full h-[3px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </motion.div>
@@ -260,7 +273,7 @@ export default function Header() {
                           openSubMenuIndex === index ? null : index
                         )
                       }
-                      className="text-white font-semibold py-2 w-full text-left flex items-center"
+                      className="text-white font-medium py-2 w-full text-left flex items-center"
                     >
                       {item.name}
                       <motion.span
