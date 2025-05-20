@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import CTA from "@/components/CTA";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -203,7 +204,10 @@ export default function CareerPage() {
                   ))}
                 </ul>
               </div>
-              <Button size="lg" className="group bg-white text-primary hover:text-white">
+              <Button
+                size="lg"
+                className="group bg-white text-primary hover:text-white"
+              >
                 Become a Partner
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -212,41 +216,13 @@ export default function CareerPage() {
         </div>
       </section>
 
-    <section className="py-20 bg-gradient-to-r from-blue-800 to-blue-600">
-  <div className="container px-4 mx-auto flex flex-col md:flex-row items-center gap-8">
-    {/* Image Section */}
-    <div className="w-full md:w-1/2">
-      <img
-        src="/c1.jpg"
-        alt="empower students"
-        className="w-full h-full object-cover rounded-lg shadow-lg"
+      <CTA
+        title=" Ready to Empower Students Worldwide?"
+        description="Join us in building global academic and career success stories."
+        buttonText="Contact Us"
+        imageSrc="/cta.png"
+        onButtonClick={navigateToContact}
       />
-    </div>
-
-    {/* Text Section */}
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={fadeIn}
-      className="w-full md:w-1/2 text-white space-y-6"
-    >
-      <h2 className="text-3xl font-bold text-black">
-        Ready to Empower <span className="text-primary">Students</span> Worldwide?
-      </h2>
-      <p className="text-lg text-black/80">
-        Join us in building global academic and career success stories.
-      </p>
-      <Button
-        size="lg"
-        className="bg-primary text-blue-800 hover:bg-primary/90 px-6 py-3  font-semibold transition-transform hover:scale-105"
-        onClick={navigateToContact}
-      >
-        Contact Us
-      </Button>
-    </motion.div>
-  </div>
-</section>
-
     </div>
   );
 }

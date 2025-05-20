@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import CTA from "@/components/CTA";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -205,7 +206,10 @@ export default function ExportEmportPage() {
                 </ul>
               </div>
 
-              <Button size="lg" className="group bg-white text-primary hover:text-white">
+              <Button
+                size="lg"
+                className="group bg-white text-primary hover:bg-white"
+              >
                 Partner With Us
                 <ArrowRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -214,37 +218,14 @@ export default function ExportEmportPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
-        <div className="container px-4 mx-auto flex flex-col md:flex-row items-center gap-8">
-          {/* Image Section */}
-          <div className="w-full md:w-1/2">
-            <img
-              src="/e1.jpg"
-              alt="export"
-              className="w-full h-full object-cover rounded-lg shadow-md"
-            />
-          </div>
-
-          {/* Text Section */}
-          <div className="w-full md:w-1/2">
-            <h2 className="text-3xl font-bold mb-4">
-              Ready to Expand Your <span className="text-primary">Global</span>{" "}
-              Reach?
-            </h2>
-            <p className="text-lg text-gray-600 mb-6">
-              Maximize your online potential. Our expert services optimize every
-              click into a loyal customer, driving business growth.
-            </p>
-            <Button
-              size="lg"
-              className="bg-primary text-white hover:bg-primary/90 px-6 py-3  font-semibold transition-transform hover:scale-105"
-              onClick={navigateToContact}
-            >
-              Contact Us
-            </Button>
-          </div>
-        </div>
-      </section>
+      <CTA
+        title="Ready to Expand Your Global Reach?"
+        description=" Maximize your online potential. Our expert services optimize every
+              click into a loyal customer, driving business growth."
+        buttonText="Contact Us"
+        imageSrc="/cta.png"
+        onButtonClick={navigateToContact}
+      />
     </div>
   );
 }

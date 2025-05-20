@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import CTA from "@/components/CTA";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -274,6 +275,16 @@ export default function SoftwareDevelopementPage() {
           </motion.div>
         </div>
       </section>
+
+      
+            <CTA
+              title=" Ready to Invest or Partner with Us?"
+              description="Whether you’re an experienced investor or exploring new
+              opportunities, we welcome you to join our network."
+              buttonText="Contact Us"
+              imageSrc="/cta.png"
+              onButtonClick={navigateToContact}
+            />
     </div>
   );
 }

@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import CTA from "@/components/CTA";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -214,7 +215,10 @@ export default function SoftwareDevelopementPage() {
                   ))}
                 </ul>
               </div>
-              <Button size="lg" className="group bg-white text-primary hover:text-white">
+              <Button
+                size="lg"
+                className="group bg-white text-primary hover:text-white"
+              >
                 Become a Tech Partner
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -223,43 +227,13 @@ export default function SoftwareDevelopementPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-700">
-  <div className="container px-4 mx-auto flex flex-col md:flex-row items-center gap-8">
-    {/* Image Section */}
-    <div className="w-full md:w-1/2">
-      <img
-        src="/s2.jpg"             /* swap with your preferred software image */
-        alt="Software Development"
-        className="w-full h-full object-cover rounded-lg shadow-lg"
+      <CTA
+        title="Ready to Build the Future With Us?"
+        description=" Let’s develop scalable software tailored to your business growth."
+        buttonText="Contact Us"
+        imageSrc="/cta.png"
+        onButtonClick={navigateToContact}
       />
-    </div>
-
-    {/* Text / CTA Section */}
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={fadeIn}
-      className="w-full md:w-1/2 text-black space-y-6"
-    >
-      <h2 className="text-3xl font-bold">
-        Ready to Build the <span className="text-primary">Future</span> With Us?
-      </h2>
-      <p className="text-lg ">
-        Let’s develop scalable software tailored to your business growth.
-      </p>
-
-      <Button
-        size="lg"
-        className="group bg-primary text-blue-800 hover:bg-primary/90 px-6 py-3  font-semibold transition-transform hover:scale-105"
-        onClick={navigateToContact}
-      >
-        Contact Us
-      </Button>
-    </motion.div>
-  </div>
-</section>
-
     </div>
   );
 }

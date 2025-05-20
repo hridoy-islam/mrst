@@ -4,33 +4,38 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ChevronDown, Mail, MapPin, Phone } from "lucide-react";
-import { HandCoins, BarChart2, Layers, TrendingUp, Clock, ArrowRight } from "lucide-react";
+import {
+  HandCoins,
+  BarChart2,
+  Layers,
+  TrendingUp,
+  Clock,
+  ArrowRight,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import CTA from "@/components/CTA";
 
 export default function ForexPage() {
-
-
-   
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6 },
-  },
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
     },
-  },
-};
-const investmentOpportunities = [
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+  const investmentOpportunities = [
     {
       icon: <HandCoins className="w-8 h-8 text-primary" />,
       image: "/f1.jpg", // Path to the image
@@ -42,13 +47,15 @@ const investmentOpportunities = [
       icon: <BarChart2 className="w-8 h-8 text-primary" />,
       image: "/f2.jpg", // Path to the image
       title: "Asset-Backed Investment Vehicles",
-      description: "Invest in secured and asset-backed Forex vehicles with lower risks.",
+      description:
+        "Invest in secured and asset-backed Forex vehicles with lower risks.",
     },
     {
       icon: <Layers className="w-8 h-8 text-primary" />,
       image: "/f3.jpg", // Path to the image
       title: "Return-on-Investment (ROI) Tracking Dashboard",
-      description: "Monitor your investments with a user-friendly, real-time ROI tracking dashboard.",
+      description:
+        "Monitor your investments with a user-friendly, real-time ROI tracking dashboard.",
     },
     {
       icon: <TrendingUp className="w-8 h-8 text-primary" />,
@@ -74,11 +81,10 @@ const investmentOpportunities = [
     },
   ];
 
- const router = useRouter();
+  const router = useRouter();
   const navigateToContact = () => {
     router.push("/contact");
   };
-
 
   return (
     <div className="bg-secondary">
@@ -130,7 +136,8 @@ const investmentOpportunities = [
                 What We Offer
               </h2>
               <p className="text-muted-foreground">
-                Explore our diverse and strategic investment models to maximize returns in the Forex market.
+                Explore our diverse and strategic investment models to maximize
+                returns in the Forex market.
               </p>
             </motion.div>
 
@@ -208,7 +215,10 @@ const investmentOpportunities = [
                   ))}
                 </ul>
               </div>
-              <Button size="lg" className="group bg-white text-primary hover:text-white">
+              <Button
+                size="lg"
+                className="group bg-white text-primary hover:text-white"
+              >
                 Explore Investment Models
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -217,45 +227,13 @@ const investmentOpportunities = [
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-800 to-blue-700">
-  <div className="container px-4 mx-auto flex flex-col md:flex-row items-center gap-8">
-    {/* Image Section */}
-    <div className="w-full md:w-1/2">
-      <img
-        src="/f2.jpg"
-        alt="Forex Investment"
-        className="w-full h-full object-cover rounded-lg shadow-lg"
+      <CTA
+        title="Ready to Start Investing in Forex?"
+        description="Join our network of investors and take part in high-return Forex investments."
+        buttonText="Contact Us"
+        imageSrc="/cta.png"
+        onButtonClick={navigateToContact}
       />
-    </div>
-
-    {/* Text Section */}
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={fadeIn}
-      className="w-full md:w-1/2 text-black space-y-6"
-    >
-      <h2 className="text-3xl font-bold">
-        Ready to Start <span className="text-primary">Investing in Forex</span>?
-      </h2>
-      <p className="text-lg ">
-        Join our network of investors and take part in high-return Forex investments.
-      </p>
-      <p className="text-lg ">
-        Contact us today to schedule a consultation and start your Forex investment journey.
-      </p>
-      <Button
-        size="lg"
-        className="group bg-primary text-black hover:bg-primary/90 px-6 py-3  font-semibold transition-transform hover:scale-105"
-        onClick={navigateToContact}
-      >
-        Contact Us
-      </Button>
-    </motion.div>
-  </div>
-</section>
-
     </div>
   );
 }

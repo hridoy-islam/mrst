@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { ArrowRight } from "lucide-react";
+import { Circle } from "lucide-react";
 
 const fadeIn = {
   hidden: { opacity: 0, y: 30 },
@@ -91,7 +92,7 @@ export default function ExportEmportPage() {
               comprehensive solutions to help you make informed decisions and
               achieve long-term value through trusted property services.
             </motion.p>
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
@@ -103,7 +104,7 @@ export default function ExportEmportPage() {
                 Discover Our Approach
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
         </div>
       </section>
@@ -127,6 +128,16 @@ export default function ExportEmportPage() {
               planning, constructing, marketing, and selling. This ensures
               control, efficiency, and strong returns at every stage.
             </p>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.5 }}
+            >
+              <Button className="group mt-4 bg-primary text-primary hover:bg-primary/90">
+                Discover Our Approach{" "}
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </motion.div>
           </div>
 
           <div className="relative w-full h-[450px]">
@@ -207,21 +218,8 @@ export default function ExportEmportPage() {
                 <div className="space-y-5">
                   {/* 1 - Residential & Commercial Property Development */}
                   <div className="flex items-start gap-4">
-                    <div className="bg-green-100 p-3 rounded-full">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-6 h-6 text-green-700"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M3 12l2 2-2 2m0 0l2 2-2 2M21 12l-2 2 2 2m0 0l-2 2 2 2"
-                        />
-                      </svg>
+                    <div className="bg-blue-400 p-3 rounded-full">
+                      <Circle className="w-4 h-4 text-primary fill-primary/90" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-lg text-primary">
@@ -236,21 +234,8 @@ export default function ExportEmportPage() {
 
                   {/* 2 - Joint Ventures with Landowners */}
                   <div className="flex items-start gap-4">
-                    <div className="bg-green-100 p-3 rounded-full">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-6 h-6 text-green-700"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 3v18m9-9H3"
-                        />
-                      </svg>
+                    <div className="bg-blue-100 p-3 rounded-full">
+                      <Circle className="w-4 h-4 text-primary fill-primary/90" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-lg text-primary">
@@ -265,21 +250,8 @@ export default function ExportEmportPage() {
 
                   {/* 3 - Property Refurbishment & Flipping */}
                   <div className="flex items-start gap-4">
-                    <div className="bg-green-100 p-3 rounded-full">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-6 h-6 text-green-700"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M6 9l6 6 6-6"
-                        />
-                      </svg>
+                    <div className="bg-blue-100 p-3 rounded-full">
+                      <Circle className="w-4 h-4 text-primary fill-primary/90" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-lg text-primary">
@@ -294,21 +266,8 @@ export default function ExportEmportPage() {
 
                   {/* 4 - Long-term Rental Investment Projects */}
                   <div className="flex items-start gap-4">
-                    <div className="bg-green-100 p-3 rounded-full">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-6 h-6 text-green-700"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M4 4h16v16H4V4z"
-                        />
-                      </svg>
+                    <div className="bg-blue-100 p-3 rounded-full">
+                      <Circle className="w-4 h-4 text-primary fill-primary/90" />
                     </div>
                     <div>
                       <h4 className="font-semibold text-lg text-primary">
@@ -333,18 +292,21 @@ export default function ExportEmportPage() {
           viewport={{ once: true }}
           variants={fadeIn}
           custom={3}
-          className="py-16 bg-blue-50/50"
+          className="py-16 bg-gradient-radial from-primary/20 via-primary/5 to-white"
         >
           <div className="container mx-auto px-4">
-            <div className="flex flex-col items-center mb-12">
+            {/* Header */}
+            <div className="flex flex-col items-center text-center mb-12">
               <h2 className="text-4xl font-bold text-primary mb-2">
                 Why Choose Us?
               </h2>
               <div className="w-24 h-1 bg-orange-500"></div>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-8">
-              <div className="space-y-6">
+            {/* Content */}
+            <div className="flex flex-row lg:flex-row justify-center items-center  gap-32">
+              {/* Text Features */}
+              <div className="space-y-6 w-full lg:w-1/2">
                 {features.map((item, i) => (
                   <motion.div
                     key={item.title}
@@ -352,19 +314,7 @@ export default function ExportEmportPage() {
                     custom={i}
                     className={`flex items-start p-6 rounded-xl shadow-lg border border-primary ${item.bgColor}`}
                   >
-                    <div className="flex-shrink-0 ">
-                      {/* <div
-                        className={`w-16 h-16 rounded-tl-lg rounded-br-lg ${item.bgColor} flex items-center justify-center`}
-                      >
-                        <Image
-                          src={item.image || "/placeholder.svg"}
-                          alt={item.title}
-                          width={100}
-                          height={60}
-                          className="object-contain"
-                        />
-                      </div> */}
-                    </div>
+                    <div className="flex-shrink-0"></div>
                     <div>
                       <h3 className="text-xl font-semibold mb-2 text-primary">
                         {item.title}
@@ -375,19 +325,20 @@ export default function ExportEmportPage() {
                 ))}
               </div>
 
-              <motion.div
-                variants={fadeIn}
-                custom={1}
-                className="relative overflow-hidden shadow-lg rounded-tl-3xl rounded-br-3xl w-[450px]"
-              >
+              {/* Image Stack */}
+              <div className="relative w-full lg:w-1/2 h-[600px] flex justify-center items-center">
+                {/* Top blue block */}
+                <div className="absolute left-[20%] w-[65%] h-[90%] bg-primary rounded-tl-[100px] rounded-br-[100px] z-10 shadow-md"></div>
+
+                {/* Foreground Image */}
                 <Image
-                  src="/state3.jpg"
-                  alt="Dental office"
-                  width={500}
-                  height={600}
-                  className="w-full h-full object-cover rounded-tl-5xl rounded-br-3xl"
+                  src="/state5.jpg"
+                  alt="Business Man"
+                  width={300}
+                  height={400}
+                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[65%] h-[90%] object-cover rounded-tl-[100px] rounded-br-[100px] z-20 shadow-xl"
                 />
-              </motion.div>
+              </div>
             </div>
           </div>
         </motion.section>
