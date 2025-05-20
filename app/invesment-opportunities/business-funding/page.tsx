@@ -233,48 +233,7 @@ export default function SoftwareDevelopementPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-green-800 to-green-700">
-        <div className="container px-4 mx-auto flex flex-col md:flex-row items-center gap-8">
-          {/* Image Section */}
-          <div className="w-full md:w-1/2">
-            <img
-              src="/b2.jpg" /* Use an appropriate image for investment */
-              alt="Investment Opportunities"
-              className="w-full h-full object-cover rounded-lg shadow-lg"
-            />
-          </div>
-
-          {/* Text / CTA Section */}
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            className="w-full md:w-1/2 text-black space-y-6"
-          >
-            <h2 className="text-3xl font-bold">
-              Ready to <span className="text-primary">Invest</span> or Partner
-              with Us?
-            </h2>
-            <p className="text-lg ">
-              Whether you’re an experienced investor or exploring new
-              opportunities, we welcome you to join our network.
-            </p>
-            <p className="text-lg ">
-              Contact us today to schedule a free investment consultation or
-              explore our current projects.
-            </p>
-
-            <Button
-              size="lg"
-              className="group bg-primary text-black hover:bg-primary/90 px-6 py-3 font-semibold transition-transform hover:scale-105"
-              onClick={navigateToContact}
-            >
-              Contact Us
-            </Button>
-          </motion.div>
-        </div>
-      </section>
+    
 
       
             <CTA

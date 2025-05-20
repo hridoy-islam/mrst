@@ -92,7 +92,7 @@ export default function SoftwareDevelopementPage() {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="text-start mt-8"
+            className="text-start mt-9"
           >
             <h1 className="max-md:text-4xl font-bold mb-6">
               Building Intelligent Software That Powers Your Digital Future
