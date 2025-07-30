@@ -165,7 +165,7 @@ export default function CareerPage() {
 
       {/* Investment Appeal Section */}
       <section
-        className="py-20 bg-gradient-to-tr from-primary to-primary/95 bg-cover bg-center relative"
+        className="py-20 bg-gradient-to-b from-primary/10 to-secondary bg-cover bg-center relative"
 
       >
         {/* <div className="absolute inset-0 bg-black/10" /> */}
@@ -188,7 +188,7 @@ export default function CareerPage() {
 
             <motion.div variants={fadeIn} className="lg:w-1/2 space-y-8">
               <div>
-                <h2 className="text-3xl font-bold mb-6 text-white">
+                <h2 className="text-3xl font-bold mb-6 text-primary">
                   Investment Appeal
                 </h2>
                 <ul className="space-y-6">
@@ -196,17 +196,17 @@ export default function CareerPage() {
                     <li key={index} className="flex items-start gap-4">
                       <div className="flex-shrink-0 mt-1">
                         <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
-                          <Users className="w-6 h-6 text-white" />
+                          <Users className="w-6 h-6 text-primary" />
                         </div>
                       </div>
-                      <p className="text-white text-xl">{point}</p>
+                      <p className="text-primary text-xl">{point}</p>
                     </li>
                   ))}
                 </ul>
               </div>
               <Button
                 size="lg"
-                className="group bg-white text-primary hover:text-white"
+                className="group bg-primary text-pwhite"
                 onClick={() => router.push("/contact")}
               >
                 Become a Partner

@@ -98,7 +98,12 @@ export default function ForexPage() {
           />
         </div>
         <div className="w-full container ">
-          <motion.div initial="hidden" animate="visible" className="text-start">
+         <motion.div
+                     initial="hidden"
+                     animate="visible"
+                     variants={fadeIn}
+                     className="text-start"
+                   >
             <h1 className="max-md:text-4xl font-bold mb-6">
               Unlock Global Opportunities with Expert Forex Solutions
             </h1>

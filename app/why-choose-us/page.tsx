@@ -103,17 +103,14 @@ export default function WhyChooseUs() {
           <motion.div
             initial="hidden"
             animate="visible"
-            className=" flex flex-col items-start text-start justify-center"
+            variants={fadeIn}
+            className="text-start "
           >
             <h1 className="text-secondary font-bold mb-4">
-              Empowering Global Ambitions with Trusted Expertise
+             Empowering global ambitions through trusted expertise.
             </h1>
             <h3 className="text-secondary font-normal ">
-              Discover why individuals and businesses worldwide choose MRST
-              Consultancy. With our deep industry knowledge and international
-              reach, we deliver tailored solutions that connect you to global
-              business opportunities and world-class education pathways — all
-              built on trust, integrity, and results.
+              MRST Consultancy connects you to international business and education opportunities with tailored, results-driven solutions.
             </h3>
           </motion.div>
         </div>

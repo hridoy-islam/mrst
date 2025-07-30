@@ -73,8 +73,12 @@ const router = useRouter();
             className="object-cover"
           />
         </div>
+       
         <div className="container py-16  relative z-10">
-          <motion.div initial="hidden" animate="visible" className="max-w-4xl ">
+          <motion.div   initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+            className="text-start ">
             <h1 className="text-secondary font-bold mb-4">MRST Consultancy</h1>
             <h3 className="text-secondary font-normal ">
               Your trusted partner for global business connections and

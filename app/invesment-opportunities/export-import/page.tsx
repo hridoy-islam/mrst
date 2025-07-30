@@ -162,7 +162,7 @@ export default function ExportEmportPage() {
 
       {/* Investor Benefits Section */}
       <section
-        className="py-28 bg-cover bg-gradient-to-tr from-primary to-primary/95 bg-center relative"
+        className="py-28 bg-cover bg-gradient-to-b from-primary/10 to-secondary bg-center relative"
        
       >
         <div className="container px-4 mx-auto relative">
@@ -184,7 +184,7 @@ export default function ExportEmportPage() {
 
             <motion.div variants={fadeIn} className="lg:w-1/2 space-y-8">
               <div>
-                <h2 className="text-3xl font-semibold text-white mb-6">
+                <h2 className="text-3xl font-semibold text-primary mb-6">
                   Investor Benefits
                 </h2>
                 <ul className="space-y-6">
@@ -196,10 +196,10 @@ export default function ExportEmportPage() {
                     <li key={index} className="flex items-start gap-4">
                       <div className="flex-shrink-0 mt-1">
                         <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
-                          <BarChart className="w-6 h-6 text-white" />
+                          <BarChart className="w-6 h-6 text-primary" />
                         </div>
                       </div>
-                      <p className="text-white text-xl">{benefit}</p>
+                      <p className="text-primary text-xl">{benefit}</p>
                     </li>
                   ))}
                 </ul>
@@ -207,7 +207,7 @@ export default function ExportEmportPage() {
 
               <Button
                 size="lg"
-                className="group bg-white text-primary hover:bg-white"
+                className="group bg-primary text-primary"
                 onClick={()=> router.push("/contact")}
               >
                 Partner With Us

@@ -63,6 +63,14 @@ export default function ContactPage() {
       },
     },
   };
+ const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
+    },
+  };
 
   return (
     <div className="min-h-screen ">
@@ -85,13 +93,13 @@ export default function ContactPage() {
             />
           </div>
           <div className="container mx-auto py-16  relative z-10">
-            <motion.div initial="hidden" animate="visible" className="">
+            <motion.div   initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+            className="text-start ">
               <h1 className="text-secondary font-bold mb-4">Contact Us</h1>
               <h3 className="text-secondary font-normal ">
-                Whether you have a question, need guidance, or are ready to take
-                the next step, MRST Consultancy is here to help. Reach out to us
-                today and discover how our global expertise and personalized
-                support can turn your goals into reality.
+                Have a question or ready to move forward? MRST Consultancy is here to help with expert guidance and personalized support. Contact us today!
               </h3>
             </motion.div>
           </div>

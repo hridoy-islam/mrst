@@ -72,15 +72,15 @@ export default function SoftwareDevelopementPage() {
 
   const investorBenefits = [
     {
-      icon: <Banknote className="w-6 h-6 text-white" />,
+      icon: <Banknote className="w-6 h-6 text-primary" />,
       text: "Fixed income from business loan interest",
     },
     {
-      icon: <TrendingUp className="w-6 h-6 text-white" />,
+      icon: <TrendingUp className="w-6 h-6 text-primary" />,
       text: "Equity participation in high-growth companies",
     },
     {
-      icon: <Timer className="w-6 h-6 text-white" />,
+      icon: <Timer className="w-6 h-6 text-primary" />,
       text: "Exit plans with predefined ROI timelines",
     },
   ];
@@ -187,7 +187,7 @@ export default function SoftwareDevelopementPage() {
 
       {/* Investor Benefits */}
       <section
-        className="py-20 bg-gradient-to-tr from-primary to-primary/95 bg-cover bg-center relative"
+        className="py-20 bg-gradient-to-b from-primary/10 to-secondary bg-cover bg-center relative"
         
       >
         {/* <div className="absolute inset-0 bg-black/10" /> */}
@@ -210,21 +210,21 @@ export default function SoftwareDevelopementPage() {
 
             <motion.div variants={fadeIn} className="lg:w-1/2 space-y-8">
               <div>
-                <h2 className="text-3xl font-bold mb-6 text-white">
+                <h2 className="text-3xl font-bold mb-6 text-primary">
                   Investor Incentives
                 </h2>
                 <ul className="space-y-6">
                   {investorBenefits.map((item, index) => (
                     <li key={index} className="flex items-center gap-4">
-                      <div className="w-6 h-6 flex items-center justify-center">
+                      <div className="w-6 h-6 text-primary flex items-center justify-center">
                         {item.icon}
                       </div>
-                      <p className="text-white">{item.text}</p>
+                      <p className="text-primary">{item.text}</p>
                     </li>
                   ))}
                 </ul>
               </div>
-              <Button size="lg" className="group bg-white text-primary hover:text-white" onClick={() => router.push("/contact")}>
+              <Button size="lg" className="group bg-primary text-white" onClick={() => router.push("/contact")}>
                 Explore Investment Models
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
