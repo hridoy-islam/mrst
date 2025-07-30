@@ -28,7 +28,7 @@ export default function ExportEmportPage() {
     <div className="bg-background">
       {/* Hero Section */}
 
-      <section className="relative bg-gradient-to-br from-primary to-primary/90 py-28 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary to-primary/90 py-16 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <Image
             src="/pattern.png"
@@ -42,7 +42,7 @@ export default function ExportEmportPage() {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="text-start text-white space-y-6 mt-8"
+            className="text-start text-white space-y-6 "
           >
             <motion.h1
               className="text-4xl md:text-5xl font-bold leading-tight"

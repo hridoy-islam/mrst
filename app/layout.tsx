@@ -13,7 +13,7 @@ import { Inter } from "next/font/google";
 // });
 
 const inter = Inter({
-  weight: ["400","200","300","500","600", "700"],
+  weight: ["400", "200", "300", "500", "600", "700"],
   style: ["normal"],
   subsets: ["latin"],
   display: "swap",
@@ -22,7 +22,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "MRST CONSULTANCY",
-  description: "MRST CONSULTANCY is a consulting firm that provides services in the areas of export, import, mutual funds, and student consultancy.",
+  description:
+    "MRST CONSULTANCY is a consulting firm that provides services in the areas of export, import, mutual funds, and student consultancy.",
 };
 
 export default function RootLayout({
@@ -34,11 +35,13 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} light`}>
       <head>
         <title>MRST CONSULTANCY</title>
-        <link rel="icon" href="../public/favicon.ico"/>
+        <link rel="icon" href="../public/favicon.ico" />
       </head>
-      <body>
+      <body className="relative">
         <Header />
-        <Providers>{children}</Providers>
+        <div className="pt-[66px]">
+          <Providers>{children}</Providers>
+        </div>
         <Footer />
       </body>
     </html>

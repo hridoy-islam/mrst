@@ -76,23 +76,26 @@ export default function ContactPage() {
           />
         </div>
         <section className="relative bg-primary text-secondary">
-                <div className="absolute inset-0 opacity-40">
-                  <Image
-                    src="/pattern.png"
-                    alt="Investment Partnership Background"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="container py-28  relative z-10">
-                  <motion.div initial="hidden" animate="visible" className="mt-12">
-                    <h1 className="text-secondary font-bold mb-4">Contact Us</h1>
-                    <h3 className="text-secondary font-normal ">
-                      Whether you have a question, need guidance, or are ready to take the next step, MRST Consultancy is here to help. Reach out to us today and discover how our global expertise and personalized support can turn your goals into reality.
-                    </h3>
-                  </motion.div>
-                </div>
-              </section>
+          <div className="absolute inset-0 opacity-40">
+            <Image
+              src="/pattern.png"
+              alt="Investment Partnership Background"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="container mx-auto py-16  relative z-10">
+            <motion.div initial="hidden" animate="visible" className="">
+              <h1 className="text-secondary font-bold mb-4">Contact Us</h1>
+              <h3 className="text-secondary font-normal ">
+                Whether you have a question, need guidance, or are ready to take
+                the next step, MRST Consultancy is here to help. Reach out to us
+                today and discover how our global expertise and personalized
+                support can turn your goals into reality.
+              </h3>
+            </motion.div>
+          </div>
+        </section>
       </section>
 
       <div className="container flex flex-col items-center   py-12 ">

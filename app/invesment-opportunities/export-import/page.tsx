@@ -44,7 +44,7 @@ export default function ExportEmportPage() {
   return (
     <div className="bg-secondary">
       {/* Hero Section */}
-      <section className="relative bg-primary py-32">
+      <section className="relative bg-primary py-16">
         <div className="absolute inset-0 opacity-40">
           <Image
             src="/pattern.png"
@@ -58,7 +58,7 @@ export default function ExportEmportPage() {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="text-start mt-8"
+            className="text-start "
           >
             <h1 className="max-md:text-4xl font-extrabold mb-6 text-white">
               Driving Global Trade Through Seamless Export-Import Solutions
@@ -162,10 +162,9 @@ export default function ExportEmportPage() {
 
       {/* Investor Benefits Section */}
       <section
-        className="py-28 bg-cover bg-center relative"
-        style={{ backgroundImage: "url(/pattern3.jpg)" }}
+        className="py-28 bg-cover bg-gradient-to-tr from-primary to-primary/95 bg-center relative"
+       
       >
-        <div className="absolute inset-0 bg-black/10" />
         <div className="container px-4 mx-auto relative">
           <motion.div
             initial="hidden"

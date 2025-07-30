@@ -88,7 +88,7 @@ export default function SoftwareDevelopementPage() {
   return (
     <div className="bg-secondary">
       {/* Hero Section */}
-      <section className="relative bg-primary  py-28">
+      <section className="relative bg-primary  py-16">
         <div className="absolute inset-0 opacity-40">
           <Image
             src="/pattern.png"
@@ -102,7 +102,7 @@ export default function SoftwareDevelopementPage() {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="text-start mt-8"
+            className="text-start "
           >
             <h1 className="max-md:text-4xl font-bold mb-6">
               Empowering Ambitions with Strategic Business Funding Solutions
@@ -187,10 +187,10 @@ export default function SoftwareDevelopementPage() {
 
       {/* Investor Benefits */}
       <section
-        className="py-20 bg-gray-100 bg-cover bg-center relative"
-        style={{ backgroundImage: "url(/pattern3.jpg)" }}
+        className="py-20 bg-gradient-to-tr from-primary to-primary/95 bg-cover bg-center relative"
+        
       >
-        <div className="absolute inset-0 bg-black/10" />
+        {/* <div className="absolute inset-0 bg-black/10" /> */}
         <div className="container px-4 mx-auto relative">
           <motion.div
             initial="hidden"

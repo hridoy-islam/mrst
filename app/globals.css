@@ -235,4 +235,7 @@ button.absolute.appearance-none.select-none.top-1.right-1.p-2.text-foreground-50
 
 .feature-list li:last-child {
   margin-bottom: 0;
+}html {
+  scroll-padding-top: 80px; /* Match your header height */
+  scroll-behavior: smooth;
 }

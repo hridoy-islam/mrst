@@ -75,7 +75,7 @@ export default function CareerPage() {
   return (
     <div className="bg-secondary">
       {/* Hero Section */}
-      <section className="relative bg-primary py-28">
+      <section className="relative bg-primary py-16">
         <div className="absolute inset-0 opacity-40">
           <Image
             src="/pattern.png"
@@ -89,7 +89,7 @@ export default function CareerPage() {
             initial="hidden"
             animate="visible"
             variants={fadeIn}
-            className="text-start mt-8"
+            className="text-start"
           >
             <h1 className="text-6xl font-bold mb-6">
               Empowering Students for Global Career Success
@@ -165,10 +165,10 @@ export default function CareerPage() {
 
       {/* Investment Appeal Section */}
       <section
-        className="py-20 bg-blue-50 bg-cover bg-center relative"
-        style={{ backgroundImage: "url(/pattern3.jpg)" }}
+        className="py-20 bg-gradient-to-tr from-primary to-primary/95 bg-cover bg-center relative"
+
       >
-        <div className="absolute inset-0 bg-black/10" />
+        {/* <div className="absolute inset-0 bg-black/10" /> */}
         <div className="container px-4 mx-auto relative">
           <motion.div
             initial="hidden"

@@ -99,8 +99,12 @@ export default function WhyChooseUs() {
             className="object-cover"
           />
         </div>
-        <div className="container py-28  relative z-10">
-          <motion.div initial="hidden" animate="visible" className=" mt-12">
+        <div className="container py-16 relative z-10">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            className=" flex flex-col items-start text-start justify-center"
+          >
             <h1 className="text-secondary font-bold mb-4">
               Empowering Global Ambitions with Trusted Expertise
             </h1>
@@ -141,18 +145,18 @@ export default function WhyChooseUs() {
           {/* Content */}
           <div className="flex flex-row lg:flex-row justify-center items-center  gap-32">
             {/* Text Features */}
-            <div className="space-y-6 w-full lg:w-1/2">
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 ">
               {features.map((item, i) => (
                 <motion.div
                   key={item.title}
                   variants={fadeIn}
                   custom={i}
-                  className={`flex items-start p-6 rounded-xl shadow-lg border border-primary ${item.bgColor}`}
+                  className={`flex flex-col h-full items-start p-6 rounded-xl shadow-lg border border-primary ${item.bgColor}`}
                 >
-                  <div className="flex-shrink-0">
-                    {/* You can add icons or other visual elements here */}
+                  <div className="">
+                    {/* Add icon or visual element if needed */}
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h3 className="text-xl font-semibold mb-2 text-primary">
                       {item.title}
                     </h3>
@@ -166,19 +170,6 @@ export default function WhyChooseUs() {
             </div>
 
             {/* Image Stack */}
-            <div className="relative w-full lg:w-1/2 h-[1000px] flex justify-center items-center">
-              {/* Top blue block */}
-              <div className="absolute left-[20%] w-[65%] h-[90%] bg-primary rounded-tl-[100px] rounded-br-[100px] z-10 shadow-md"></div>
-
-              {/* Foreground Image */}
-              <Image
-                src="/state5.jpg"
-                alt="Business Man"
-                width={400}
-                height={800}
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[65%] h-[90%] object-cover rounded-tl-[100px] rounded-br-[100px] z-20 shadow-xl"
-              />
-            </div>
           </div>
         </div>
       </motion.section>

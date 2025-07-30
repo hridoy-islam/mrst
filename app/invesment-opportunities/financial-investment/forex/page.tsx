@@ -88,7 +88,7 @@ export default function ForexPage() {
 
   return (
     <div className="bg-secondary">
-      <section className="relative bg-primary  py-28">
+      <section className="relative bg-primary  py-16">
         <div className="absolute inset-0 opacity-40">
           <Image
             src="/pattern.png"
@@ -97,7 +97,7 @@ export default function ForexPage() {
             className="object-cover"
           />
         </div>
-        <div className="w-full container mt-8">
+        <div className="w-full container ">
           <motion.div initial="hidden" animate="visible" className="text-start">
             <h1 className="max-md:text-4xl font-bold mb-6">
               Unlock Global Opportunities with Expert Forex Solutions

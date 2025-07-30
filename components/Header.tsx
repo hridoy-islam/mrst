@@ -92,11 +92,7 @@ export default function Header() {
 
   return (
     <header
-      className={`w-full bg-secondary shadow-lg transition-all duration-300 ${
-        hideNavbar ? "translate-y-[-100%]" : "translate-y-0"
-      } ${
-        lastScrollY > 0 ? "fixed top-0 left-0 right-0 z-50" : "relative z-40"
-      }`}
+      className={`fixed top-0 left-0 z-50 w-full bg-secondary shadow-lg`}
     >
       {/* Mobile Topbar */}
       <div className="hidden px-4 max-md:flex justify-between items-center">
@@ -111,7 +107,7 @@ export default function Header() {
       {/* Desktop Navbar */}
       <div className="container">
         <div
-          className="w-full  font-medium bg-secondary hidden md:flex items-center justify-between"
+          className="w-full font-medium bg-secondary hidden md:flex items-center justify-between"
           ref={desktopMenuRef}
         >
           <Link href="/" className="flex items-center">
