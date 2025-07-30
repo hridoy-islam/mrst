@@ -190,7 +190,7 @@ export default function SoftwareDevelopementPage() {
         className="py-20 bg-gray-100 bg-cover bg-center relative"
         style={{ backgroundImage: "url(/pattern3.jpg)" }}
       >
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/10" />
         <div className="container px-4 mx-auto relative">
           <motion.div
             initial="hidden"
@@ -224,7 +224,7 @@ export default function SoftwareDevelopementPage() {
                   ))}
                 </ul>
               </div>
-              <Button size="lg" className="group bg-white text-primary hover:text-white">
+              <Button size="lg" className="group bg-white text-primary hover:text-white" onClick={() => router.push("/contact")}>
                 Explore Investment Models
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -235,7 +235,7 @@ export default function SoftwareDevelopementPage() {
 
     
 
-      
+{/*       
             <CTA
               title=" Ready to Invest or Partner with Us?"
               description="Whether you’re an experienced investor or exploring new
@@ -243,7 +243,7 @@ export default function SoftwareDevelopementPage() {
               buttonText="Contact Us"
               imageSrc="/cta.png"
               onButtonClick={navigateToContact}
-            />
+            /> */}
     </div>
   );
 }

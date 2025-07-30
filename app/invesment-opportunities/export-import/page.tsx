@@ -165,7 +165,7 @@ export default function ExportEmportPage() {
         className="py-28 bg-cover bg-center relative"
         style={{ backgroundImage: "url(/pattern3.jpg)" }}
       >
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/10" />
         <div className="container px-4 mx-auto relative">
           <motion.div
             initial="hidden"
@@ -197,10 +197,10 @@ export default function ExportEmportPage() {
                     <li key={index} className="flex items-start gap-4">
                       <div className="flex-shrink-0 mt-1">
                         <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
-                          <BarChart className="w-4 h-4 text-white" />
+                          <BarChart className="w-6 h-6 text-white" />
                         </div>
                       </div>
-                      <p className="text-white text-lg">{benefit}</p>
+                      <p className="text-white text-xl">{benefit}</p>
                     </li>
                   ))}
                 </ul>
@@ -209,6 +209,7 @@ export default function ExportEmportPage() {
               <Button
                 size="lg"
                 className="group bg-white text-primary hover:bg-white"
+                onClick={()=> router.push("/contact")}
               >
                 Partner With Us
                 <ArrowRight className="ml-3 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -218,14 +219,14 @@ export default function ExportEmportPage() {
         </div>
       </section>
 
-      <CTA
+      {/* <CTA
         title="Ready to Expand Your Global Reach?"
         description=" Maximize your online potential. Our expert services optimize every
               click into a loyal customer, driving business growth."
         buttonText="Contact Us"
         imageSrc="/cta.png"
         onButtonClick={navigateToContact}
-      />
+      /> */}
     </div>
   );
 }

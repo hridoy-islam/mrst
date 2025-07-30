@@ -60,6 +60,7 @@ export default function Header() {
       ],
     },
     { name: "About Us", path: "/about" },
+    { name: "Why Choose Us", path: "/why-choose-us" },
     { name: "Contact", path: "/contact" },
   ];
 

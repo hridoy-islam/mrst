@@ -223,3 +223,16 @@ button.absolute.appearance-none.select-none.top-1.right-1.p-2.text-foreground-50
   background-repeat: no-repeat;
   background-position: center center;
 }
+.feature-list {
+  margin: 0;
+  padding-left: 16px;
+  list-style: disc;
+}
+
+.feature-list li {
+  margin-bottom: 0.75rem; /* Adjust spacing here (e.g., 12px) */
+}
+
+.feature-list li:last-child {
+  margin-bottom: 0;
+}

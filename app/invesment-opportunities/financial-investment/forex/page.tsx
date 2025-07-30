@@ -177,7 +177,7 @@ export default function ForexPage() {
       </section>
 
       {/* Partner Benefits */}
-      <section
+      {/* <section
         className="py-20 bg-gray-100 bg-cover bg-center relative"
         style={{ backgroundImage: "url(/pattern3.jpg)" }}
       >
@@ -225,7 +225,7 @@ export default function ForexPage() {
             </motion.div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       <CTA
         title="Ready to Start Investing in Forex?"

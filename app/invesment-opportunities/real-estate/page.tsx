@@ -22,36 +22,7 @@ const fadeIn = {
 export default function ExportEmportPage() {
   const router = useRouter();
 
-  const features = [
-    {
-      title: "Less Time in the Chair",
-      desc: "Justo non dolor lectus ac egestas dictum. Leo tempus nec amet fringilla. Eu semper velit tristique semper. Laoreet mi lacus nisi diam in.",
-      image: "/state1.jpg",
-      bgColor: "bg-blue-50",
-      iconColor: "text-blue-500",
-    },
-    {
-      title: "More Efficient",
-      desc: "Justo non dolor lectus ac egestas dictum. Leo tempus nec amet fringilla. Eu semper velit tristique semper. Laoreet mi lacus nisi diam in.",
-      image: "/state2.jpg",
-      bgColor: "bg-purple-50",
-      iconColor: "text-purple-500",
-    },
-    {
-      title: "Longer Lasting",
-      desc: "Justo non dolor lectus ac egestas dictum. Leo tempus nec amet fringilla. Eu semper velit tristique semper. Laoreet mi lacus nisi diam in.",
-      image: "/state3.jpg",
-      bgColor: "bg-red-50",
-      iconColor: "text-red-500",
-    },
-    {
-      title: "More Comfortable Experience",
-      desc: "Justo non dolor lectus ac egestas dictum. Leo tempus nec amet fringilla. Eu semper velit tristique semper. Laoreet mi lacus nisi diam in.",
-      image: "/state4.jpg",
-      bgColor: "bg-green-50",
-      iconColor: "text-green-500",
-    },
-  ];
+ 
 
   return (
     <div className="bg-background">
@@ -133,7 +104,7 @@ export default function ExportEmportPage() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              <Button className="group mt-4 bg-primary text-primary hover:bg-primary/90">
+              <Button className="group mt-4 bg-primary text-primary hover:bg-primary/90" onClick={() => router.push("/contact")}>
                 Discover Our Approach{" "}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
@@ -285,63 +256,7 @@ export default function ExportEmportPage() {
           </motion.section>
         </motion.div>
 
-        {/* Why Invest With Us */}
-        <motion.section
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeIn}
-          custom={3}
-          className="py-16 bg-gradient-radial from-primary/20 via-primary/5 to-white"
-        >
-          <div className="container mx-auto px-4">
-            {/* Header */}
-            <div className="flex flex-col items-center text-center mb-12">
-              <h2 className="text-4xl font-bold text-primary mb-2">
-                Why Choose Us?
-              </h2>
-              <div className="w-24 h-1 bg-orange-500"></div>
-            </div>
-
-            {/* Content */}
-            <div className="flex flex-row lg:flex-row justify-center items-center  gap-32">
-              {/* Text Features */}
-              <div className="space-y-6 w-full lg:w-1/2">
-                {features.map((item, i) => (
-                  <motion.div
-                    key={item.title}
-                    variants={fadeIn}
-                    custom={i}
-                    className={`flex items-start p-6 rounded-xl shadow-lg border border-primary ${item.bgColor}`}
-                  >
-                    <div className="flex-shrink-0"></div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2 text-primary">
-                        {item.title}
-                      </h3>
-                      <p className="text-gray-500 text-sm">{item.desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              {/* Image Stack */}
-              <div className="relative w-full lg:w-1/2 h-[600px] flex justify-center items-center">
-                {/* Top blue block */}
-                <div className="absolute left-[20%] w-[65%] h-[90%] bg-primary rounded-tl-[100px] rounded-br-[100px] z-10 shadow-md"></div>
-
-                {/* Foreground Image */}
-                <Image
-                  src="/state5.jpg"
-                  alt="Business Man"
-                  width={300}
-                  height={400}
-                  className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[65%] h-[90%] object-cover rounded-tl-[100px] rounded-br-[100px] z-20 shadow-xl"
-                />
-              </div>
-            </div>
-          </div>
-        </motion.section>
+       
       </div>
     </div>
   );

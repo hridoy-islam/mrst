@@ -17,6 +17,7 @@ import Industries from "@/components/industries";
 import Services from "@/components/services";
 import FuturePlans from "@/components/future-plans";
 import GrowthProjections from "@/components/global-reach";
+import { useRouter } from "next/navigation";
 
 export default function AboutUs() {
   const containerVariants = {
@@ -58,7 +59,7 @@ export default function AboutUs() {
       },
     },
   };
-
+const router = useRouter();
   return (
     <div className="min-h-screen bg-primary ">
       {/* Hero Section */}
@@ -117,7 +118,7 @@ export default function AboutUs() {
                 <strong>Phone:</strong> +9714 563204619
               </p>
             </div>
-            <Button className="mt-6">Contact Us</Button>
+            <Button className="mt-6" onClick={() => router.push("/contact")}>Contact Us</Button>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}

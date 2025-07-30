@@ -83,7 +83,7 @@ export default function Hero() {
                   height={800}
                 />
               </div>
-              <div className="mt-4 flex items-center justify-between rounded-lg bg-white/10 p-4 backdrop-blur-sm">
+              <div className="mt-4 flex items-center justify-between rounded-lg bg-gradient-to-r from-primary/70 to-primary/40 p-4 ">
                 <div>
                   <p className="font-medium">Headquartered in Dubai</p>
                   <p className="text-sm opacity-80">Meydan Grandstand, UAE</p>

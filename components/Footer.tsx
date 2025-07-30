@@ -5,9 +5,9 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <div className="bg-primary w-full text-secondary relative">
+    <div className="bg-gradient-to-r from-primary to-primary/95 w-full text-secondary relative">
       {/* Background Image */}
-      <div className="absolute inset-0 bg-[url('/p7.jpg')] bg-cover bg-center opacity-10"></div>
+      <div className="absolute inset-0 bg-[url('/p7.jpg')] bg-cover bg-center opacity-5 "></div>
 
       {/* Main Container */}
       {/* Main Container */}

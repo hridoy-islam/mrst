@@ -179,7 +179,7 @@ export default function SoftwareDevelopementPage() {
         className="py-20 bg-gray-100 bg-cover bg-center relative"
         style={{ backgroundImage: "url(/pattern3.jpg)" }}
       >
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-black/10" />
         <div className="container px-4 mx-auto relative">
           <motion.div
             initial="hidden"
@@ -207,10 +207,10 @@ export default function SoftwareDevelopementPage() {
                     <li key={index} className="flex items-start gap-4">
                       <div className="flex-shrink-0 mt-1">
                         <div className="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center">
-                          <TrendingUp className="w-3 h-3 text-white" />
+                          <TrendingUp className="w-6 h-6 text-white" />
                         </div>
                       </div>
-                      <p className="text-white">{point}</p>
+                      <p className="text-white text-xl">{point}</p>
                     </li>
                   ))}
                 </ul>
@@ -218,6 +218,7 @@ export default function SoftwareDevelopementPage() {
               <Button
                 size="lg"
                 className="group bg-white text-primary hover:text-white"
+                onClick={() => router.push("/contact")}
               >
                 Become a Tech Partner
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -227,13 +228,13 @@ export default function SoftwareDevelopementPage() {
         </div>
       </section>
 
-      <CTA
+      {/* <CTA
         title="Ready to Build the Future With Us?"
         description=" Let’s develop scalable software tailored to your business growth."
         buttonText="Contact Us"
         imageSrc="/cta.png"
         onButtonClick={navigateToContact}
-      />
+      /> */}
     </div>
   );
 }
