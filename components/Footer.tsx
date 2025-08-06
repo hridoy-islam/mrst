@@ -10,7 +10,6 @@ export default function Footer() {
       {/* <div className="absolute inset-0 bg-[url('/p7.jpg')] bg-cover bg-center opacity-5 "></div> */}
 
       {/* Main Container */}
-      {/* Main Container */}
       <div className="container py-12 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-start">
           {/* Company Info */}
