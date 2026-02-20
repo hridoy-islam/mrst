@@ -21,44 +21,44 @@ export default function Header() {
 
   const menuItems = [
     { name: "Home", path: "/" },
-    {
-      name: "Investment Opportunity",
-      subItems: [
-        {
-          name: "Real Estate Development",
-          path: "/invesment-opportunities/real-estate",
-        },
-        {
-          name: "Export Import",
-          path: "/invesment-opportunities/export-import",
-        },
-        {
-          name: "Student Career Service",
-          path: "/invesment-opportunities/career",
-        },
-        {
-          name: "Financial and Mutual Investment Opportunities",
-          subItems: [
-            {
-              name: "Forex Investment",
-              path: "/invesment-opportunities/financial-investment/forex",
-            },
-            {
-              name: "Crypto Investment",
-              path: "/invesment-opportunities/financial-investment/crypto",
-            },
-          ],
-        },
-        {
-          name: "Software Development (Tailor-made Solution)",
-          path: "/invesment-opportunities/software-development",
-        },
-        {
-          name: "Business Funding",
-          path: "/invesment-opportunities/business-funding",
-        },
-      ],
-    },
+    // {
+    //   name: "Investment Opportunity",
+    //   subItems: [
+    //     {
+    //       name: "Real Estate Development",
+    //       path: "/invesment-opportunities/real-estate",
+    //     },
+    //     {
+    //       name: "Export Import",
+    //       path: "/invesment-opportunities/export-import",
+    //     },
+    //     {
+    //       name: "Student Career Service",
+    //       path: "/invesment-opportunities/career",
+    //     },
+    //     {
+    //       name: "Financial and Mutual Investment Opportunities",
+    //       subItems: [
+    //         {
+    //           name: "Forex Investment",
+    //           path: "/invesment-opportunities/financial-investment/forex",
+    //         },
+    //         {
+    //           name: "Crypto Investment",
+    //           path: "/invesment-opportunities/financial-investment/crypto",
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       name: "Software Development (Tailor-made Solution)",
+    //       path: "/invesment-opportunities/software-development",
+    //     },
+    //     {
+    //       name: "Business Funding",
+    //       path: "/invesment-opportunities/business-funding",
+    //     },
+    //   ],
+    // },
     { name: "About Us", path: "/about" },
     { name: "Why Choose Us", path: "/why-choose-us" },
     { name: "Contact", path: "/contact" },
